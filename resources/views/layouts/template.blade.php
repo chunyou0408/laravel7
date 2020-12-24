@@ -15,6 +15,9 @@
             width: 100%;
             background-color: lightgray;
         }
+        a{
+            text-decoration:none;
+        }
         ul{
             list-style: none;
             padding: 0 10px;

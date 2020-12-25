@@ -2,6 +2,8 @@
 @extends('layouts.template')
 
 @section('css')
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <style>
         * {
             box-sizing: border-box;
@@ -12,13 +14,6 @@
         body {
             padding: 0;
             margin: 0;
-        }
-
-        ul {
-            padding: 0;
-        }
-        li{
-            padding: 10px;
         }
 
         .container {
@@ -33,7 +28,7 @@
 
         .title {
             margin-bottom: 20px;
-            line-height: 1em;
+            /* line-height: 1em; */
             border-bottom: 1px #c8c8c8 solid;
         }
 
@@ -101,12 +96,14 @@
         .album-model ul {
             width: 100%;
             list-style: none;
+            padding: 0;
 
         }
 
         .album-model ul li {
             width: 33%;
             height: 100%;
+            padding: 10px;
         }
 
 
@@ -133,6 +130,107 @@
             padding: 10px;
             border: 1px solid black;
         }
+        .warp2 a{
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #e06827;
+        }
+        .warp2 a span {
+            display: inline-block;
+            padding: 10px 25px;
+            height: 40px;
+            border: 1px #000 solid;
+            line-height: 1em;
+            margin-right: 20px;
+            font-size: 1.125rem;
+            color: black;
+        }
+
+        .warp2 a:hover {
+            color: #e06827;
+            text-decoration: underline;
+        }
+
+        .warp2 a:hover span {
+            border-color: #db3b00;
+            background-color: #db3b00;
+            color: #fff;
+        }
+
+        .lastupdated {
+            margin-bottom: 50px;
+            font-size: 1.125rem;
+            border-top: 1px solid black;
+        }
+
+        .top-page {
+            position: absolute;
+            left: calc((100% - 130px)/2);
+        }
+
+        .warp3 a {
+            display: block;
+            padding: 10px 20px;
+            float: right;
+            text-align: center;
+            background-color: #f1f1f1;
+            color: #c53e00;
+        }
+
+
+        .share-link-item {
+            display: flex;
+            width: 100%;
+            padding: 30px 0;
+            margin: 0;
+
+            list-style: none;
+            justify-content: center;
+        }
+
+        .icon {
+            border-radius: 100%;
+            width: 60px;
+            height: 60px;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .icon-fb {
+            background-color: #3b5998;
+            background-image: url('https://www.taiwan.net.tw/images/icon/shareicon_facebook.svg');
+            color: #fff;
+        }
+        .icon-fb:hover {
+            background-color: #2a4173;
+        }
+
+        .icon-tw {
+            background-color: #00aced;
+            background-image: url('https://www.taiwan.net.tw/images/icon/shareicon_twitter.svg');
+        }
+        .icon-tw:hover {
+            background-color:#1197ca;
+        }
+
+        .icon-plurk{
+            background-color: #c6602b;
+            background-image: url('https://www.taiwan.net.tw/images/icon/shareicon_plurk.svg');
+        }
+        .icon-plurk:hover {
+            background-color:#9c4e25;
+        }
+        .icon-line{
+            background-color: #2cbf13;
+            background-image: url('https://www.taiwan.net.tw/images/icon/shareicon_line.svg');
+        }
+        .icon-line:hover {
+            background-color:#2f961d;
+        }
+
+
+
     </style>
 @endsection
 
@@ -140,7 +238,7 @@
     <div class="container">
         <div class="warp">
             <div class="title">
-                <h1>「台灣觀巴」優質貼心服務伴您便捷暢遊全臺</h1>
+                <h2>「台灣觀巴」優質貼心服務伴您便捷暢遊全臺</h2>
                 <div class="news-row">
                     <span>發布日期：<span style="color:#db3b00;">2020-12-24</span></span>
                     <span>瀏覽次數：<span style="color:#db3b00;">139</span></span>
@@ -176,9 +274,41 @@
                         </a>
                     </li>
                 </ul>
-
             </div>
+            <div class="warp2">
+            {{-- <a href=""><span>上一則</span> 「台灣觀巴」優質貼心服務伴您便捷暢遊全臺</a> --}}
+            <a href=""><span>下一則</span> 觀光局視各縣市政府執行需求 評估增撥安心旅遊行政費</a>
+            <div class="lastupdated">
+                <div style="padding-top: 5px; float: right;">
+                    最後更新時間：
+                    <span>2020-12-22</span>
+                </div>
+                <div style="clear:both;"></div>
+                <div>
+                   <a class="top-page" href="" title="回列表頁"><span><i class="fas fa-chevron-up"></i>回列表頁</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="warp3">
+            <a href="" title="網站除錯報馬仔">網站除錯報馬仔</a>
+            <div style="clear:both;"></div>
+        </div>
+            <ul class="share-link-item">
+                <li>
+                    <div class="icon-fb icon"></div>
+                </li>
+                <li>
+                    <div class="icon-tw icon"></div>
+                </li>
+                <li>
+                    <div class="icon-plurk icon"></div>
+                </li>
+                <li>
+                    <div class="icon-line icon"></div>
+                </li>
+            </ul>
 
 
         </div>

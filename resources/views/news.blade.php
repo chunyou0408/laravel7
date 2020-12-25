@@ -86,7 +86,7 @@
             <div class="card">
                 <div class="img"><img src="https://www.taiwan.net.tw/pic.ashx?qp=/0030269/13_0030269.jpg&sizetype=2" alt=""></div>
                 <div class="content">
-                    <a href=""><div class="title">觀光局視各縣市政府執行需求 評估增撥安心旅遊行政費</div></a>
+                    <a href="news/no002"><div class="title">觀光局視各縣市政府執行需求 評估增撥安心旅遊行政費</div></a>
                     <div class="date">2020-12-22</div>
                     <div class="text">關於今(21)日台北市旅館商業同業公會質疑中央違反比例原則，安心旅遊補助僅給新臺幣400萬北市府行政費，致審核人力不足，導致安心旅遊補助款核發進度較緩慢一節，交通部觀光局澄清表示，安心旅遊民眾反映熱烈，整體補助筆數較先前之國旅補助高，但大部分縣市仍在觀光局核給之行政費額度辦理核銷作業，就臺北市反映行政費不足之部分，先前已告知會視後續整體預算執行情形，倘有餘裕將再行評估核給。</div>
                 </div>

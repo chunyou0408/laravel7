@@ -20,7 +20,9 @@ Route::get('news/no001', function () {
     return view('Insidepage01');
 });
 
-
+Route::get('news/no002', function () {
+    return view('Insidepage02');
+});
 
 
 

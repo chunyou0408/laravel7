@@ -1,7 +1,11 @@
 @extends('layouts.template')
 
 @section('css')
-
+<style>
+    main{
+        height: auto;
+    }
+</style>
 @endsection
 
 @section('main')

@@ -3,7 +3,11 @@
 
 {{-- 要連入CSS區塊的東西 --}}
 @section('css')
-
+<style>
+    main{
+        height: auto;
+    }
+</style>
 @endsection
 
 

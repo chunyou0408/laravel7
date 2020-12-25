@@ -16,6 +16,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('news/no001', function () {
+    return view('Insidepage01');
+});
+
+
+
+
+
+
+
+
+
+
 //Route::請求方式('網址',function(){要做的事情})
 Route::get('/home', function () {
     // $data2=[

@@ -78,7 +78,7 @@
             <div class="card">
                 <div class="img"><img src="https://www.taiwan.net.tw/pic.ashx?qp=/0030275/13_0030275_1.jpg&sizetype=2" alt=""></div>
                 <div class="content">
-                    <a href=""><div class="title">「台灣觀巴」優質貼心服務伴您便捷暢遊全臺</div></a>
+                    <a href="news/no001"><div class="title">「台灣觀巴」優質貼心服務伴您便捷暢遊全臺</div></a>
                     <div class="date">2020-12-24</div>
                     <div class="text">109年「台灣觀巴」優良管理業者、最佳優質路線及最佳服務人員評選結果揭曉。交通部觀光局為提供國內外旅客在臺灣的便利觀光旅遊服務，自93年度起推出「台灣觀巴」套裝旅遊產品，其以優質多元行程與便捷貼心服務，成為台灣旅遊的優質品牌。本年經評選出服務品質優化績優業者前3名、最佳優質路線前10名、服務品質優良獎業者1名及最佳服務人員8名，並於今日假觀光局台北旅遊服務中心舉行頒獎典禮。</div>
                 </div>

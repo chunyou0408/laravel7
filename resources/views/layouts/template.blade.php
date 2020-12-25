@@ -45,9 +45,9 @@
 <body>
     <nav>
         <ul>
-            <li><a href="home">回首頁</a></li>
-            <li><a href="news">最新消息</a></li>
-            <li><a href="test1">第二頁</a></li>
+            <li><a href="/home">回首頁</a></li>
+            <li><a href="/news">最新消息</a></li>
+            <li><a href="/test1">第二頁</a></li>
         </ul>
     </nav>
     <main>

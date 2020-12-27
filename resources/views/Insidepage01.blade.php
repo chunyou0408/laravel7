@@ -169,68 +169,6 @@
             left: calc((100% - 130px)/2);
         }
 
-        .warp3 a {
-            display: block;
-            padding: 10px 20px;
-            float: right;
-            text-align: center;
-            background-color: #f1f1f1;
-            color: #c53e00;
-        }
-
-
-        .share-link-item {
-            display: flex;
-            width: 100%;
-            padding: 30px 0;
-            margin: 0;
-
-            list-style: none;
-            justify-content: center;
-        }
-
-        .icon {
-            border-radius: 100%;
-            width: 60px;
-            height: 60px;
-            background-position: center;
-            background-size: contain;
-        }
-
-        .icon-fb {
-            background-color: #3b5998;
-            background-image: url('https://www.taiwan.net.tw/images/icon/shareicon_facebook.svg');
-            color: #fff;
-        }
-        .icon-fb:hover {
-            background-color: #2a4173;
-        }
-
-        .icon-tw {
-            background-color: #00aced;
-            background-image: url('https://www.taiwan.net.tw/images/icon/shareicon_twitter.svg');
-        }
-        .icon-tw:hover {
-            background-color:#1197ca;
-        }
-
-        .icon-plurk{
-            background-color: #c6602b;
-            background-image: url('https://www.taiwan.net.tw/images/icon/shareicon_plurk.svg');
-        }
-        .icon-plurk:hover {
-            background-color:#9c4e25;
-        }
-        .icon-line{
-            background-color: #2cbf13;
-            background-image: url('https://www.taiwan.net.tw/images/icon/shareicon_line.svg');
-        }
-        .icon-line:hover {
-            background-color:#2f961d;
-        }
-
-
-
     </style>
 @endsection
 
@@ -249,7 +187,8 @@
             <p>觀光局為輔導「台灣觀巴」業者持續提供遊客更優質的服務品質，並檢視推動成效，每年藉由委託第3公正單位辦理服務品質提升暨優化評比作業，選出績優單位與人員予以頒發獎金及獎牌或獎狀，以資獎勵。本(109)年「台灣觀巴」經過專家學者多面向考評與遊客意見調查後，評選出服務品質優化前3名業者分別是屏東旅行社、鄉村旅行社、宏祥旅行社及元帥旅行社(並列)。最佳優質路線共有10條，分別是飛行家旅行社-宜蘭文藝風情豐富行二日遊、屏東旅行社-墾丁海陸體驗線半日遊、鄉村旅行社-澎湖悠閒之旅半日遊、屏東旅行社-恆春半島東海岸線半日遊、金建旅行社-佛光山半日遊、怡容國際旅行社-雪霸國家公園觀霧自然風情二日遊、大確幸旅行社-客家與文青的交流-桃園龍潭一日遊、金建旅行社臺南古都&烏山頭一日遊、元帥旅行社-雲林文化薈萃
                 傳統藝術精華一日遊及宏祥旅行社-基隆港、野柳、北海岸半日遊。服務品質優良獎得獎業者為飛行家旅行社。最佳服務人員獎由華府旅行社蕭平；宏祥旅行社宜約瑟、邱健翔、林士懿；屏東旅行社許媄婷、王辰安及漢星旅行社廖堂守等人獲得。
             </p>
-            <p>交通部觀光局表示：「台灣觀巴」是觀光局輔導推動的旅遊產品品牌，其以飯店、機場及高臺鐵車站等重要交通節點出發，專人專車接送至國內各主要觀光景點的旅遊服務模式發展迄今已臻成熟，往年國際旅客為主要客源，約占68%。然而在此受全球疫情影響，國境近乎關閉，每年1,700萬出國旅遊人次全留在國內之情形下，危機亦是轉機，「台灣觀巴」當因應後疫情時期轉型，由過去以國際旅客為主的做法，轉為以國旅市場為主，才能增加客源，擴大服務對象。近日將邀集產、官、學各界代表召開「研商輔導『台灣觀巴』轉型作法會議」，共同研議「台灣觀巴」輔導轉型之作法，以有效輔導業者轉型，創新優質品牌形象與價值。未來並將持續就整合行銷及提升服務品質等相關事宜予以協助，期望「台灣觀巴」業者齊心協力，針對國旅市場創新規劃行程內容，共同為「台灣觀巴」的蛻變與精進而努力。「台灣觀巴」行程資訊可至官網查悉。
+            <p>交通部觀光局表示：「台灣觀巴」是觀光局輔導推動的旅遊產品品牌，其以飯店、機場及高臺鐵車站等重要交通節點出發，專人專車接送至國內各主要觀光景點的旅遊服務模式發展迄今已臻成熟，往年國際旅客為主要客源，約占68%。然而在此受全球疫情影響，國境近乎關閉，每年1,700萬出國旅遊人次全留在國內之情形下，危機亦是轉機，「台灣觀巴」當因應後疫情時期轉型，由過去以國際旅客為主的做法，轉為以國旅市場為主，才能增加客源，擴大服務對象。近日將邀集產、官、學各界代表召開「研商輔導『台灣觀巴』轉型作法會議」，共同研議「台灣觀巴」輔導轉型之作法，以有效輔導業者轉型，創新優質品牌形象與價值。未來並將持續就整合行銷及提升服務品質等相關事宜予以協助，期望「台灣觀巴」業者齊心協力，針對國旅市場創新規劃行程內容，共同為「台灣觀巴」的蛻變與精進而努力。「台灣觀巴」行程資訊可至<a href="" style="color:#db3b00 ;text-decoration: none;
+                border-bottom: 1px #db3b00 solid;">官網</a>查悉。
             </p>
 
             <div class="album-model">
@@ -291,24 +230,6 @@
             </div>
         </div>
 
-        <div class="warp3">
-            <a href="" title="網站除錯報馬仔">網站除錯報馬仔</a>
-            <div style="clear:both;"></div>
-        </div>
-            <ul class="share-link-item">
-                <li>
-                    <div class="icon-fb icon"></div>
-                </li>
-                <li>
-                    <div class="icon-tw icon"></div>
-                </li>
-                <li>
-                    <div class="icon-plurk icon"></div>
-                </li>
-                <li>
-                    <div class="icon-line icon"></div>
-                </li>
-            </ul>
 
 
         </div>

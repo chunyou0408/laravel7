@@ -94,69 +94,6 @@
             position: absolute;
             left: calc((100% - 130px)/2);
         }
-
-        .warp3 a {
-            display: block;
-            padding: 10px 20px;
-            float: right;
-            text-align: center;
-            background-color: #f1f1f1;
-            color: #c53e00;
-        }
-
-        .share-link-item {
-            display: flex;
-            width: 100%;
-            padding: 30px 0;
-            margin: 0;
-
-            list-style: none;
-            justify-content: center;
-        }
-
-        .icon {
-            border-radius: 100%;
-            width: 60px;
-            height: 60px;
-            background-position: center;
-            background-size: contain;
-        }
-
-        .icon-fb {
-            background-color: #3b5998;
-            background-image: url('https://www.taiwan.net.tw/images/icon/shareicon_facebook.svg');
-            color: #fff;
-        }
-        .icon-fb:hover {
-            background-color: #2a4173;
-        }
-
-        .icon-tw {
-            background-color: #00aced;
-            background-image: url('https://www.taiwan.net.tw/images/icon/shareicon_twitter.svg');
-        }
-        .icon-tw:hover {
-            background-color:#1197ca;
-        }
-
-        .icon-plurk{
-            background-color: #c6602b;
-            background-image: url('https://www.taiwan.net.tw/images/icon/shareicon_plurk.svg');
-        }
-        .icon-plurk:hover {
-            background-color:#9c4e25;
-        }
-        .icon-line{
-            background-color: #2cbf13;
-            background-image: url('https://www.taiwan.net.tw/images/icon/shareicon_line.svg');
-        }
-        .icon-line:hover {
-            background-color:#2f961d;
-        }
-
-
-
-
     </style>
 @endsection
 
@@ -192,24 +129,7 @@
                 </div>
             </div>
 
-        <div class="warp3">
-            <a href="" title="網站除錯報馬仔">網站除錯報馬仔</a>
-            <div style="clear:both;"></div>
-        </div>
-        <ul class="share-link-item">
-            <li>
-                <div class="icon-fb icon"></div>
-            </li>
-            <li>
-                <div class="icon-tw icon"></div>
-            </li>
-            <li>
-                <div class="icon-plurk icon"></div>
-            </li>
-            <li>
-                <div class="icon-line icon"></div>
-            </li>
-        </ul>
+
     </div>
 @endsection
 

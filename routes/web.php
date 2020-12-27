@@ -13,7 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('news');
+});
+
+Route::get('/news', function () {
+    return view('news');
 });
 
 Route::get('news/no001', function () {
@@ -24,42 +28,11 @@ Route::get('news/no002', function () {
     return view('Insidepage02');
 });
 
-
-
-
-
-
-
-
-//Route::請求方式('網址',function(){要做的事情})
-Route::get('/home', function () {
-    // $data2=[
-    //     'name'=>'leo',
-    //     'age'=>18,
-    //     'gender'=>'male'
-    // ];
-
-    $name = 'leo';
-    $age = 18;
-    $gender = 'male';
-
-
-    return view('first')->with(compact('name', 'age','gender'));
+Route::get('news/no003', function () {
+    return view('Insidepage03');
 });
 
-Route::get('/news', function () {
-    return view('news');
+Route::get('news/no004', function () {
+    return view('Insidepage04');
 });
-
-Route::get('/test1', function () {
-    return view('test2');
-});
-
-// Route::get('/test1', function () {
-//     $name = 'leo';
-//     $age = 18;
-//     $gender = 'male';
-//     return view('first',['name'=>$name,'age'=>$age,'gender'=>$gender]);
-// });
-
 

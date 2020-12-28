@@ -36,3 +36,8 @@ Route::get('news/no004', function () {
     return view('Insidepage04');
 });
 
+Route::get('news/no005', function () {
+    return view('Insidepage05');
+});
+
+

@@ -86,7 +86,8 @@
         .album {
             display: flex;
             width: 100%;
-            height: 400px;
+            height: 800px;
+            flex-wrap: wrap;
         }
 
         .album a {
@@ -102,13 +103,13 @@
         }
 
         .album-model ul li {
-            width: 33%;
-            height: 100%;
+            width: 32.598%;
+            height: 50%;
             padding: 10px;
         }
 
 
-        .img {
+        .img{
             width: 100%;
             height: 80%;
             background-color: lightcoral;
@@ -118,15 +119,27 @@
         }
 
         .img01 {
-            background-image: url('https://www.taiwan.net.tw/att/0030266/02_0030266_1.jpg');
+            background-image: url('https://www.taiwan.net.tw/att/0030265/02_0030265.jpg');
         }
 
         .img02 {
-            background-image: url('https://www.taiwan.net.tw/att/0030266/02_0030266_2.jpg');
+            background-image: url('https://www.taiwan.net.tw/att/0030265/02_0030265_1.jpg');
         }
 
         .img03 {
-            background-image: url('https://www.taiwan.net.tw/att/0030266/02_0030266.jpg');
+            background-image: url('https://www.taiwan.net.tw/att/0030265/02_0030265_2.jpg');
+        }
+
+        .img04 {
+            background-image: url('https://www.taiwan.net.tw/att/0030265/02_0030265_3.jpg');
+        }
+
+        .img05 {
+            background-image: url('https://www.taiwan.net.tw/att/0030265/02_0030265_4.jpg');
+        }
+
+        .img06 {
+            background-image: url('https://www.taiwan.net.tw/att/0030265/02_0030265_5.jpg');
         }
 
         .text {
@@ -182,21 +195,28 @@
     <div class="container">
         <div class="warp">
             <div class="title">
-                <h2>相信臺灣疫情控制 傾心臺灣鐵道旅遊 英國電視節目來台拍攝臺灣鐵道旅遊專輯</h2>
+                <h2>全台各國家風景區送夕陽、跨年、迎曙光活動</h2>
                 <div class="news-row">
                     <span>發布日期：<span style="color:#db3b00;">2020-12-15</span></span>
-                    <span>瀏覽次數：<span style="color:#db3b00;">1196</span></span>
+                    <span>瀏覽次數：<span style="color:#db3b00;">2284</span></span>
                 </div>
             </div>
-            <p>自全球新冠疫情爆發以來，臺灣因疫情控制良好多次躍登英國主流平面及電視媒體，安全、健康、多元、包容的形象已逐漸於英國民眾心中奠基。英國Channel 5的主題紀錄片節目「世界最美麗的鐵道旅行（World’s
-                Most Scenic Railway
-                Journeys）」受臺灣多種軌道建設、多樣地理環境及多元文化之吸引，加以對臺灣疫情控制深具信心，在觀光局的協助下，製作單位特別安排攝影小組來台，並配合政府疫情管制措施，完成14天隔離後進行拍攝鐵道旅遊紀錄片。
+            <p>揮別新冠肺炎陰影，2021年即將到來，你想好要怎麼度過了嗎？台灣各地掀起新希望熱潮，該如何選擇地點歡送最後一道夕陽，共浴新年第一道曙光傳遞新希望。交通部觀光局特別彙整7個國家風景區、各個風光秀麗景點辦理109-110年賞夕陽、跨年及迎曙光活動資訊，規劃迎接2021的到來！讓各處地點參與迎曙光民眾許願望、迎幸福。來台，並配合政府疫情管制措施，完成14天隔離後進行拍攝鐵道旅遊紀錄片。
             </p>
-            <p>臺灣是該節目首次拍攝之東亞旅遊目的地。本次拍攝採東部幹線花蓮-臺北段、西部幹線臺北-嘉義段以及阿里山森林火車三軸線，造訪「花蓮」、「太魯閣」、「宜蘭」、「舊草嶺隧道」、「福隆」、「臺北」、「龍騰斷橋」、「阿里山」等據點，除了介紹鐵路機電及工程建設外，同時將呈現鐵道沿線周邊美麗風光、永續旅遊據點、綠色觀光活動，以及部落文化與品茗產業等面向，希望能透過與鐵道相關的人們、故事和歷史，讓英國民眾深入了解臺灣風光與生活文化。
+            <p>觀光局表示，全台及離島皆有送舊迎新活動，想歡送2020年最後一道夕陽、揮別疫情的民眾，可選擇到阿里山參加日出印象音樂會，聆聽感恩音樂饗宴，歡送2020年最後一抹夕陽。全台最高的跨年活動〜梨山，除了可以欣賞原住民熱情舞蹈外，並可安排到谷關看晚會、泡溫泉、住飯店，去除冷冽嚴寒迎向晨煦陽光；觀光局也推薦民眾到屏東參加東港鎮跨年晚會，一邊吃東港美食，一邊看表演以及體驗大鵬灣國家風景區潟湖風光美景。
             </p>
-            <p>World’s Most Scenic Railway
-                Journeys於2020年邁入第3季，為深受全英鐵道迷及深度旅遊愛好者喜愛的鐵道旅遊紀錄片節目，平均每集首播約有150萬人次觀賞。<br>本次交通部觀光局與Channel
-                5世界最美麗的鐵道旅行電視節目合作，預定於2021年春季播出。除將於英國國際旅遊市場持續推動臺灣為一主題旅遊目的地意象外，同時宣傳2022鐵道旅遊年行銷主題，有助吸引英國民眾來臺旅遊深度體驗呈現臺灣最新面貌，為臺灣後續開放國境，迎接國際旅客而準備。
+            <p>北部民眾也可以選擇搭乘台鐵曙光列車，至東北角福隆海水浴場參加曙光音樂會，民眾可至周邊順遊，包括舊草嶺環狀線自行車逍遙遊，三貂角燈塔步道健行及至靈鷲山進行新春祈福之旅等。
+            </p>
+            <p>中部民眾可前往日月潭欣賞煙火音樂跨年晚會，在湖光水色霧氣繚繞之間，等待曙光乍現，迎接新年，並有晨曦音樂會及原聲天籟等精彩表演。</p>
+            <p>南部民眾可搭台灣好行到阿里山參加「日出印象音樂會」，來自阿里山高山上的天籟演奏，一同展開一場高海拔、高品質、高水準的三高日出印象音樂會。</p>
+
+            <p>東部民眾不妨前往台東三仙台礫灘旁岩石曙光舞台，感受現場表演樂團結合燈光，以不同的節奏、色調創造出不同情境，一同迎接本島第1道幸福曙光。
+                至於離島部分，則可選擇到馬祖北竿島上參加升旗典禮，在國家級島嶼與百年古蹟、沙灘美景陪伴下迎新年賞日出，還可參加熱血的健行路跑活動，用健康及微笑開啟你的2021年。</p>
+
+            <p>所有詳細資訊可於台灣觀光資訊網或相關國家風景區管理處網站查詢。觀光局也提醒，因跨年活動適逢連假期間，各項跨年及迎曙光活動皆於半夜清晨之間，道路視線較昏暗，能見度較低，鼓勵民眾多多搭乘公共運輸或接駁車參與各活動，並請事先做好禦寒保暖準備。
+            </p>
+            <p style="text-align: center;">
+                <img src="https://www.taiwan.net.tw/userfiles/image/2021photo/13222958637358.jpg" alt="" width="70%">
             </p>
 
             <div class="album-model">
@@ -211,31 +231,49 @@
                     <li>
                         <a href="">
                             <div class="img01 img"></div>
-                            <div class="text">英國Channel 5的紀錄片節目受臺灣多種軌道建設、多樣地理環境及多元文化之吸引，並對臺灣疫情控制深具信心</div>
+                            <div class="text">三仙台迎曙光</div>
                         </a>
                     </li>
                     <li>
                         <a href="">
                             <div class="img02 img"></div>
-                            <div class="text">本次拍攝希望能透過與鐵道相關的人們、故事和歷史，讓英國民眾深入了解臺灣風光與生活文化。</div>
+                            <div class="text">三仙台美景</div>
                         </a>
                     </li>
                     <li>
                         <a href="">
                             <div class="img03 img"></div>
-                            <div class="text">Channel 5「World's Most Scenic Railway Journeys」拍攝團隊與受訪店家合照</div>
+                            <div class="text">阿里山日出</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="img04 img"></div>
+                            <div class="text">阿里山日出印象音樂會</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="img05 img"></div>
+                            <div class="text">福隆迎曙光</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <div class="img06 img"></div>
+                            <div class="text">福隆迎曙光人潮</div>
                         </a>
                     </li>
                 </ul>
             </div>
 
             <div class="warp2">
-                <a href=""><span>上一則</span>美豬美牛進口議題專區</a>
-                <a href=""><span>下一則</span>全台各國家風景區送夕陽、跨年、迎曙光活動</a>
+                <a href=""><span>上一則</span>相信臺灣疫情控制 傾心臺灣鐵道旅遊 英國電視節目來台拍攝臺灣鐵道旅遊專輯</a>
+                <a href=""><span>下一則</span>更多詳細內容...</a>
                 <div class="lastupdated">
                     <div style="padding-top: 5px; float: right;">
                         最後更新時間：
-                        <span>2020-12-15</span>
+                        <span>2020-12-24</span>
                     </div>
                     <div style="clear:both;"></div>
                     <div>
@@ -250,3 +288,4 @@
 @section('js')
 
 @endsection
+

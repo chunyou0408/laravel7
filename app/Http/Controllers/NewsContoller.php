@@ -46,5 +46,22 @@ class NewsContoller extends Controller
         return view('Insidepage05');
     }
 
+    public function create()
+    {
+        DB::table('news')->insert([
+            'title' => '第二個標題',
+            'date' => '2020-12-30',
+            'content' => '今天禮拜三02',
+            'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF8hF2Y31Ob5S_3foO9M0uiep5rI8PE8KL8Q&usqp=CAU',
+        ]);
+        return "success";
+    }
+
+    public function delete()
+    {
+
+        return "success";
+    }
+
 
 }

@@ -109,7 +109,7 @@
                 <div class="img"><img src="{{$news->img}}" alt=""></div>
                 <div class="content">
                     <div class="news_box">最新消息</div>
-                    <a href="/news_detail_0{{$news->id}}"><div class="title">{{$news->title}}</div></a>
+                    <a href="{{$news->img}}"><div class="title">{{$news->title}}</div></a>
                     <div class="date">{{$news->date}}</div>
                     <div class="text">{{$news->content}}</div>
                 </div>

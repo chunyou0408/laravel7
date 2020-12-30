@@ -18,25 +18,24 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-
+//最新消息首頁
 Route::get('/news','NewsContoller@index');
 
 Route::get('/','FrontContoller@index');
-
+//最新消息第一篇
 Route::get('/news_detail_01','NewsContoller@detail01');
-
+//最新消息第二篇
 Route::get('/news_detail_02','NewsContoller@detail02');
-
+//最新消息第三篇
 Route::get('/news_detail_03','NewsContoller@detail03');
-
+//最新消息第四篇
 Route::get('/news_detail_04','NewsContoller@detail04');
-
+//最新消息第五篇
 Route::get('/news_detail_05','NewsContoller@detail05');
-
-
-
-
-
+//最新消息-新增資料
+Route::get('/news_create','NewsContoller@create');
+//最新消息-刪除資料
+Route::get('/news_delete','NewsContoller@delete');
 
 
 

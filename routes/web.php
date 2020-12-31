@@ -38,6 +38,15 @@ Route::get('/news_create','NewsContoller@create');
 Route::get('/news_delete','NewsContoller@delete');
 
 
+Route::get('/product','ProductController@index');
+
+Route::get('/update_product','ProductController@update');
+
+Route::get('/create_product','ProductController@create');
+
+Route::get('/delete_product','ProductController@delete');
+
+
 
 
 

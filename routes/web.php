@@ -46,7 +46,19 @@ Route::get('/create_product','ProductController@create');
 
 Route::get('/delete_product','ProductController@delete');
 
+Route::get('/create_contact_us','ContactUsController@create');
 
+// Route::get('/contact_us','ContactUsController@index');
+
+// Route::post('/contact_us/store','ContactUsController@store');
+
+//群組
+
+Route::prefix('contact_us')->group(function() {
+    Route::get('/','ContactUsController@index');
+    Route::get('/create','ContactUsController@create');
+    Route::post('/store','ContactUsController@store');
+});
 
 
 

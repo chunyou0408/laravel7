@@ -65,6 +65,11 @@ Route::prefix('contact_us')->group(function() {
     
 });
 
+Route::prefix('book')->group(function() {
+    Route::get('/','ContactUsController@book_index');
+    
+});
+
 // Route::get('/test/{id?}/{data?}',function ($id='QQQ',$data=123) {
 //     dd($id.$data);
 // });

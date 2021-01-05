@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class ContactUsController extends Controller
 {
+
+    //
+    public function book_index()
+    {
+
+        return '123';
+    }
     //
     public function index()
     {

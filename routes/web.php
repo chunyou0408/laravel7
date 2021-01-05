@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\NewsContoller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsContoller;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +59,21 @@ Route::prefix('contact_us')->group(function() {
     Route::get('/','ContactUsController@index');
     Route::get('/create','ContactUsController@create');
     Route::post('/store','ContactUsController@store');
+    Route::get('/edit/{id}','ContactUsController@edit');    //開啟編輯頁面
+    Route::post('/updata/{id}','ContactUsController@updata');  //執行更新
+    Route::get('/destroy/{id}','ContactUsController@destroy');  //執行刪除
+    
 });
+
+// Route::get('/test/{id?}/{data?}',function ($id='QQQ',$data=123) {
+//     dd($id.$data);
+// });
+
+
+// Route::get('/test/{id}/{data}',function ($id,$data) {
+//     dd($id.$data);
+// });
+
 
 
 
@@ -89,3 +104,10 @@ Route::prefix('contact_us')->group(function() {
 // });
 
 
+
+// Route::get('/test',function(Request $request){
+//     //取得所有參數
+//     // dd($request->all());
+//     //取得指定參數
+//     dd($request->ans);
+// });

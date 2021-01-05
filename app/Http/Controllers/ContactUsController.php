@@ -54,6 +54,7 @@ class ContactUsController extends Controller
         //     'content' => $request->content,
         // ]);
 
+
         //方法二
         ContactUs::create($request->all());
         //重新導向路徑
@@ -61,7 +62,7 @@ class ContactUsController extends Controller
 
 
     }
-    
+
     public function destroy($id)
     {
         // ContactUs::create($request->all());
@@ -84,7 +85,7 @@ class ContactUsController extends Controller
         //重新導向路徑
         return redirect('/contact_us');
     }
- 
+
     public function edit($id)
     {
         // dd($id);
@@ -94,5 +95,5 @@ class ContactUsController extends Controller
     }
 
 
-    
+
 }

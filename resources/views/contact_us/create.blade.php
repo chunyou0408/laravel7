@@ -13,7 +13,7 @@
         button{
              cursor: pointer;
         }
-    
+
     </style>
 @endsection
 
@@ -21,9 +21,13 @@
     <form action="/contact_us/store" method="post">
         @csrf
         <div class="_button"><a href="/contact_us">返回首頁</a></div>
-        
+
         <div class="form-group">
-            <h1>新增聯絡我們資料</h1>    
+            <h1>新增聯絡我們資料</h1>
+        </div>
+        <div class="form-group">
+            日期:
+            <input type="date" name="date" id="date" required>
         </div>
         <div class="form-group">
             姓名:
@@ -50,7 +54,7 @@
         </div>
     </form>
 
-    
+
 @endsection
 
 @section('js')

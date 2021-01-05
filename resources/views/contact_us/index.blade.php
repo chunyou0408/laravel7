@@ -28,6 +28,7 @@
     <table>
         <thead>
           <tr>
+            <th>日期</th>
             <th>姓名</th>
             <th>電話</th>
             <th>Email</th>
@@ -46,6 +47,7 @@
           </tr> --}}
           @foreach ($ContactUs as $data)
           <tr>
+            <td>{{$data->date}}</td>
             <td>{{$data->name}}</td>
             <td>{{$data->phone}}</td>
             <td>{{$data->email}}</td>
@@ -70,4 +72,3 @@
 @section('js')
 
 @endsection
-      

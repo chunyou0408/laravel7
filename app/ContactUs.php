@@ -8,6 +8,6 @@ class ContactUs extends Model
 {
     //
     protected $table = 'contact_us';
-    protected $fillable = ['name','phone','email','title','content'];
+    protected $fillable = ['date','name','phone','email','title','content'];
 
 }

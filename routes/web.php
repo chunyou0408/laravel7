@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsContoller;
 
@@ -56,12 +57,16 @@ Route::get('/create_contact_us','ContactUsController@create');
 //群組
 
 Route::prefix('contact_us')->group(function() {
-    Route::get('/','ContactUsController@index');
     Route::get('/create','ContactUsController@create');
     Route::post('/store','ContactUsController@store');
-    Route::get('/edit/{id}','ContactUsController@edit');    //開啟編輯頁面
-    Route::post('/updata/{id}','ContactUsController@updata');  //執行更新
-    Route::get('/destroy/{id}','ContactUsController@destroy');  //執行刪除
+
+    Route::middleware('auth')->group(function () {
+        Route::get('/','ContactUsController@index');
+        Route::get('/edit/{id}','ContactUsController@edit');    //開啟編輯頁面
+        Route::post('/updata/{id}','ContactUsController@updata');  //執行更新
+        Route::get('/destroy/{id}','ContactUsController@destroy');  //執行刪除
+    });
+    
     
 });
 
@@ -116,3 +121,27 @@ Route::prefix('book')->group(function() {
 //     //取得指定參數
 //     dd($request->ans);
 // });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+Route::prefix('test')->group(function() {
+
+    Route::get('/',function(){
+        return redirect('/');
+    })->middleware('auth');
+
+    Route::get('/edit',function(){
+        return 'success';
+    })->middleware('auth');
+    
+});
+
+
+
+
+
+
+// Route::prefix('test')->group(function(){});

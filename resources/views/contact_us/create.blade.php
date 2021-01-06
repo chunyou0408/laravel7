@@ -26,10 +26,6 @@
             <h1>新增聯絡我們資料</h1>
         </div>
         <div class="form-group">
-            日期:
-            <input type="date" name="date" id="date" required>
-        </div>
-        <div class="form-group">
             姓名:
             <input type="text" name="name" id="name" required>
         </div>

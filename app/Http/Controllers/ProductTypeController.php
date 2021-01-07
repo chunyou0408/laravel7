@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
+use App\ProductType;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProductTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $products=Product::get();
-        // return view('product.index')->with(compact('products'));
-        return view('admin.product.index')->with(compact('products'));
+        $productTypes=ProductType::get();
+        return view('admin.productType.index')->with(compact('productTypes'));
     }
 
     /**
@@ -28,7 +27,8 @@ class ProductController extends Controller
     public function create()
     {
         //
-        return view('admin.product.create');
+        return view('admin.productType.create');
+
     }
 
     /**
@@ -40,9 +40,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
-        Product::create($request->all());
+        ProductType::create($request->all());
         //重新導向路徑
-        return redirect('/admin/product');
+        return redirect('/admin/product_type');
     }
 
     /**
@@ -64,9 +64,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
-        $product=Product::find($id);
-        return view('admin.product.edit',compact('product'));
+       //
+       $productType=ProductType::find($id);
+       return view('admin.productType.edit',compact('productType'));
     }
 
     /**
@@ -79,16 +79,12 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $porduct = Product::find($id);
-        $porduct->type_id = $request->type_id;
-        $porduct->name = $request->name;
-        $porduct->price = $request->price;
-        $porduct->img = $request->img;
-        $porduct->description = $request->description;
-        $porduct->save();
+        $porductType = ProductType::find($id);
+        $porductType->name = $request->name;
+        $porductType->save();
 
         //重新導向路徑
-        return redirect('/admin/product');
+        return redirect('/admin/product_type');
     }
 
     /**
@@ -100,8 +96,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
-        Product::find($id)->delete();
-        return redirect('/admin/product');
-
+        ProductType::find($id)->delete();
+        return redirect('/admin/product_type');
     }
 }

@@ -1,4 +1,5 @@
 @extends('layouts.template')
+
 @section('css')
     <style>
         form{

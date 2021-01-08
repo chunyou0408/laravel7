@@ -25,21 +25,25 @@ Route::group(['middleware' => ['auth'],'prefix'=>'admin'], function () {
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::group(['prefix' => 'product'], function () {
-    Route::get('/', 'ProductController@index');
+        Route::get('/', 'ProductController@index');
         Route::get('/create', 'ProductController@create');
         Route::post('/store', 'ProductController@store');
+
         Route::get('/edit/{id}', 'ProductController@edit');
         Route::post('/update/{id}', 'ProductController@update');
+
         Route::get('/destroy/{id}', 'ProductController@destroy');   
     });
 
     Route::group(['prefix' => 'product_type'], function () {
         Route::get('/', 'ProductTypeController@index');
-            Route::get('/create', 'ProductTypeController@create');
-            Route::post('/store', 'ProductTypeController@store');
-            Route::get('/edit/{id}', 'ProductTypeController@edit');
-            Route::post('/update/{id}', 'ProductTypeController@update');
-            Route::get('/destroy/{id}', 'ProductTypeController@destroy');   
-        });
+        Route::get('/create', 'ProductTypeController@create');
+        Route::post('/store', 'ProductTypeController@store');
+
+        Route::get('/edit/{id}', 'ProductTypeController@edit');
+        
+        Route::post('/update/{id}', 'ProductTypeController@update');
+        Route::get('/destroy/{id}', 'ProductTypeController@destroy');   
+    });
   
 });

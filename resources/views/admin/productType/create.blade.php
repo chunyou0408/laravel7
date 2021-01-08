@@ -7,13 +7,13 @@
 @section('main')
 <div class="container">
     <a class="btn btn-success" href="/admin/product_type">返回頁面</a>
-    <h2>新增產品</h2>
+    <h2>新增產品類別</h2>
     <hr>
     <form action="/admin/product_type/store" method="post">
         @csrf
         <div class="form-group">
             <label for="name">類別:</label>
-            <input type="number" class="form-control" min="1" id="name" name="name" required>
+            <input type="text" class="form-control" min="1" id="name" name="name" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         </form>  

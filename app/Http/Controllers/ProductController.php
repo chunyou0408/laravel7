@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\ProductType;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -16,8 +17,8 @@ class ProductController extends Controller
     {
         //
         $products=Product::get();
-        // return view('product.index')->with(compact('products'));
-        return view('admin.product.index')->with(compact('products'));
+        $productTypes=ProductType::get();
+        return view('admin.product.index',compact('products','productTypes'));
     }
 
     /**
@@ -28,7 +29,8 @@ class ProductController extends Controller
     public function create()
     {
         //
-        return view('admin.product.create');
+        $productTypes = ProductType::get();
+        return view('admin.product.create',compact('productTypes'));
     }
 
     /**
@@ -65,8 +67,20 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
+        $productTypes = ProductType::get();
+
+        //1.在取資料時,同時取得關聯的資料
+        // $product=Product::with('productType')->find($id);
+        // dd($product->productType);
+
+        //2.需要資料時,才利用關聯function取得資料
         $product=Product::find($id);
-        return view('admin.product.edit',compact('product'));
+        //$product->關聯含式名稱
+        //$product->productType
+        //dd($product->productType->name);
+
+
+        return view('admin.product.edit',compact('product','productTypes'));
     }
 
     /**
@@ -88,6 +102,7 @@ class ProductController extends Controller
         $porduct->save();
 
         //重新導向路徑
+        // return redirect()->route('create');
         return redirect('/admin/product');
     }
 

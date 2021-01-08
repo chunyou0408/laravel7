@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FrontContoller extends Controller
+class FrontController extends Controller
 {
     /**
      * Handle the incoming request.

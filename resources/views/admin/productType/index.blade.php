@@ -5,13 +5,14 @@
 @endsection
 
 @section('main')
+
 <div class="container">
     <a class="btn btn-success" href="/admin/product_type/create">新增產品類別</a>
     <table id="myTable" class="display">
         <thead>
             <tr>
                 <th>產品類別</th>
-                <th>功能</th>
+                <th style="width: 120px">功能</th>
             </tr>
         </thead>
         <tbody>

@@ -5,6 +5,7 @@
 @endsection
 
 @section('main')
+
 <div class="container">
     <a class="btn btn-success" href="/admin/product/create">新增產品</a>
     <table id="myTable" class="display">
@@ -20,7 +21,15 @@
         <tbody>
             @foreach ($products as $product)
             <tr>
-                <td>{{$product->type_id}}</td>
+                {{-- <td>{{$product->type_id}}</td> --}}
+                <?php 
+                // dd($product->$productTypes->name);
+                    // $typeData = App\ProductType::find($product->type_id);
+                ?>
+                
+                {{-- <td>{{$product->$productType->name}}</td> --}}
+                <td>{{$product->productType->name}}</td>
+            
                 <td>{{$product->name}}</td>
                 <td>{{$product->price}}</td>
                 <td><img  width="200" src="{{$product->img}}" alt=""></td>

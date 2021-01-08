@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-  
+
     @yield('css')
 
     <!-- Fonts -->
@@ -37,6 +37,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/admin/product">產品管理</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/news_type">最新消息類別管理</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/news">最新消息管理</a>
                         </li>
                     </ul>
 
@@ -81,7 +87,7 @@
             @yield('main')
         </main>
     </div>
-    
+
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
         @yield('js')

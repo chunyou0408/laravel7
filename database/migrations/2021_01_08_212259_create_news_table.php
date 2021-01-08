@@ -15,12 +15,12 @@ class CreateNewsTable extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
+            $table->integer('type_id');
             $table->string('title');
-            $table->date('date');
             $table->longText('content');
-            $table->longText('img');
+            $table->date('date');
             $table->timestamps();
-        }); 
+        });
     }
 
     /**
@@ -31,6 +31,5 @@ class CreateNewsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('news');
-        
     }
 }

@@ -32,7 +32,7 @@ Route::group(['middleware' => ['auth'],'prefix'=>'admin'], function () {
         Route::get('/edit/{id}', 'ProductController@edit');
         Route::post('/update/{id}', 'ProductController@update');
 
-        Route::get('/destroy/{id}', 'ProductController@destroy');   
+        Route::get('/destroy/{id}', 'ProductController@destroy');
     });
 
     Route::group(['prefix' => 'product_type'], function () {
@@ -41,9 +41,32 @@ Route::group(['middleware' => ['auth'],'prefix'=>'admin'], function () {
         Route::post('/store', 'ProductTypeController@store');
 
         Route::get('/edit/{id}', 'ProductTypeController@edit');
-        
+
         Route::post('/update/{id}', 'ProductTypeController@update');
-        Route::get('/destroy/{id}', 'ProductTypeController@destroy');   
+        Route::get('/destroy/{id}', 'ProductTypeController@destroy');
     });
-  
+
+    Route::group(['prefix' => 'news'], function () {
+        Route::get('/', 'NewsController@index');
+        Route::get('/create', 'NewsController@create');
+        Route::post('/store', 'NewsController@store');
+
+        Route::get('/edit/{id}', 'NewsController@edit');
+
+        Route::post('/update/{id}', 'NewsController@update');
+        Route::get('/destroy/{id}', 'NewsController@destroy');
+    });
+
+    Route::group(['prefix' => 'news_type'], function () {
+        Route::get('/', 'NewsTypeController@index');
+        Route::get('/create', 'NewsTypeController@create');
+        Route::post('/store', 'NewsTypeController@store');
+
+        Route::get('/edit/{id}', 'NewsTypeController@edit');
+
+        Route::post('/update/{id}', 'NewsTypeController@update');
+        Route::get('/destroy/{id}', 'NewsTypeController@destroy');
+    });
+
+
 });

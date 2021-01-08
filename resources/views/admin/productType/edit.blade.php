@@ -7,7 +7,7 @@
 @section('main')
 <div class="container">
     <a class="btn btn-success" href="/admin/product_type">返回頁面</a>
-    <h2>編輯產品</h2>
+    <h2>編輯產品類別</h2>
     <hr>
     <form action="/admin/product_type/update/{{$productType->id}}" method="post">
         @csrf
@@ -16,7 +16,7 @@
             <input type="number" class="form-control" min="1" id="name" name="name" value="{{$productType->name}}" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        </form>  
+        </form>
 </div>
 
 
@@ -25,14 +25,14 @@
 
 
 
-{{-- 
+{{--
 
 <form action="/admin/product/update/{{$data->id}}" method="post">
     @csrf
     <div class="_button"><a href="/admin/product">返回首頁</a></div>
-    
+
     <div class="form-group">
-        <h1>編輯產品資料</h1>    
+        <h1>編輯產品資料</h1>
     </div>
     <div class="form-group">
         類別:

@@ -32,7 +32,7 @@
 
                 <td>{{$news->title}}</td>
                 <td>{{$news->content}}</td>
-                <td>{{$news->date}}></td>
+                <td>{{$news->date}}</td>
                 <td>
                     <a class="btn btn-success" href="/admin/news/edit/{{$news->id}}">編輯</a>
                     <a class="btn btn-danger" href="/admin/news/destroy/{{$news->id}}">刪除</a>

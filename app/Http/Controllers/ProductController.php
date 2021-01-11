@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\ProductType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -41,9 +43,15 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        Product::create($request->all());
-        //重新導向路徑
+        $fileName=Storage::disk('public')->put('/images', $request->file('img'));
+        $product=Product::create($request->all());
+
+        // $product->img = Storage::url($fileName);
+        // 或
+        $product->img = '/storage/'.$fileName;
+
+        $product->save();
+
         return redirect('/admin/product');
     }
 
@@ -68,7 +76,7 @@ class ProductController extends Controller
     {
         //
         $productTypes = ProductType::get();
-
+    
         //1.在取資料時,同時取得關聯的資料
         // $product=Product::with('productType')->find($id);
         // dd($product->productType);
@@ -92,14 +100,29 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $porduct = Product::find($id);
-        $porduct->type_id = $request->type_id;
-        $porduct->name = $request->name;
-        $porduct->price = $request->price;
-        $porduct->img = $request->img;
-        $porduct->description = $request->description;
-        $porduct->save();
+
+        $product = Product::find($id);
+        $product->type_id = $request->type_id;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
+
+        
+        //2.判斷是否有新圖片
+        if ($request->hasFile('img')){
+            //刪除舊圖片
+            if(file_exists(public_path().$product->img)){
+                File::delete(public_path().$product->img);
+            }
+            //儲存圖片取得路徑
+            $fileName=Storage::disk('public')->put('/images', $request->file('img'));
+            //更新圖片路徑
+            $product->img = Storage::url($fileName);
+        }
+
+        
+
+        $product->save();
 
         //重新導向路徑
         // return redirect()->route('create');

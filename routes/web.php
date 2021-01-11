@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewsContoller;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,5 +69,9 @@ Route::group(['middleware' => ['auth'],'prefix'=>'admin'], function () {
         Route::get('/destroy/{id}', 'NewsTypeController@destroy');
     });
 
+
+    Route::get('/test', function () {
+        Storage::disk('local')->put('/public/example.txt', 'Contents');
+    });
 
 });

@@ -9,7 +9,7 @@
     <a class="btn btn-success" href="/admin/product">返回頁面</a>
     <h2>新增產品</h2>
     <hr>
-    <form action="/admin/product/store" method="post">
+    <form action="/admin/product/store" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="type_id">類別:</label>
@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
             <label for="img">圖片:</label>
-            <input type="text" class="form-control" id="img" name="img" required>
+            <input type="file" class="form-control" id="img" name="img" required>
         </div>
         <div class="form-group">
             <label for="description">描述:</label>

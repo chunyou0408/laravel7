@@ -11,15 +11,15 @@
     <table id="myTable" class="display">
         <thead>
             <tr>
-                <th>類別</th>
-                <th>標題</th>
+                <th style="width: 80px">類別</th>
+                <th style="width: 120px">標題</th>
                 <th>內文</th>
-                <th>日期</th>
-                <th>功能</th>
+                <th style="width: 120px">日期</th>
+                <th style="width: 120px">功能</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($newss as $news)
+            @foreach ($newsData as $news)
             <tr>
                 {{-- <td>{{$product->type_id}}</td> --}}
                 <?php
@@ -31,7 +31,8 @@
                 <td>{{$news->newsType->name}}</td>
 
                 <td>{{$news->title}}</td>
-                <td>{{$news->content}}</td>
+                {{-- 限制字串長度 --}}
+                <td>{{\Illuminate\Support\Str::limit($news->content, 30)}}</td>
                 <td>{{$news->date}}</td>
                 <td>
                     <a class="btn btn-success" href="/admin/news/edit/{{$news->id}}">編輯</a>

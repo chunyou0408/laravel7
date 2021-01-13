@@ -7,7 +7,7 @@
 @section('main')
 <div class="container">
     <a class="btn btn-success" href="/admin/product_type">返回頁面</a>
-    <h2>編輯產品類別</h2>
+    <h2>編輯產品類別:</h2>
     <hr>
     <form action="/admin/product_type/update/{{$productType->id}}" method="post">
         @csrf

@@ -35,12 +35,31 @@
         </div>
         <div class="form-group">
             <label for="img">目前圖片</label>
-            <img src="{{$product->img}}" alt="200">
+            <img src="{{$product->img}}" alt="" width="200">
         </div>
         <div class="form-group">
             <label for="img">重新上傳圖片:</label>
             <input type="file" class="form-control" id="img" name="img">
         </div>
+        <hr>
+        <div class="form-group">
+            <label for="img">其他圖片</label>
+            {{-- 1.不用關聯的寫法 --}}
+            {{-- @foreach ($productImgs as $productImg)
+              <img src="{{$productImg->url}}" alt="200">
+            @endforeach --}}
+
+            {{-- 2.關聯的寫法 --}}
+            @foreach ($product->productImgs as $productImg)
+              <img src="{{$productImg->url}}" alt="" width="200">
+            @endforeach
+        </div>
+        <hr>
+        <div class="form-group">
+            <label for="imgs">上傳其他圖片:</label>
+            <input type="file" class="form-control" id="imgs" name="imgs[]" multiple>
+        </div>
+
         <div class="form-group">
             <label for="description">描述:</label>
             <textarea class="form-control" id="description" name="description" rows="3" required>{{$product->description}}</textarea>

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\ProductImg;
 use App\ProductType;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Foreach_;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
@@ -43,14 +45,35 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $fileName=Storage::disk('public')->put('/images', $request->file('img'));
-        $product=Product::create($request->all());
+        $product = Product::create($request->all());
+        
+        //主要圖片
+        if($request->hasFile('img')){
+            $filePath=Storage::disk('public')->put('/images/product', $request->file('img'));
+            // $product->img = Storage::url($fileName);
+            // 或
+            // $product->img = '/storage/'.$fileName;
+            $product->img= Storage::url($filePath);
+            $product->save();
 
-        // $product->img = Storage::url($fileName);
-        // 或
-        $product->img = '/storage/'.$fileName;
+        }else{
+            //放'查無圖片'的圖片
+            $product->img ='/images/no-image-found-360x250.png';
+            $product->save();
+        }
 
-        $product->save();
+        //其他圖片
+        if($request->hasFile('imgs')){
+            foreach ($request->imgs as $img){
+                $filePath=Storage::disk('public')->put('/images/product', $img);
+                ProductImg::create([
+                    'product_id'=>$product->id,
+                    'url'=>Storage::url($filePath),
+                ]);
+            }
+        }
+
+
 
         return redirect('/admin/product');
     }
@@ -87,8 +110,16 @@ class ProductController extends Controller
         //$product->productType
         //dd($product->productType->name);
 
+        //1.不用關聯的方法
+        //找出資料庫相同id的資料
+        // $productImgs=ProductImg::where('product_id',$product->id)->get();
+
+        // return view('admin.product.edit',compact('product','productTypes','productImgs'));
+
+        //2.關聯的方法
 
         return view('admin.product.edit',compact('product','productTypes'));
+
     }
 
     /**
@@ -109,20 +140,40 @@ class ProductController extends Controller
 
         
         //2.判斷是否有新圖片
+        //$request->hasFile() 查詢是否有檔案
         if ($request->hasFile('img')){
             //刪除舊圖片
             if(file_exists(public_path().$product->img)){
-                File::delete(public_path().$product->img);
+                if(public_path().$product->img != 'C:\github\laravel7\public/images/no-image-found-360x250.png'){
+                    File::delete(public_path().$product->img);
+                };
             }
             //儲存圖片取得路徑
-            $fileName=Storage::disk('public')->put('/images', $request->file('img'));
+            //disk指定位置
+            //put 存放檔案
+            //disk(儲存資料夾) ->put(根目錄路徑,檔案)
+    
+            $fileName=Storage::disk('public')->put('/images/product', $request->file('img'));
             //更新圖片路徑
             $product->img = Storage::url($fileName);
         }
 
+        $product->save();
+
+
+
+        //其他圖片
+        if($request->hasFile('imgs')){
+            foreach ($request->imgs as $img){
+                $filePath=Storage::disk('public')->put('/images/product', $img);
+                ProductImg::create([
+                    'product_id'=>$product->id,
+                    'url'=>Storage::url($filePath),
+                ]);
+            }
+        }
         
 
-        $product->save();
 
         //重新導向路徑
         // return redirect()->route('create');

@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {{-- swiper CDN --}}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <style>
         * {
             box-sizing: border-box;
@@ -143,6 +149,7 @@
         .share-link-item {
             display: flex;
             width: 100%;
+            height: auto;
             padding: 30px 0;
             margin: 0;
 
@@ -265,7 +272,10 @@
     </ul>
     <footer>
     </footer>
-
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- swiper --}}
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     {{-- JS --}}
     @yield('js')
 </body>

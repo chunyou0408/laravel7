@@ -32,7 +32,8 @@
 
                 <td>{{$news->title}}</td>
                 {{-- 限制字串長度 --}}
-                <td>{{\Illuminate\Support\Str::limit($news->content, 30)}}</td>
+                {{-- <td>{{\Illuminate\Support\Str::limit($news->content, 30)}}</td> --}}
+                <td>{!!$news->content!!}</td>
                 <td>{{$news->date}}</td>
                 <td>
                     <a class="btn btn-success" href="/admin/news/edit/{{$news->id}}">編輯</a>

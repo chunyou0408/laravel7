@@ -193,4 +193,24 @@ class ProductController extends Controller
         return redirect('/admin/product');
 
     }
+
+    public function deleteImg(Request $request)
+    {
+        //1.利用id尋找產品圖片
+        
+        $productImg = ProductImg::find($request->id);
+        //2.刪除產品圖片檔案
+        //判斷是否有找到productImg
+        if($productImg){
+            if(file_exists(public_path().$productImg->url)){
+                //
+                File::delete(public_path().$productImg->url);
+            };
+        }
+        //3.刪除產品圖片資料
+        $productImg->delete();
+        //4.返回success
+        return "success";
+    }
+    
 }

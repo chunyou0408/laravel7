@@ -34,6 +34,7 @@
         width: 100%;
         height: auto;
         display: flex;
+        flex-direction: row;
         padding: 40px 20px;
         border-bottom: 1px solid #000;
 
@@ -104,7 +105,8 @@
                 <h1>最新消息</h1>
             </div>
 
-            @foreach ($news_data as $news)
+            {{-- 1. --}}
+            {{-- @foreach ($news_data as $news)
             <div class="card">
                 <div class="img"><img src="{{$news->img}}" alt=""></div>
                 <div class="content">
@@ -112,6 +114,19 @@
                     <a href="{{$news->img}}"><div class="title">{{$news->title}}</div></a>
                     <div class="date">{{$news->date}}</div>
                     <div class="text">{{$news->content}}</div>
+                </div>
+            </div>
+            @endforeach --}}
+
+            {{-- 2. --}}
+            @foreach ($newsData as $news)
+            <div class="card">
+                <div class="img"><img src="{{$news->img}}" alt=""></div>
+                <div class="content">
+                    <div class="news_box">最新消息</div>
+                    <a href="{{$news->img}}"><div class="title">{{$news->title}}</div></a>
+                    <div class="date">{{$news->date}}</div>
+                    <div class="text">{!!$news->content!!}</div>
                 </div>
             </div>
             @endforeach

@@ -18,6 +18,10 @@ use Illuminate\Support\Facades\Storage;
 */
 
 Route::get('/','FrontController@index');
+Route::get('/news','FrontController@news');
+Route::get('/product','FrontController@product');
+
+Route::get('/product/{id}','FrontController@detail');
 
 Auth::routes();
 
@@ -34,6 +38,8 @@ Route::group(['middleware' => ['auth'],'prefix'=>'admin'], function () {
         Route::post('/update/{id}', 'ProductController@update');
 
         Route::get('/destroy/{id}', 'ProductController@destroy');
+        //刪除圖片
+        Route::post('/delete_img', 'ProductController@deleteImg');
     });
 
     Route::group(['prefix' => 'product_type'], function () {

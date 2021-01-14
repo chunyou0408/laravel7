@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
+use App\Product;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -20,4 +22,21 @@ class FrontController extends Controller
     {
         return view('welcome');
     }
+    
+    public function news()
+    {
+        $newsData=News::get();
+        return view('front.news.news',compact('newsData'));
+    }
+    public function product()
+    {
+        $products= Product::get();
+        return view('front.product.index',compact('products'));
+    }
+    public function detail($id)
+    {
+        $product= Product::find($id);
+        return view('front.product.detail',compact('product'));
+    }
+    
 }

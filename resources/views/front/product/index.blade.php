@@ -14,7 +14,7 @@
         }
 
     </style>
-    
+
 @endsection
 @section('main')
     <div class="container">
@@ -27,7 +27,7 @@
                     <div class="card-body">
                     <h5 class="card-title">{{$product->name}}</h5>
                     <p class="card-text">{{$product->description}}</p>
-                    <a href="/product/{{$product->id}}" class="btn btn-primary">Go somewhere</a>
+                    <a href="/product_detail/{{$product->id}}" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             @endforeach
@@ -36,7 +36,7 @@
 
 
 
-{{-- 
+{{--
 
             <div class="card col-3 my-2">
                 <img src="/images/no-image-found-360x250.png" class="card-img-top" alt="...">
@@ -64,7 +64,7 @@
                   <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
-            
+
             <div class="card col-3 my-2">
                 <img src="/images/no-image-found-360x250.png" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -86,5 +86,5 @@
 @endsection
 
 @section('js')
-    
+
 @endsection

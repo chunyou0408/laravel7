@@ -22,7 +22,7 @@ class FrontController extends Controller
     {
         return view('welcome');
     }
-    
+
     public function news()
     {
         $newsData=News::get();
@@ -33,10 +33,11 @@ class FrontController extends Controller
         $products= Product::get();
         return view('front.product.index',compact('products'));
     }
-    public function detail($id)
+    
+    public function productDetail($id)
     {
         $product= Product::find($id);
         return view('front.product.detail',compact('product'));
     }
-    
+
 }

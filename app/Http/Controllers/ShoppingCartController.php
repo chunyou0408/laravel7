@@ -20,7 +20,7 @@ class ShoppingCartController extends Controller
                 'id' => $product->id, // inique row ID
                 'name' => $product->name,
                 'price' => $product->price,
-                'quantity' => 1,
+                'quantity' => $request->qty,
                 'attributes' => array()
             ));
             //抓出所有存在購物車產品的數量

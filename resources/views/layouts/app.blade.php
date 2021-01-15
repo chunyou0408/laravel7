@@ -46,6 +46,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/admin/news">最新消息管理</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/order">訂單管理</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

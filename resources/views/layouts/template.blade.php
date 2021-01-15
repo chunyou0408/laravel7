@@ -2,14 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Document</title>
-    {{-- swiper CDN --}}
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    {{-- swiper CDN --}}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    
 
     <style>
         * {
@@ -201,6 +207,30 @@
         .icon-line:hover {
             background-color: #2f961d;
         }
+        .shopping_cart{
+            color: black;
+            font-size: 48px;
+            position: fixed;
+            right: 40px;
+            bottom: 30vh;
+        }
+
+        .shopping_cart .qty{
+            position: absolute;
+            color: #000;
+            width:35px;
+            height: 35px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            background: #FFF;
+            font-size: 16px;
+            top:0;
+            right: 0;
+            transform: translate(40%,-40%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         footer {
             height: 300px;
@@ -250,7 +280,15 @@
 
     <main>
         <!-- 放內文 -->
+        <div id="app"></div>
         @yield('main')
+        <div class="shopping_cart">
+            <a href="/checkout">
+                <i class="fas fa-shopping-cart shopping_cart">
+                    <div class="qty">1</div>
+                </i>
+            </a>
+        </div>
     </main>
     <div class="div_debug">
         <a href="" title="網站除錯報馬仔">網站除錯報馬仔</a>

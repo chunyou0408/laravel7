@@ -23,6 +23,15 @@ Route::get('/product','FrontController@product');
 
 Route::get('/product_detail/{id}','FrontController@productDetail');
 
+Route::get('/checkout','FrontController@checkout');
+Route::get('/create_order','FrontController@createOrder');
+
+
+
+Route::post('/add_cart','ShoppingCartController@addCart');
+
+
+
 Auth::routes();
 
 Route::group(['middleware' => ['auth'],'prefix'=>'admin'], function () {
@@ -74,6 +83,18 @@ Route::group(['middleware' => ['auth'],'prefix'=>'admin'], function () {
         Route::post('/update/{id}', 'NewsTypeController@update');
         Route::get('/destroy/{id}', 'NewsTypeController@destroy');
     });
+
+    Route::group(['prefix' => 'order'], function () {
+        Route::get('/', 'OrderController@index');
+        Route::get('/create', 'OrderController@create');
+        Route::post('/store', 'OrderController@store');
+
+        Route::get('/edit/{id}', 'OrderController@edit');
+
+        Route::post('/update/{id}', 'OrderController@update');
+        Route::get('/destroy/{id}', 'OrderController@destroy');
+    });
+
 
 
     Route::get('/test', function () {

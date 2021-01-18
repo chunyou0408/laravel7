@@ -38,13 +38,13 @@ class FrontController extends Controller
         $products= Product::get();
         return view('front.product.index',compact('products'));
     }
-    
+
     public function productDetail($id)
     {
         $product= Product::find($id);
         return view('front.product.detail',compact('product'));
     }
-    
+
     public function checkout()
     {
         $carts = \Cart::getContent();
@@ -66,7 +66,7 @@ class FrontController extends Controller
             'email'=>'9999@gmail.com',
             'order_number'=>$order_number,
         ]);
-        
+
         //取得車內所有物品
         $cartCollectinon= \Cart::getContent();
 
@@ -96,14 +96,41 @@ class FrontController extends Controller
 
     public function bookingSearch(Request $request){
 
-        //  return($request->year."年".($request->month+1)."月");
-        // $date=$request->year."-".(($request->month)+1)."-18";
-        
-        $bookings= Booking::get();
+
+
+        $dt = Carbon::create(2021, 1, 1, 0);
+
+
+        for ($i=0; $i <= 30; $i++) {
+            $bookings[$i]= Booking::whereDate('date', '=', $dt)->get();
+
+            $dt->addDay();
+        }
+
+
+
+
+
+
+
+
+
+        // $dt = Carbon::now();
+
+        // $to = Carbon::now();
+        // $to->addDay();
+        // $to->addDay();
+
+        // $bookings[0]= Booking::whereBetween('date', [$dt , $to])->where('area',1)->get();
+        // $bookings[1]= Booking::whereBetween('date', [$dt , $to])->where('area',2)->get();
+        // $bookings[2]= Booking::whereBetween('date', [$dt , $to])->where('area',3)->get();
+        // $bookings[3]= Booking::whereBetween('date', [$dt , $to])->where('area',4)->get();
+        // $bookings[4]= Booking::whereBetween('date', [$dt , $to])->where('area',5)->get();
+
 
         return $bookings;
     }
-    
 
-    
+
+
 }

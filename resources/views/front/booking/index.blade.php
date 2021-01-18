@@ -8,11 +8,31 @@
 
 @section('main')
     <div class="container">
-        
+
         <table id="myTable" class="display">
             <button id="prevMonth">上個月</button>
             <button id="nextMonth">下個月</button>
-
+            <thead>
+                <tr>
+                    <th>日</th>
+                    <th>一</th>
+                    <th>二</th>
+                    <th>三</th>
+                    <th>四</th>
+                    <th>五</th>
+                    <th>六</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
         </table>
 
     </div>
@@ -33,10 +53,9 @@
     <script>
 
         var DayArray = new Array();
-        var detailsDayArray = new Array();
 
 
-        
+
 
         var myTable = document.querySelector('#myTable');
         var setMonth_btn = document.querySelector('#setMonth_btn');
@@ -51,7 +70,7 @@
 
         booking_search(year,month);
 
-        
+
         function booking_search(year,month){
 
         var _token= document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -62,9 +81,9 @@
         formData.append('_token',_token);
 
         fetch(`booking_search`, {
-                method: 'POST', 
-                body: formData, 
-            })                
+                method: 'POST',
+                body: formData,
+            })
             .then(function (response){
                 return response.json();
             })
@@ -76,28 +95,42 @@
                 console.log(data);
                 createCalendar(year, month);
 
-                
 
                 data.forEach((element,index) => {
-                    //取得有資料的天數
-                    // console.log(new Date(element['date']).getDate());
-                    DayArray.push(new Date(element['date']).getDate());
-                    detailsDayArray.push(element['area_01']+","+element['area_02']+","+element['area_03']+","+element['area_04']+","+element['area_05']+","+element['area_06']);
+                var a=0,b=0,c=0,d=0,e=0;
 
+                    element.forEach((countArea,index) => {
 
+                        if (countArea['area']== 1){
+                            a=a+1;
+                        }else if (countArea['area']== 2){
+                            b=b+1;
+                        }else if (countArea['area']== 3){
+                            c=c+1;
+                        }else if (countArea['area']== 4){
+                            d=d+1;
+                        }else if (countArea['area']== 5){
+                            e=e+1;
+                        }
 
+                    });
+
+                    console.log(index+1+"日");
+                    console.log('a=',a);
+                    console.log('b=',b);
+                    console.log('c=',c);
+                    console.log('d=',d);
+                    console.log('e=',e);
                 });
 
 
-                console.log(DayArray);
-                console.log(detailsDayArray);
 
-
+            // console.log(DayArray);
 
 
             });
         }
-     
+
 
         var prevMonth = document.querySelector('#prevMonth');
         var nextMonth = document.querySelector('#nextMonth');
@@ -111,7 +144,7 @@
             booking_search(year,month);
         }
         nextMonth.onclick=function(){
-            
+
             if(month<11){
                 month=month+1;
             }else{
@@ -130,7 +163,7 @@
 
             var firstDay = new Date(yy, mm, 1).getDay();
             var lastDay = new Date(yy, mm+1, 0).getDate();
-            
+
             console.log("目前日期:"+year + "年" + (month+1) + "月" + "第一天:"+firstDay
             +"有幾天:"+lastDay );
 
@@ -167,7 +200,7 @@
                 }
 
                 text = text + `
-                <td class="calendar-date"> 
+                <td class="calendar-date">
                     <div class="day">
                         <span class="day-num">${day_num}</span>
                     </div>
@@ -192,7 +225,7 @@
         }
 
 
-        
+
     </script>
 
 @endsection

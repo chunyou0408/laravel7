@@ -6,13 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer $id
+ * @property string $name
+ * @property string $phone
+ * @property int $people
+ * @property string $area
  * @property string $date
- * @property int $area_01
- * @property int $area_02
- * @property int $area_03
- * @property int $area_04
- * @property int $area_05
- * @property int $area_06
  * @property string $created_at
  * @property string $updated_at
  */
@@ -28,6 +26,6 @@ class Booking extends Model
     /**
      * @var array
      */
-    protected $fillable = ['date', 'area_01', 'area_02', 'area_03', 'area_04', 'area_05', 'area_06', 'created_at', 'updated_at'];
+    protected $fillable = ['name', 'phone', 'people', 'area', 'date', 'created_at', 'updated_at'];
 
 }

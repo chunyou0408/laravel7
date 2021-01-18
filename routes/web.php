@@ -21,20 +21,32 @@ Route::get('/','FrontController@index');
 Route::get('/news','FrontController@news');
 Route::get('/product','FrontController@product');
 
+Route::get('/test',function(){
+    dd('test');
+})->middleware('is_admin');
+
+
+
 Route::get('/product_detail/{id}','FrontController@productDetail');
 
 Route::get('/checkout','FrontController@checkout');
 Route::get('/create_order','FrontController@createOrder');
 
+Route::get('/booking','FrontController@booking');
+Route::post('/booking_search','FrontController@bookingSearch');
 
 
 Route::post('/add_cart','ShoppingCartController@addCart');
 
 
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+    'reset' => false,
+    'verify' => false,
+]);
 
-Route::group(['middleware' => ['auth'],'prefix'=>'admin'], function () {
+Route::group(['middleware' => ['auth','is_admin'],'prefix'=>'admin'], function () {
 
     Route::get('/', 'HomeController@index')->name('home');
 

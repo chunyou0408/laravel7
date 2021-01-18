@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\News;
 use App\Order;
-use App\OrderDetail;
+use App\Booking;
 use App\Product;
 use Carbon\Carbon;
+use App\OrderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -86,5 +87,23 @@ class FrontController extends Controller
 
         return redirect('/admin/order');
     }
+
+
+    //
+    public function booking(){
+        return view('front.booking.index');
+    }
+
+    public function bookingSearch(Request $request){
+
+        //  return($request->year."年".($request->month+1)."月");
+        // $date=$request->year."-".(($request->month)+1)."-18";
+        
+        $bookings= Booking::get();
+
+        return $bookings;
+    }
+    
+
     
 }

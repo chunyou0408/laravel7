@@ -1,0 +1,43 @@
+main{
+    margin-top: 50px;
+    height: auto;
+}
+
+
+
+table {
+    .prev-month,.next-month{
+        cursor: pointer;
+    }
+    max-width: 1200px;
+    
+
+    td {
+        border: none;
+        padding: 10px;
+    }
+    .calendar-date {
+        background: #666666;
+        /* border-radius: 5px; */
+        height: 64px;
+        width: 14%;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        &:hover {
+            background: #808080;
+        }
+        .day {
+            font-size: 13px;
+            color: #ccc;
+            .day-num {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+            }
+        }
+    }
+}

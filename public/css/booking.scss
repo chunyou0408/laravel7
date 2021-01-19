@@ -15,6 +15,23 @@ table {
     td {
         border: none;
         padding: 10px;
+        position: relative;
+        ul{
+            display: none;
+            
+            background-color: #666666;
+            position: absolute;
+            top: 50px;
+            left: 100px;
+            height: auto;
+            z-index: 100;
+            li{
+                padding: 10px;
+            }
+        }
+        &:hover ul{
+            display: block;
+        }
     }
     .calendar-date {
         background: #666666;

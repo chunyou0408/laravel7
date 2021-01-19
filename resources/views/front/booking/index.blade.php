@@ -25,7 +25,18 @@
             </thead>
             <tbody>
                 <tr>
-                    <td></td>
+                    <td class="calendar-date">
+                        <div class="day">
+                            <span class="day-num">1</span>
+                            <ul>
+                                <li>aaaaaaa</li>
+                                <li>bbbbbbb</li>
+                                <li>ccccccc</li>
+                                <li>ddddddd</li>
+                                <li>eeeeeee</li>
+                            </ul>
+                        </div>
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -51,9 +62,7 @@
         });
     </script>
     <script>
-
-        var DayArray = new Array();
-
+        var currentMonth = new Array();
 
 
 
@@ -63,6 +72,7 @@
 
         var year = new Date().getFullYear(); //年 目前年份
         var month = new Date().getMonth();//月 目前月份
+        var lastDay = new Date(year, month+1, 0).getDate();
 
         console.log("目前日期:"+year + "年" + (month+1) + "月");
 
@@ -78,6 +88,7 @@
         var formData = new FormData();
         formData.append('year',year);
         formData.append('month',month);
+        formData.append('lastDay',lastDay);
         formData.append('_token',_token);
 
         fetch(`booking_search`, {
@@ -92,8 +103,8 @@
             })
             .then(function(data){
                 // console.log('成功:',data);
-                console.log(data);
-                createCalendar(year, month);
+                // console.log(data);
+                currentMonth = new Array();
 
 
                 data.forEach((element,index) => {
@@ -113,22 +124,25 @@
                             e=e+1;
                         }
 
+                        
                     });
+                    // console.log(index+1+"日");
+                    // console.log('a=',a);
+                    // console.log('b=',b);
+                    // console.log('c=',c);
+                    // console.log('d=',d);
+                    // console.log('e=',e);
 
-                    console.log(index+1+"日");
-                    console.log('a=',a);
-                    console.log('b=',b);
-                    console.log('c=',c);
-                    console.log('d=',d);
-                    console.log('e=',e);
+
+                    currentMonth.push([a,b,c,d,e]);
                 });
 
-
-
-            // console.log(DayArray);
-
+                createCalendar(year, month);
 
             });
+            console.log('二維');
+            // console.log(currentMonth);
+
         }
 
 
@@ -157,6 +171,7 @@
 
 
         function createCalendar(yy, mm) {
+
             var day_num = 1;
             var indexNextLine = 1;
             var text = ""; //放字串
@@ -203,6 +218,20 @@
                 <td class="calendar-date">
                     <div class="day">
                         <span class="day-num">${day_num}</span>
+                        <span class="tag">
+                        營位 ${20-(currentMonth[day_num-1][0])+
+                        20-(currentMonth[day_num-1][1])+
+                        20-(currentMonth[day_num-1][2])+
+                        20-(currentMonth[day_num-1][3])+
+                        20-(currentMonth[day_num-1][4])}
+                            <ul>
+                            <li>A區${20-(currentMonth[day_num-1][0])}個空位</li>
+                            <li>B區${20-(currentMonth[day_num-1][1])}個空位</li>
+                            <li>C區${20-(currentMonth[day_num-1][2])}個空位</li>
+                            <li>D區${20-(currentMonth[day_num-1][3])}個空位</li>
+                            <li>E區${20-(currentMonth[day_num-1][4])}個空位</li>
+                         </ul>
+                        </span>
                     </div>
                 </td>`;
                 indexNextLine++;

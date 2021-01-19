@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1be97889fbc0f27ffac287e2b6ad4547",
+    "content-hash": "4d1f79007ea79babd7f7ece2432a8f8e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -167,10 +167,6 @@
                 "laravel",
                 "shopping cart"
             ],
-            "support": {
-                "issues": "https://github.com/darryldecode/laravelshoppingcart/issues",
-                "source": "https://github.com/darryldecode/laravelshoppingcart/tree/4.2.1"
-            },
             "time": "2020-12-18T03:01:17+00:00"
         },
         {
@@ -4697,6 +4693,55 @@
             "time": "2020-07-13T06:12:54+00:00"
         },
         {
+            "name": "tsaiyihua/laravel-ecpay",
+            "version": "2.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tsaiyihua/laravel-ecpay.git",
+                "reference": "f5eead25d35cc93de535dc9832df28587f728190"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tsaiyihua/laravel-ecpay/zipball/f5eead25d35cc93de535dc9832df28587f728190",
+                "reference": "f5eead25d35cc93de535dc9832df28587f728190",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^6|^7|^8",
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "TsaiYiHua\\ECPay\\ECPayServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TsaiYiHua\\ECPay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yihua Tsai",
+                    "email": "tsaiyihua@gmail.com"
+                }
+            ],
+            "description": "ecpay library for laravel",
+            "keywords": [
+                "ecpay",
+                "laravel",
+                "payment"
+            ],
+            "time": "2020-11-19T06:21:56+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v4.1.8",
             "source": {
@@ -6988,5 +7033,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }

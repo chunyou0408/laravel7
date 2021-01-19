@@ -9,10 +9,18 @@ use App\Product;
 use Carbon\Carbon;
 use App\OrderDetail;
 use Illuminate\Http\Request;
+use TsaiYiHua\ECPay\Checkout;
 use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
 {
+    protected $checkout;
+    
+    public function __construct(Checkout $checkout)
+    {
+        $this->checkout = $checkout;
+    }
+
     /**
      * Handle the incoming request.
      *
@@ -23,6 +31,7 @@ class FrontController extends Controller
     {
         //
     }
+
     public function index()
     {
         return view('welcome');
@@ -70,6 +79,8 @@ class FrontController extends Controller
         //取得車內所有物品
         $cartCollectinon= \Cart::getContent();
 
+        $items=[];
+
         foreach ($cartCollectinon as $item) {
             $product =Product::find($item->id);
 
@@ -81,11 +92,31 @@ class FrontController extends Controller
                 'qty'=>$item->quantity,
                 'img'=>$product->img,
             ]);
+
+            $new_ary = [
+                'name' => $product->name,
+                'qty' => $item->quantity,
+                'price' => $product->price,
+                'unit' => '個'
+            ];
+
+            array_push($items, $new_ary);
         }
+
+         //第三方支付
+         $formData = [
+            'UserId' => Auth::user()->id, // 用戶ID , Optional
+            'OrderId' => 'DP'.$dt->year.$dt->month.$dt->day.$dt->hour.$dt->minute.$dt->second,
+            'ItemDescription' => '產品簡介',
+            'Items' => $items,
+            'TotalAmount' => \Cart::getTotal(),
+            'PaymentMethod' => 'Credit', // ALL, Credit, ATM, WebATM
+        ];
 
         \Cart::clear();
 
-        return redirect('/admin/order');
+        return $this->checkout->setNotifyUrl(route('notify'))->setReturnUrl(route('return'))->setPostData($formData)->send();
+        // return redirect('/admin/order');
     }
 
 
@@ -96,12 +127,12 @@ class FrontController extends Controller
 
     public function bookingSearch(Request $request){
 
+        
+      
+        $dt = Carbon::create($request->year, ($request->month+1), 1, 0);
 
 
-        $dt = Carbon::create(2021, 1, 1, 0);
-
-
-        for ($i=0; $i <= 30; $i++) {
+        for ($i=0; $i <= $request->lastDay; $i++) {
             $bookings[$i]= Booking::whereDate('date', '=', $dt)->get();
 
             $dt->addDay();
@@ -132,5 +163,19 @@ class FrontController extends Controller
     }
 
 
+
+
+    public function test_check_out(){
+
+        $formData = [
+            'UserId' => Auth::user()->id, // 用戶ID , Optional
+            'ItemDescription' => '產品簡介',
+            'ItemName' => 'Product Name',
+            'TotalAmount' => \Cart::getTotal(),
+            'PaymentMethod' => 'Credit', // ALL, Credit, ATM, WebATM
+        ];
+        return $this->checkout->setPostData($formData)->send();
+
+    }
 
 }

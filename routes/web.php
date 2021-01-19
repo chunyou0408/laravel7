@@ -41,14 +41,32 @@ Route::post('/add_cart','ShoppingCartController@addCart');
 
 
 Auth::routes([
-    'register' => false,
+    // 'register' => false,
     'reset' => false,
     'verify' => false,
 ]);
 
-Route::group(['middleware' => ['auth','is_admin'],'prefix'=>'admin'], function () {
+Route::get('/test_check_out','FrontController@test_check_out');
 
+Route::prefix('cart_ecpay')->group(function(){
+    
+    //當消費者付款完成後，綠界會將付款結果參數以幕後(Server POST)回傳到該網址。
+    Route::post('notify', 'CartController@notifyUrl')->name('notify');
+
+    //付款完成後，綠界會將付款結果參數以幕前(Client POST)回傳到該網址
+    Route::post('return', 'CartController@returnUrl')->name('return');
+});
+
+
+// Route::get('/admin/login', '');
+
+Route::group(['middleware' => ['auth','is_admin'],'prefix'=>'admin'], function () {
     Route::get('/', 'HomeController@index')->name('home');
+
+    //管理員的註冊
+    Route::get('/register', 'Auth\RegisterController@showAdminRegistrationForm');
+    Route::post('/register', 'Auth\RegisterController@admin_register');
+
 
     Route::group(['prefix' => 'product'], function () {
         Route::get('/', 'ProductController@index');

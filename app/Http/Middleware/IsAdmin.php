@@ -21,6 +21,10 @@ class IsAdmin
         // $user = Auth::user();
         // $role = $user->type;
 
+        if(Auth::user()==''){
+
+        }
+
 
         if(Auth::user()->type != 'admin'){
             // return redirect('/');

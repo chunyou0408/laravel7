@@ -14,6 +14,25 @@ table .prev-month, table .next-month {
 table td {
   border: none;
   padding: 10px;
+  position: relative;
+}
+
+table td ul {
+  display: none;
+  background-color: #666666;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  height: auto;
+  z-index: 100;
+}
+
+table td ul li {
+  padding: 10px;
+}
+
+table td:hover ul {
+  display: block;
 }
 
 table .calendar-date {

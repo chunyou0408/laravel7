@@ -51,7 +51,7 @@ Auth::routes([
 Route::get('/test_check_out','FrontController@test_check_out');
 
 Route::prefix('cart_ecpay')->group(function(){
-    
+
     //當消費者付款完成後，綠界會將付款結果參數以幕後(Server POST)回傳到該網址。
     Route::post('notify', 'CartController@notifyUrl')->name('notify');
 

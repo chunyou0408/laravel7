@@ -4739,6 +4739,10 @@
                 "laravel",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/tsaiyihua/laravel-ecpay/issues",
+                "source": "https://github.com/tsaiyihua/laravel-ecpay/tree/2.4.1"
+            },
             "time": "2020-11-19T06:21:56+00:00"
         },
         {
@@ -7033,5 +7037,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

@@ -10,7 +10,45 @@ $('.product-quantity input').change( function() {
 });
 
 $('.product-removal button').click( function() {
-  removeItem(this);
+  console.log($(this).attr('data-id'));
+  //拿到購物車產品ID
+  var id =$(this).attr('data-id');
+  var qty =parseInt(this.previousSibling.previousSibling.value);
+  var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+  //建立表單
+  var formData = new FormData;
+  //存入資料庫
+  formData.append('id',id);
+  formData.append('qty',qty);
+  formData.append('_token',_token);
+
+  console.log(formData);
+
+  fetch('/dal_cart', {
+      method:'POST',
+      body:formData,
+  })
+  .then(function (response){
+      return response.text()
+  })
+  .catch(function (error){
+      console.log('錯誤:',error);
+  })
+  .then(function(data){
+      //回傳的資料
+      if(data == "false"){
+          //fales(代表找不到產品)
+          alert('找不到該項產品');
+      }else{
+          //車子有多少數量的商品
+          $('.shopping_cart .qty').text(data);
+      }
+      console.log('成功:',data);
+  });
+
+
+  // removeItem(this);
 });
 
 

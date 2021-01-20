@@ -37,6 +37,8 @@ Route::post('/booking_search','FrontController@bookingSearch');
 
 
 Route::post('/add_cart','ShoppingCartController@addCart');
+Route::post('/del_cart','ShoppingCartController@delCart');
+Route::post('/update_cart','ShoppingCartController@updateCart');
 
 
 

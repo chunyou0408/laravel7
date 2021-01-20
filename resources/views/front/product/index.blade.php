@@ -67,6 +67,14 @@
                     console.log('錯誤:',error);
                 })
                 .then(function(data){
+                    //回傳的資料
+                    if(data == "false"){
+                        //fales(代表找不到產品)
+                        alert('找不到該項產品');
+                    }else{
+                        //車子有多少數量的商品
+                        $('.shopping_cart .qty').text(data);
+                    }
                     console.log('成功:',data);
                 });
             };

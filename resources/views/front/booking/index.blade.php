@@ -45,7 +45,36 @@
                     <td></td>
                 </tr>
         </table>
-
+    
+        
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Recipient:</label>
+                    <input type="text" class="form-control" id="recipient-name">
+                  </div>
+                  <div class="form-group">
+                    <label for="message-text" class="col-form-label">Message:</label>
+                    <textarea class="form-control" id="message-text"></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Send message</button>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 @endsection
 
@@ -61,10 +90,21 @@
             });
         });
     </script>
+
+    <script>
+    $('#exampleModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var recipient = button.data('whatever') // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this)
+    modal.find('.modal-title').text('露營預約')
+    modal.find('.modal-body input').val(recipient)
+    })
+    </script>
+
     <script>
         var currentMonth = new Array();
-
-
 
         var myTable = document.querySelector('#myTable');
         var setMonth_btn = document.querySelector('#setMonth_btn');
@@ -224,13 +264,23 @@
                         20-(currentMonth[day_num-1][2])+
                         20-(currentMonth[day_num-1][3])+
                         20-(currentMonth[day_num-1][4])}
-                            <ul>
-                            <li>A區${20-(currentMonth[day_num-1][0])}個空位</li>
-                            <li>B區${20-(currentMonth[day_num-1][1])}個空位</li>
-                            <li>C區${20-(currentMonth[day_num-1][2])}個空位</li>
-                            <li>D區${20-(currentMonth[day_num-1][3])}個空位</li>
-                            <li>E區${20-(currentMonth[day_num-1][4])}個空位</li>
-                         </ul>
+                        <ul>
+                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-whatever="A區營位">
+                                A區${20-(currentMonth[day_num-1][0])}個空位 預約
+                            </div></li>
+                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-whatever="B區營位">
+                                B區${20-(currentMonth[day_num-1][1])}個空位 預約
+                            </div></li>
+                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-whatever="C區營位">
+                                C區${20-(currentMonth[day_num-1][2])}個空位 預約
+                            </div></li>
+                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-whatever="D區營位">
+                                D區${20-(currentMonth[day_num-1][3])}個空位 預約
+                            </div></li>
+                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-whatever="E區營位">
+                                E區${20-(currentMonth[day_num-1][4])}個空位 預約
+                            </div></li>
+                        </ul>
                         </span>
                     </div>
                 </td>`;

@@ -26,6 +26,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            overflow: hidden;
         }
 
         nav {
@@ -208,11 +209,25 @@
             background-color: #2f961d;
         }
         .shopping_cart{
+            width: 80px;
             color: black;
             font-size: 48px;
             position: fixed;
             right: 40px;
             bottom: 30vh;
+        }
+        .shopping_cart img {
+            display: block;
+        }
+        .shopping_cart:hover img:first-child {
+            display: none;
+        }
+
+        .shopping_cart img:nth-child(2) {
+            display: none;
+        }
+        .shopping_cart:hover img:nth-child(2) {
+            display: block;
         }
 
         .shopping_cart .qty{
@@ -284,8 +299,13 @@
         @yield('main')
         <div class="shopping_cart">
             <a href="/checkout">
-                <i class="fas fa-shopping-cart shopping_cart">
-                    <div class="qty">1</div>
+            <?php
+            $getTotalQty=\Cart::getTotalQuantity();
+            ?>
+                <i class="shopping_cart">
+                    <img src="{{asset("./storage/jpg/maxresdefault-removebg-preview.png")}}" alt="" width="100%">
+                    <img src="{{asset("./storage/jpg/cart2.png")}}" alt="" width="100%">
+                    <div class="qty">{{$getTotalQty}}</div>
                 </i>
             </a>
         </div>

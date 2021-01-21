@@ -73,45 +73,75 @@
                         </div>
                         <div class="form-group">
                             <label for="area_id">區域:</label>
-                            {{-- <select class="form-control" id="area_id" name="area_id" required>
+                            <select class="form-control" id="area_id" name="area_id" required>
                                 @foreach ($bookingTypes as $bookingType)
-                                    <option value="{{$bookingType->id}}">{{$bookingType->name}}</option>
+                                <option value="{{$bookingType->id}}">{{$bookingType->name}}</option>
                                 @endforeach
-                            </select> --}}
-                            <input type="text" class="form-control" id="area_id" name="area_id" required>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="date">日期:</label>
                             <input type="date" class="form-control" min="0" id="date" name="date" required>
-                        </div>    
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" id="createBooking" class="btn btn-primary">立即預約</button>
-                    </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="createBooking_btn" class="btn btn-primary">立即預約</button>
+                </div>
                 </form>
             </div>
         </div>
     </div>
-   
-<!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">預約結果</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <p>姓名:XXX 手機:0912345678</p>
-            <p> Email:123@123 營位:AAA 入營時間:2021-01-21</p>
+    <!-- Large modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large
+        modal</button>
+
+    <div class="modal fade bd-example-modal-lg" id="result_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">預約結果</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col">
+                            <label>姓名:</label>
+                            <label class="name"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>電話:</label>
+                            <label class="phone"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>信箱:</label>
+                            <label class="email"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label >區域:</label>
+                            <label class="area_id"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>日期:</label>
+                            <label class="date"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
-</div>
 
 
 </div>
@@ -352,7 +382,7 @@
                 </td>`;
                 }
 
-                
+
                 indexNextLine++;
                 day_num++;
             }
@@ -372,10 +402,61 @@
 
         }
 
-        var createBooking = document.querySelector('#createBooking');
-        createBooking.onclick=function(){
-            console.log(123456);
-        } 
+        //發送資料到後端
+        var createBooking_btn = document.querySelector('#createBooking_btn');
+        var close = document.querySelector('.close');
+
+        createBooking_btn.onclick=function(){
+            console.log({{$bookingType}});
+
+
+            var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            var name = document.querySelector('#name').value;
+            var phone = document.querySelector('#phone').value;
+            var area_id = document.querySelector('#area_id').value;
+            var email= document.querySelector('#email').value;
+            var date = document.querySelector('#date').value;
+
+            if (name == "" || phone == "" || area_id == "" || email == "" || date == "") {
+                alert('有資料還沒輸入');
+            }else{
+                //建立表單
+                var formData = new FormData;
+                //存入資料庫
+                formData.append('name',name);
+                formData.append('phone',phone);
+                formData.append('email',email);
+                formData.append('area_id',area_id);
+                formData.append('date',date);
+                formData.append('_token',_token);
+
+                fetch('/booking_store', {
+                    method:'POST',
+                    body:formData,
+                })
+                .then(function (response){
+                    return response.json()
+                })
+                .catch(function (error){
+                    console.log('錯誤:',error);
+                })
+                .then(function(data){
+                    console.log('成功:',data);
+
+                    //關閉原本的MODAL
+                    close.click();
+                    //開啟預約成功的MODAL
+                    $("#result_modal").modal();
+                    var modal = $("#result_modal")
+                    modal.find('.modal-title').text('預約結果:成功')
+                    modal.find('.modal-body .name').text(data.name)
+                    modal.find('.modal-body .phone').text(data.phone)
+                    modal.find('.modal-body .email').text(data.email)
+                    modal.find('.modal-body .area_id').text(data.area_id)
+                    modal.find('.modal-body .date').text(data.date)
+                });
+            }
+        }
 
 
 

@@ -7,6 +7,7 @@ use App\Order;
 use App\Booking;
 use App\Product;
 use Carbon\Carbon;
+use App\BookingType;
 use App\OrderDetail;
 use Illuminate\Http\Request;
 use TsaiYiHua\ECPay\Checkout;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 class FrontController extends Controller
 {
     protected $checkout;
-    
+
     public function __construct(Checkout $checkout)
     {
         $this->checkout = $checkout;
@@ -122,13 +123,17 @@ class FrontController extends Controller
 
     //
     public function booking(){
-        return view('front.booking.index');
+
+        $bookingTypes=BookingType::get();
+        return view('front.booking.index',compact('bookingTypes'));
+        // return view('front.booking.index');
+
     }
 
     public function bookingSearch(Request $request){
 
-        
-      
+
+
         $dt = Carbon::create($request->year, ($request->month+1), 1, 0);
 
 
@@ -137,8 +142,6 @@ class FrontController extends Controller
 
             $dt->addDay();
         }
-
-
 
 
 
@@ -163,6 +166,11 @@ class FrontController extends Controller
     }
 
 
+    public function bookingStore(Request $request){
+        //
+        Booking::create($request->all());
+        return $request;
+    }
 
 
     public function test_check_out(){
@@ -177,5 +185,7 @@ class FrontController extends Controller
         return $this->checkout->setPostData($formData)->send();
 
     }
+
+
 
 }

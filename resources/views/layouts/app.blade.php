@@ -47,6 +47,12 @@
                             <a class="nav-link" href="/admin/news">最新消息管理</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="/admin/booking">預約管理</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/booking_type">預約類別管理</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/admin/order">訂單管理</a>
                         </li>
                     </ul>

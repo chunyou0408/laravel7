@@ -34,6 +34,7 @@ Route::get('/create_order','FrontController@createOrder');
 
 Route::get('/booking','FrontController@booking');
 Route::post('/booking_search','FrontController@bookingSearch');
+Route::post('/booking_store', 'FrontController@bookingStore');
 
 
 Route::post('/add_cart','ShoppingCartController@addCart');
@@ -136,6 +137,17 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix'=>'admin'], function (
 
         Route::post('/update/{id}', 'BookingController@update');
         Route::get('/destroy/{id}', 'BookingController@destroy');
+    });
+
+    Route::group(['prefix' => 'booking_type'], function () {
+        Route::get('/', 'BookingTypeController@index');
+        Route::get('/create', 'BookingTypeController@create');
+        Route::post('/store', 'BookingTypeController@store');
+
+        Route::get('/edit/{id}', 'BookingTypeController@edit');
+
+        Route::post('/update/{id}', 'BookingTypeController@update');
+        Route::get('/destroy/{id}', 'BookingTypeController@destroy');
     });
 
 

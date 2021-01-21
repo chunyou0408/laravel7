@@ -127,6 +127,17 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix'=>'admin'], function (
         Route::get('/destroy/{id}', 'OrderController@destroy');
     });
 
+    Route::group(['prefix' => 'booking'], function () {
+        Route::get('/', 'BookingController@index');
+        Route::get('/create', 'BookingController@create');
+        Route::post('/store', 'BookingController@store');
+
+        Route::get('/edit/{id}', 'BookingController@edit');
+
+        Route::post('/update/{id}', 'BookingController@update');
+        Route::get('/destroy/{id}', 'BookingController@destroy');
+    });
+
 
 
     Route::get('/test', function () {

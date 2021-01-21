@@ -46,7 +46,6 @@
             </tr>
     </table>
 
-
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -59,34 +58,62 @@
                 </div>
                 <div class="modal-body">
                     <form>
+                        @csrf
                         <div class="form-group">
-                            <label for="name" class="col-form-label">姓名:</label>
-                            <input type="text" class="form-control" id="name">
+                            <label for="name">姓名:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone" class="col-form-label">手機:</label>
-                            <input type="text" class="form-control" id="phone">
+                            <label for="content">電話:</label>
+                            <input type="text" class="form-control" id="phone" name="phone" required>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="col-form-label">Email:</label>
-                            <input type="text" class="form-control" id="email">
+                            <label for="content">Email:</label>
+                            <input type="text" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">營位:</label>
-                            <input type="text" class="form-control" id="camp-name">
+                            <label for="area_id">區域:</label>
+                            {{-- <select class="form-control" id="area_id" name="area_id" required>
+                                @foreach ($bookingTypes as $bookingType)
+                                    <option value="{{$bookingType->id}}">{{$bookingType->name}}</option>
+                                @endforeach
+                            </select> --}}
+                            <input type="text" class="form-control" id="area_id" name="area_id" required>
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">入營時間:</label>
-                            <input type="date" class="form-control" id="date" value="2021-01-29">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">立即預約</button>
-                </div>
+                            <label for="date">日期:</label>
+                            <input type="date" class="form-control" min="0" id="date" name="date" required>
+                        </div>    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="createBooking" class="btn btn-primary">立即預約</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+   
+<!-- Large modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">預約結果</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>姓名:XXX 手機:0912345678</p>
+            <p> Email:123@123 營位:AAA 入營時間:2021-01-21</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+
 </div>
 @endsection
 
@@ -114,7 +141,7 @@
     //將文字加入到MODEL上
     var modal = $(this)
     modal.find('.modal-title').text('露營預約')
-    modal.find('.modal-body #camp-name').val(recipient)
+    modal.find('.modal-body #area_id').val(recipient)
     modal.find('.modal-body #date').val(year+"-"+pad((month+1),2)+"-"+pad(date,2))
 
     })
@@ -131,22 +158,22 @@
 <script>
     var currentMonth = new Array();
 
-        var myTable = document.querySelector('#myTable');
-        var setMonth_btn = document.querySelector('#setMonth_btn');
-        var currentYearMonth = document.querySelector('.current-year-month');
+    var myTable = document.querySelector('#myTable');
+    var setMonth_btn = document.querySelector('#setMonth_btn');
+    var currentYearMonth = document.querySelector('.current-year-month');
 
-        var year = new Date().getFullYear(); //年 目前年份
-        var month = new Date().getMonth();//月 目前月份
-        var lastDay = new Date(year, month+1, 0).getDate();
+    var year = new Date().getFullYear(); //年 目前年份
+    var month = new Date().getMonth();//月 目前月份
+    var lastDay = new Date(year, month+1, 0).getDate();
 
-        console.log("目前日期:"+year + "年" + (month+1) + "月");
-
-
-
-        booking_search(year,month);
+    console.log("目前日期:"+year + "年" + (month+1) + "月");
 
 
-        function booking_search(year,month){
+
+    booking_search(year,month);
+
+
+    function booking_search(year,month){
 
         var _token= document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -207,7 +234,6 @@
             });
             console.log('二維');
             // console.log(currentMonth);
-
         }
 
 
@@ -222,6 +248,7 @@
             }
             booking_search(year,month);
         }
+
         nextMonth.onclick=function(){
 
             if(month<11){
@@ -231,7 +258,6 @@
                 year=year+1;
             }
             booking_search(year,month);
-
         }
 
 
@@ -243,6 +269,7 @@
 
             var firstDay = new Date(yy, mm, 1).getDay();
             var lastDay = new Date(yy, mm+1, 0).getDate();
+            var today = Date.now();
 
             console.log("目前日期:"+year + "年" + (month+1) + "月" + "第一天:"+firstDay
             +"有幾天:"+lastDay );
@@ -273,13 +300,15 @@
 
             while (day_num <= lastDay) {
                 //換行用
+                var date = new Date(yy, mm, day_num);
 
                 if (indexNextLine > 7) {
                     indexNextLine = 1;
                     text = text + ` </tr><tr>`;
                 }
 
-                text = text + `
+                if(date > today){
+                    text = text + `
                 <td class="calendar-date">
                     <div class="day">
                         <span class="day-num">${day_num}</span>
@@ -309,6 +338,17 @@
                         </span>
                     </div>
                 </td>`;
+
+                }else{
+                text = text + `
+                <td class="calendar-date">
+                    <div class="day">
+                        <span class="day-num">${day_num}</span>
+                    </div>
+                </td>`;
+                }
+
+                
                 indexNextLine++;
                 day_num++;
             }
@@ -327,6 +367,11 @@
             console.log(yy + "年" + (mm+1) + "月");
 
         }
+
+        var createBooking = document.querySelector('#createBooking');
+        createBooking.onclick=function(){
+            console.log(123456);
+        } 
 
 
 

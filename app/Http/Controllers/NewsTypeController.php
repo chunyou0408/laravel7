@@ -15,8 +15,9 @@ class NewsTypeController extends Controller
     public function index()
     {
         //
-        $newsTypes=NewsType::with('newss')->get();
-        return view('admin.newsType.index')->with(compact('newsTypes'));
+        // $newsTypes=NewsType::with('newss')->get();
+        $newsTypes=NewsType::get();
+        return view('admin.newsType.index',compact('newsTypes'));
     }
 
     /**

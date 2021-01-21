@@ -133,7 +133,7 @@
 <script>
     $('#exampleModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget) // Button that triggered the modal
-    var recipient = button.data('whatever') // Extract info from data-* attributes
+    var recipient = button.data('area_id') // Extract info from data-* attributes
     var date = button.data('date')
     // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
     // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
@@ -319,19 +319,23 @@
                         20-(currentMonth[day_num-1][3])+
                         20-(currentMonth[day_num-1][4])}
                         <ul>
-                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-whatever="A區營位" data-date="${day_num}">
+                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="1" data-date="${day_num}">
                                 A區${20-(currentMonth[day_num-1][0])}個空位 預約
                             </div></li>
-                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-whatever="B區營位" data-date="${day_num}">
+
+                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="2" data-date="${day_num}">
                                 B區${20-(currentMonth[day_num-1][1])}個空位 預約
                             </div></li>
-                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-whatever="C區營位" data-date="${day_num}">
+
+                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="3" data-date="${day_num}">
                                 C區${20-(currentMonth[day_num-1][2])}個空位 預約
                             </div></li>
-                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-whatever="D區營位" data-date="${day_num}">
+
+                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="4" data-date="${day_num}">
                                 D區${20-(currentMonth[day_num-1][3])}個空位 預約
                             </div></li>
-                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-whatever="E區營位" data-date="${day_num}">
+
+                            <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="5" data-date="${day_num}">
                                 E區${20-(currentMonth[day_num-1][4])}個空位 預約
                             </div></li>
                         </ul>

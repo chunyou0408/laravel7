@@ -26,8 +26,8 @@
         <div class="form-group">
             <label for="area_id">區域:</label>
             <select class="form-control" id="area_id" name="area_id" required>
-                @foreach ($bookingTypes as $bookingType)
-                    <option value="{{$bookingType->id}}">{{$bookingType->name}}</option>
+                @foreach ($areaTypes as $areaType)
+                    <option value="{{$areaType->id}}">{{$areaType->name}}</option>
                 @endforeach
             </select>
         </div>

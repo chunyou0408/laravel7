@@ -34,27 +34,37 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin/product_type">產品類別管理</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                產品相關
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link" href="/admin/product">產品管理</a>
+                                <a class="nav-link" href="/admin/product_type">產品類別管理</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin/product">產品管理</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                最新消息
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link" href="/admin/news">最新消息管理</a>
+                                <a class="nav-link" href="/admin/news_type">最新消息類別管理</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin/news_type">最新消息類別管理</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin/news">最新消息管理</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin/booking">預約管理</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin/booking_type">預約類別管理</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                預約相關
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link" href="/admin/booking">預約管理</a>
+                                <a class="nav-link" href="/admin/area_type">營區類別管理</a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/admin/order">訂單管理</a>
                         </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -26,14 +26,14 @@
         <div class="form-group">
             <label for="area_id">類別:</label>
             <select class="form-control" id="area_id" name="area_id" required>
-                @foreach ($bookingTypes as $bookingType)
-                    <option value="{{$bookingType->id}}"
-                    @if ($booking->area_id == $bookingType->id)
+                @foreach ($areaTypes as $areaType)
+                    <option value="{{$areaType->id}}"
+                    @if ($booking->area_id == $areaType->id)
                        selected
                     @else
 
                     @endif
-                    >{{$bookingType->name}}</option>
+                    >{{$areaType->name}}</option>
                 @endforeach
             </select>
         </div>

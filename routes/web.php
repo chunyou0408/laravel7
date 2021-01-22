@@ -35,7 +35,7 @@ Route::get('/create_order','FrontController@createOrder');
 Route::get('/booking','FrontController@booking');
 Route::post('/booking_search','FrontController@bookingSearch');
 Route::post('/booking_store', 'FrontController@bookingStore');
-
+Route::post('/area_types', 'FrontController@area_types');
 
 Route::post('/add_cart','ShoppingCartController@addCart');
 Route::post('/del_cart','ShoppingCartController@delCart');
@@ -139,15 +139,15 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix'=>'admin'], function (
         Route::get('/destroy/{id}', 'BookingController@destroy');
     });
 
-    Route::group(['prefix' => 'booking_type'], function () {
-        Route::get('/', 'BookingTypeController@index');
-        Route::get('/create', 'BookingTypeController@create');
-        Route::post('/store', 'BookingTypeController@store');
+    Route::group(['prefix' => 'area_type'], function () {
+        Route::get('/', 'AreaTypeController@index');
+        Route::get('/create', 'AreaTypeController@create');
+        Route::post('/store', 'AreaTypeController@store');
 
-        Route::get('/edit/{id}', 'BookingTypeController@edit');
+        Route::get('/edit/{id}', 'AreaTypeController@edit');
 
-        Route::post('/update/{id}', 'BookingTypeController@update');
-        Route::get('/destroy/{id}', 'BookingTypeController@destroy');
+        Route::post('/update/{id}', 'AreaTypeController@update');
+        Route::get('/destroy/{id}', 'AreaTypeController@destroy');
     });
 
 

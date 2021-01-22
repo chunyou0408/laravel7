@@ -74,8 +74,8 @@
                         <div class="form-group">
                             <label for="area_id">區域:</label>
                             <select class="form-control" id="area_id" name="area_id" required>
-                                @foreach ($bookingTypes as $bookingType)
-                                <option value="{{$bookingType->id}}">{{$bookingType->name}}</option>
+                                @foreach ($areaTypes as $areaType)
+                                <option value="{{$areaType->id}}">{{$areaType->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -294,6 +294,8 @@
         //建立月曆
         function createCalendar(yy, mm) {
 
+
+
             var day_num = 1;
             var indexNextLine = 1;
             var text = ""; //放字串
@@ -302,8 +304,35 @@
             var lastDay = new Date(yy, mm+1, 0).getDate();
             var today = Date.now();
 
-            console.log("目前日期:"+year + "年" + (month+1) + "月" + "第一天:"+firstDay
-            +"有幾天:"+lastDay );
+
+            var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            var formData = new FormData;
+            formData.append('_token',_token);
+
+            var bookingtype = new Array();
+
+            fetch('/area_types', {
+                    method:'POST',
+                    body:formData,
+                })
+                .then(function (response){
+                    return response.json()
+                })
+                .catch(function (error){
+                    console.log('錯誤:',error);
+                })
+                .then(function(data){
+                    // console.log(data);
+
+                    data.forEach((element,index) => {
+                        bookingtype[index] = element;
+                    });
+
+
+
+
+            // console.log("目前日期:"+year + "年" + (month+1) + "月" + "第一天:"+firstDay
+            // +"有幾天:"+lastDay );
 
             myTable.innerHTML = `
             <thead>
@@ -337,7 +366,7 @@
                     indexNextLine = 1;
                     text = text + ` </tr><tr>`;
                 }
-                
+
                 if(date > today){
                     text = text + `
                 <td class="calendar-date">
@@ -350,27 +379,28 @@
                         20-(currentMonth[day_num-1][3])+
                         20-(currentMonth[day_num-1][4])}
                         <ul>
-                        
+
                             <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="1" data-date="${day_num}">
-                                A區${20-(currentMonth[day_num-1][0])}個空位 預約
+                                ${bookingtype[0]['name']}${20-(currentMonth[day_num-1][0])}個空位 預約
                             </div></li>
 
                             <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="2" data-date="${day_num}">
-                                B區${20-(currentMonth[day_num-1][1])}個空位 預約
+                                ${bookingtype[1]['name']}${20-(currentMonth[day_num-1][1])}個空位 預約
                             </div></li>
 
                             <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="3" data-date="${day_num}">
-                                C區${20-(currentMonth[day_num-1][2])}個空位 預約
+                                ${bookingtype[2]['name']}${20-(currentMonth[day_num-1][2])}個空位 預約
                             </div></li>
 
                             <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="4" data-date="${day_num}">
-                                D區${20-(currentMonth[day_num-1][3])}個空位 預約
+                                ${bookingtype[3]['name']}${20-(currentMonth[day_num-1][3])}個空位 預約
                             </div></li>
 
                             <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="5" data-date="${day_num}">
-                                E區${20-(currentMonth[day_num-1][4])}個空位 預約
+                                ${bookingtype[4]['name']}${20-(currentMonth[day_num-1][4])}個空位 預約
                             </div></li>
                         </ul>
+
                         </span>
                     </div>
                 </td>`;
@@ -401,6 +431,8 @@
             myTable.innerHTML += text;
 
             console.log(yy + "年" + (mm+1) + "月");
+
+        });
 
         }
 

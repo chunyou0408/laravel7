@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\BookingType;
+use App\AreaType;
 use Illuminate\Http\Request;
 
-class BookingTypeController extends Controller
+class AreaTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class BookingTypeController extends Controller
     public function index()
     {
         //
-        $bookingTypes=BookingType::get();
-        return view('admin.bookingType.index',compact('bookingTypes'));
+        $areaTypes=AreaType::get();
+        return view('admin.areaType.index',compact('areaTypes'));
     }
 
     /**
@@ -27,7 +27,7 @@ class BookingTypeController extends Controller
     public function create()
     {
         //
-        return view('admin.bookingType.create');
+        return view('admin.areaType.create');
     }
 
     /**
@@ -39,9 +39,8 @@ class BookingTypeController extends Controller
     public function store(Request $request)
     {
         //
-        BookingType::create($request->all());
-        //重新導向路徑
-        return redirect('/admin/booking_type');
+        AreaType::create($request->all());
+        return redirect('/admin/area_type');
     }
 
     /**
@@ -64,8 +63,8 @@ class BookingTypeController extends Controller
     public function edit($id)
     {
         //
-        $bookingType=BookingType::find($id);
-        return view('admin.bookingType.edit',compact('bookingType'));
+        $areaType=AreaType::find($id);
+        return view('admin.areaType.edit',compact('areaType'));
     }
 
     /**
@@ -78,12 +77,11 @@ class BookingTypeController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $bookingType = BookingType::find($id);
-        $bookingType->name = $request->name;
-        $bookingType->save();
+        $areaType = AreaType::find($id);
+        $areaType->name = $request->name;
+        $areaType->save();
 
-        //重新導向路徑
-        return redirect('/admin/booking_type');
+        return redirect('/admin/area_type');
     }
 
     /**
@@ -95,7 +93,7 @@ class BookingTypeController extends Controller
     public function destroy($id)
     {
         //
-        BookingType::find($id)->delete();
-        return redirect('/admin/booking_type');
+        AreaType::find($id)->delete();
+        return redirect('/admin/area_type');
     }
 }

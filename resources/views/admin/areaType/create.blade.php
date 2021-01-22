@@ -6,10 +6,10 @@
 
 @section('main')
 <div class="container">
-    <a class="btn btn-success" href="/admin/booking_type">返回頁面</a>
-    <h2>新增最新消息類別</h2>
+    <a class="btn btn-success" href="/admin/area_type">返回頁面</a>
+    <h2>新增營區類別</h2>
     <hr>
-    <form action="/admin/booking_type/store" method="post">
+    <form action="/admin/area_type/store" method="post">
         @csrf
         <div class="form-group">
             <label for="name">類別:</label>

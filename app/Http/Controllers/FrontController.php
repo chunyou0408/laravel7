@@ -6,8 +6,8 @@ use App\News;
 use App\Order;
 use App\Booking;
 use App\Product;
+use App\AreaType;
 use Carbon\Carbon;
-use App\BookingType;
 use App\OrderDetail;
 use Illuminate\Http\Request;
 use TsaiYiHua\ECPay\Checkout;
@@ -121,16 +121,20 @@ class FrontController extends Controller
     }
 
 
+    public function area_types(Request $request){
+        $areaTypes=AreaType::get();
+        return $areaTypes;
+    }
+
+
     //
     public function booking(){
 
-        $bookingTypes=BookingType::get();
-        return view('front.booking.index',compact('bookingTypes'));
+        $areaTypes=AreaType::get();
+        return view('front.booking.index',compact('areaTypes'));
     }
 
     public function bookingSearch(Request $request){
-
-
 
         $dt = Carbon::create($request->year, ($request->month+1), 1, 0);
 
@@ -141,25 +145,6 @@ class FrontController extends Controller
             $dt->addDay();
         }
 
-
-
-
-
-
-
-        // $dt = Carbon::now();
-
-        // $to = Carbon::now();
-        // $to->addDay();
-        // $to->addDay();
-
-        // $bookings[0]= Booking::whereBetween('date', [$dt , $to])->where('area',1)->get();
-        // $bookings[1]= Booking::whereBetween('date', [$dt , $to])->where('area',2)->get();
-        // $bookings[2]= Booking::whereBetween('date', [$dt , $to])->where('area',3)->get();
-        // $bookings[3]= Booking::whereBetween('date', [$dt , $to])->where('area',4)->get();
-        // $bookings[4]= Booking::whereBetween('date', [$dt , $to])->where('area',5)->get();
-
-
         return $bookings;
     }
 
@@ -167,7 +152,7 @@ class FrontController extends Controller
     public function bookingStore(Request $request){
         //
         $data = Booking::create($request->all());
-        $data->bookingType;
+        $data->areaType;
         return $data;
     }
 

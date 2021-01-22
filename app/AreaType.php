@@ -10,11 +10,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $created_at
  * @property string $updated_at
  */
-class BookingType extends Model
+class AreaType extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -23,9 +23,10 @@ class BookingType extends Model
      * @var array
      */
     protected $fillable = ['name', 'created_at', 'updated_at'];
-    
+
     public function bookings()
     {
         return $this->hasMany('App\Booking','area_id','id');
     }
+
 }

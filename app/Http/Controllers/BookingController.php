@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
-use App\BookingType;
+use App\AreaType;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
@@ -17,8 +17,8 @@ class BookingController extends Controller
     {
         //
         $bookings=Booking::get();
-        $bookingtypes=BookingType::get();
-        return view('admin.booking.index',compact('bookings','bookingtypes'));
+        $areaTypes=AreaType::get();
+        return view('admin.booking.index',compact('bookings','areaTypes'));
     }
 
     /**
@@ -29,8 +29,8 @@ class BookingController extends Controller
     public function create()
     {
         //
-        $bookingTypes=BookingType::get();
-        return view('admin.booking.create',compact('bookingTypes'));
+        $areaTypes=AreaType::get();
+        return view('admin.booking.create',compact('areaTypes'));
     }
 
     /**
@@ -66,10 +66,10 @@ class BookingController extends Controller
     public function edit($id)
     {
         //
-        $bookingTypes = BookingType::get();
+        $bookingTypes = AreaType::get();
         $booking=Booking::find($id);
 
-        return view('admin.booking.edit',compact('booking','bookingTypes'));
+        return view('admin.booking.edit',compact('booking','areaTypes'));
     }
 
     /**

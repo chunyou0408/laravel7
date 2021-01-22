@@ -25,7 +25,7 @@
                 <td>{{$booking->name}}</td>
                 <td>{{$booking->phone}}</td>
                 <td>{{$booking->email}}</td>
-                <td>{{$booking->bookingType->name}}</td>
+                <td>{{$booking->areaType->name}}</td>
                 <td>{{$booking->date}}</td>
                 <td>
                     <a class="btn btn-success" href="/admin/booking/edit/{{$booking->id}}">編輯</a>

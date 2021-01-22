@@ -93,8 +93,7 @@
     </div>
 
     <!-- Large modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large
-        modal</button>
+
 
     <div class="modal fade bd-example-modal-lg" id="result_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">
@@ -202,7 +201,7 @@
 
     booking_search(year,month);
 
-
+    //向後端取預約資料(單月取)
     function booking_search(year,month){
 
         var _token= document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -234,15 +233,15 @@
 
                     element.forEach((countArea,index) => {
 
-                        if (countArea['area']== 1){
+                        if (countArea['area_id']== 1){
                             a=a+1;
-                        }else if (countArea['area']== 2){
+                        }else if (countArea['area_id']== 2){
                             b=b+1;
-                        }else if (countArea['area']== 3){
+                        }else if (countArea['area_id']== 3){
                             c=c+1;
-                        }else if (countArea['area']== 4){
+                        }else if (countArea['area_id']== 4){
                             d=d+1;
-                        }else if (countArea['area']== 5){
+                        }else if (countArea['area_id']== 5){
                             e=e+1;
                         }
 
@@ -262,13 +261,14 @@
                 createCalendar(year, month);
 
             });
-            console.log('二維');
-            // console.log(currentMonth);
+            // console.log('二維');
+            console.log(currentMonth);
         }
 
 
         var prevMonth = document.querySelector('#prevMonth');
         var nextMonth = document.querySelector('#nextMonth');
+        //上一月按鈕
         prevMonth.onclick=function(){
             if(month>0){
                 month=month-1;
@@ -279,6 +279,7 @@
             booking_search(year,month);
         }
 
+        //下一月按鈕
         nextMonth.onclick=function(){
 
             if(month<11){
@@ -290,7 +291,7 @@
             booking_search(year,month);
         }
 
-
+        //建立月曆
         function createCalendar(yy, mm) {
 
             var day_num = 1;
@@ -336,7 +337,7 @@
                     indexNextLine = 1;
                     text = text + ` </tr><tr>`;
                 }
-
+                
                 if(date > today){
                     text = text + `
                 <td class="calendar-date">
@@ -349,6 +350,7 @@
                         20-(currentMonth[day_num-1][3])+
                         20-(currentMonth[day_num-1][4])}
                         <ul>
+                        
                             <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="1" data-date="${day_num}">
                                 A區${20-(currentMonth[day_num-1][0])}個空位 預約
                             </div></li>
@@ -407,8 +409,6 @@
         var close = document.querySelector('.close');
 
         createBooking_btn.onclick=function(){
-            console.log({{$bookingType}});
-
 
             var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             var name = document.querySelector('#name').value;
@@ -417,6 +417,7 @@
             var email= document.querySelector('#email').value;
             var date = document.querySelector('#date').value;
 
+            //判斷表單有沒有沒填入的資料
             if (name == "" || phone == "" || area_id == "" || email == "" || date == "") {
                 alert('有資料還沒輸入');
             }else{
@@ -439,10 +440,11 @@
                 })
                 .catch(function (error){
                     console.log('錯誤:',error);
+                    alert('請稍後再試');
+
                 })
                 .then(function(data){
-                    console.log('成功:',data);
-
+                    console.log(data);
                     //關閉原本的MODAL
                     close.click();
                     //開啟預約成功的MODAL
@@ -452,14 +454,11 @@
                     modal.find('.modal-body .name').text(data.name)
                     modal.find('.modal-body .phone').text(data.phone)
                     modal.find('.modal-body .email').text(data.email)
-                    modal.find('.modal-body .area_id').text(data.area_id)
+                    modal.find('.modal-body .area_id').text(data.booking_type.name)
                     modal.find('.modal-body .date').text(data.date)
                 });
             }
         }
-
-
-
 </script>
 
 @endsection

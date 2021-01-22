@@ -126,8 +126,6 @@ class FrontController extends Controller
 
         $bookingTypes=BookingType::get();
         return view('front.booking.index',compact('bookingTypes'));
-        // return view('front.booking.index');
-
     }
 
     public function bookingSearch(Request $request){
@@ -168,8 +166,9 @@ class FrontController extends Controller
 
     public function bookingStore(Request $request){
         //
-        Booking::create($request->all());
-        return $request;
+        $data = Booking::create($request->all());
+        $data->bookingType;
+        return $data;
     }
 
 

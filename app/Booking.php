@@ -31,6 +31,6 @@ class Booking extends Model
     
     public function bookingType()
     {
-        return $this->hasOne('App\bookingType','id','area_id');
+        return $this->hasOne('App\BookingType','id','area_id');
     }
 }

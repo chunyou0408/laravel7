@@ -19,7 +19,7 @@
 
 <body>
     @yield('banner')
-
+    <section class="flex">
     <nav class="nav01">
         <div class="nav_logo_box">
             <a href="/">
@@ -143,58 +143,61 @@
                 </i>
             </a>
         </div>
+        <footer class="footer">
+            <div class="footer_container">
+                <div class="footer_decoration">
+                    <img src="./img/00/footer_decoration_01.png"  style="height:100px;" alt="" class="decoration_01">
+                    <img src="./img/00/footer_decoration_02.png" style="height:70px;" alt="" class="decoration_02">
+                    <img src="./img/00/footer_decoration_03.png" style="height:80px;" alt="" class="decoration_03">
+                </div>
+                <div class="footer_left">
+                    <ul>
+                        <li>牧場/咖啡屋 週六08:00-週日18:00</li>
+                        <li>露營區 週五-週日</li>
+                        <li>非露營時段入園請來電預約</li>
+                        <li>入園最低消費$50 / 可抵消費</li>
+                    </ul>
+                </div>
+                 <div class="footer_middle">
+                    <ul>
+                        <li>
+                            <i class="fas fa-home"></i>
+                            <div>545南投縣埔里鎮水上巷28號</div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>049-2912041 / 0937-888102</div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>yenfamily1985@yahoo.com.tw</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_right">
+                    <ul>
+                        <li>
+                            <div><img src="./img/00/LOGO_white.png" alt="" height="40px"></div>
+                            <div><img src="./img/00/顏氏牧場-橫版.png" alt="" width="90%"></div>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="/suggest"><i class="far fa-comment-dots"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </footer>
+        <div style="clear: both;"></div>
+
+
     </main>
-    <div style="clear: both;"></div>
+    </section>
 
 
-    <footer class="footer">
-        <div class="footer_container">
-            <div class="footer_decoration">
-                <img src="./img/00/footer_decoration_01.png"  style="height:100px;" alt="" class="decoration_01">
-                <img src="./img/00/footer_decoration_02.png" style="height:70px;" alt="" class="decoration_02">
-                <img src="./img/00/footer_decoration_03.png" style="height:80px;" alt="" class="decoration_03">
-            </div>
-            <div class="footer_left">
-                <ul>
-                    <li>牧場/咖啡屋 週六08:00-週日18:00</li>
-                    <li>露營區 週五-週日</li>
-                    <li>非露營時段入園請來電預約</li>
-                    <li>入園最低消費$50 / 可抵消費</li>
-                </ul>
-            </div>
-             <div class="footer_middle">
-                <ul>
-                    <li>
-                        <i class="fas fa-home"></i>
-                        <div>545南投縣埔里鎮水上巷28號</div>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i>
-                        <div>049-2912041 / 0937-888102</div>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <div>yenfamily1985@yahoo.com.tw</div>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer_right">
-                <ul>
-                    <li>
-                        <div><img src="./img/00/LOGO_white.png" alt="" height="40px"></div>
-                        <div><img src="./img/00/顏氏牧場-橫版.png" alt="" width="90%"></div>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="/suggest"><i class="far fa-comment-dots"></i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-
-    </footer>
 
 
 

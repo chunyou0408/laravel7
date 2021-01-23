@@ -19,7 +19,7 @@ header{
             background-size: cover;
             background-repeat: no-repeat;
             background-image: url('../img/01/index_photo.jpg');
-            
+
             animation: opening 5s linear 1 both;
             @keyframes opening {
                 0% {
@@ -32,7 +32,7 @@ header{
                 }
 
             }
-            
+
             img{
                 width: 100%;
                 filter:brightness(50%);
@@ -44,7 +44,7 @@ header{
             }
         }
         .logo{
-            width: 8%; 
+            width: 8%;
             position: absolute;
             top:35%;
             left: 50%;
@@ -64,7 +64,7 @@ header{
             @media (max-width: 375px){
                 top:58%;
             }
-           
+
         }
         .logo_horizontal_en{
             width: 21%;
@@ -74,7 +74,7 @@ header{
             transform: translate(-50%, -50%);
             @media (max-width: 375px){
                 top:62%;
-                
+
             }
 
         }
@@ -92,19 +92,19 @@ header{
 
             @media (max-width: 1080px){
                 bottom: 3%;
-    
+
             }
             @media (max-width: 770px){
                 font-size: 14px;
                 bottom: 1%;
-              
+
             }
             @media (max-width: 630px){
                 font-size: 12px;
             }
 
             @media (max-width: 375px){
-                bottom: 0%;   
+                bottom: 0%;
             }
             i{
                 font-size: 30px;
@@ -123,48 +123,46 @@ header{
 
                 @media (max-width: 770px){
                     font-size: 22px;
-                   
+
                 }
                 @media (max-width: 375px){
                     font-size: 12px;
-                    
+
                 }
 
             }
- 
+
         }
-        
+
     }
 
 }
 
 main{
-    width: 100%;
-    height: auto;
 
     @media (max-width: 375px){
-        
+
       }
-    
+
     .below{
         width: 100%;
-        
+
         .swiper-container {
         width: 100%;
         height: 100%;
-        
-        
+
+
             .swiper-wrapper{
                 width: 100%;
                 margin-bottom: 50px;
-               
-              
+
+
                 .swiper-slide {
                     max-width: 100%;
                     text-align: center;
                     font-size: 18px;
                     background: #fff;
-              
+
                     /* Center slide text vertically */
                     display: -webkit-box;
                     display: -ms-flexbox;
@@ -180,12 +178,12 @@ main{
                     align-items: center;
                   }
 
-                  
+
 
             }
-            
 
-            
+
+
 
         }
 

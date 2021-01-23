@@ -46,7 +46,6 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = Product::create($request->all());
-        
         //主要圖片
         if($request->hasFile('img')){
             $filePath=Storage::disk('public')->put('/images/product', $request->file('img'));
@@ -99,7 +98,7 @@ class ProductController extends Controller
     {
         //
         $productTypes = ProductType::get();
-    
+
         //1.在取資料時,同時取得關聯的資料
         // $product=Product::with('productType')->find($id);
         // dd($product->productType);
@@ -138,7 +137,7 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->description = $request->description;
 
-        
+
         //2.判斷是否有新圖片
         //$request->hasFile() 查詢是否有檔案
         if ($request->hasFile('img')){
@@ -152,7 +151,7 @@ class ProductController extends Controller
             //disk指定位置
             //put 存放檔案
             //disk(儲存資料夾) ->put(根目錄路徑,檔案)
-    
+
             $fileName=Storage::disk('public')->put('/images/product', $request->file('img'));
             //更新圖片路徑
             $product->img = Storage::url($fileName);
@@ -172,7 +171,7 @@ class ProductController extends Controller
                 ]);
             }
         }
-        
+
 
 
         //重新導向路徑
@@ -197,7 +196,7 @@ class ProductController extends Controller
     public function deleteImg(Request $request)
     {
         //1.利用id尋找產品圖片
-        
+
         $productImg = ProductImg::find($request->id);
         //2.刪除產品圖片檔案
         //判斷是否有找到productImg
@@ -212,5 +211,5 @@ class ProductController extends Controller
         //4.返回success
         return "success";
     }
-    
+
 }

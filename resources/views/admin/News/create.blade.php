@@ -9,7 +9,7 @@
     <a class="btn btn-success" href="/admin/news">返回頁面</a>
     <h2>新增最新消息</h2>
     <hr>
-    <form action="/admin/news/store" method="post">
+    <form action="/admin/news/store" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="type_id">類別:</label>
@@ -30,6 +30,10 @@
         <div class="form-group">
             <label for="content">內文:</label>
             <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="img">圖片:</label>
+            <input type="file" class="form-control" id="img" name="img">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         </form>

@@ -9,7 +9,7 @@
     <a class="btn btn-success" href="/admin/news">返回頁面</a>
     <h2>編輯最新消息</h2>
     <hr>
-    <form action="/admin/news/update/{{$news->id}}" method="post">
+    <form action="/admin/news/update/{{$news->id}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="type_id">類別:</label>
@@ -36,6 +36,14 @@
         <div class="form-group">
             <label for="date">日期:</label>
             <input type="date" class="form-control" min="0" id="date" name="date" value="{{$news->date}}" required >
+        </div>
+        <div class="form-group">
+            <label for="img">目前圖片</label>
+            <img src="{{$news->img}}" alt="" width="200">
+        </div>
+        <div class="form-group">
+            <label for="img">重新上傳圖片:</label>
+            <input type="file" class="form-control" id="img" name="img">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         </form>

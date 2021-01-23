@@ -25,7 +25,7 @@ class News extends Model
     /**
      * @var array
      */
-    protected $fillable = ['type_id', 'title', 'content', 'date', 'created_at', 'updated_at'];
+    protected $fillable = ['type_id', 'title', 'content', 'date', 'img', 'created_at', 'updated_at'];
 
     public function newsType()
     {

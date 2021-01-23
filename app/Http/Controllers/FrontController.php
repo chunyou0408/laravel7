@@ -9,6 +9,7 @@ use App\Product;
 use App\AreaType;
 use Carbon\Carbon;
 use App\OrderDetail;
+use App\ProductType;
 use Illuminate\Http\Request;
 use TsaiYiHua\ECPay\Checkout;
 use Illuminate\Support\Facades\Auth;
@@ -35,14 +36,43 @@ class FrontController extends Controller
 
     public function index()
     {
-        return view('welcome');
+        return view('front.01-index');
+        // return view('welcome');
+
     }
 
+    public function about_us()
+    {
+        return view('front.02-about_us');
+    }
     public function news()
     {
         $newsData=News::get();
-        return view('front.news.news',compact('newsData'));
+        return view('front.04-news',compact('newsData'));
     }
+
+    public function camping()
+    {
+        return view('front.05-camping');
+    }
+
+    public function shopping()
+    {
+        $products=Product::get();
+        $productTypes=ProductType::get();
+        return view('front.06-shopping',compact('products','productTypes'));
+    }
+
+    public function suggest(){
+        return view('front.07-suggest');
+    }
+
+    // public function news()
+    // {
+    //     $newsData=News::get();
+    //     return view('front.news.news',compact('newsData'));
+    // }
+
     public function product()
     {
         $products= Product::get();

@@ -1,0 +1,276 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+section {
+  width: 100%;
+  margin: auto;
+}
+
+section .suggest-title {
+  text-align: center;
+  margin: auto;
+}
+
+section .suggest-title span {
+  font-size: 40px;
+  font-family: Microsoft JhengHei;
+  color: #727171;
+  letter-spacing: 5px;
+  border-bottom: 1px #898989 solid;
+  padding-bottom: 5px;
+  margin: auto;
+}
+
+@media screen and (max-width: 538px) {
+  section .suggest-title span {
+    font-size: 18px;
+  }
+}
+
+section .suggest-box {
+  width: 90%;
+  height: auto;
+  margin: auto;
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section .suggest-box .picture {
+  max-width: 55%;
+  height: auto;
+  background-image: url(/img/07/74.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 80% 50%;
+}
+
+@media screen and (max-width: 1320px) {
+  section .suggest-box .picture {
+    max-width: 100%;
+  }
+}
+
+section .suggest-box .picture img {
+  width: 100%;
+  opacity: 0;
+}
+
+section .suggest-box .text-box {
+  width: 42%;
+}
+
+@media screen and (max-width: 1320px) {
+  section .suggest-box .text-box {
+    width: 100%;
+  }
+}
+
+section .suggest-box .text-box .text-top {
+  width: 100%;
+}
+
+@media screen and (max-width: 1321px) {
+  section .suggest-box .text-box .text-top {
+    margin-top: 2%;
+  }
+}
+
+section .suggest-box .text-box .text-top .text-top-text {
+  font-size: 28px;
+  color: #898989;
+  font-family: Microsoft JhengHei;
+  line-height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  section .suggest-box .text-box .text-top .text-top-text {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+
+@media screen and (max-width: 538px) {
+  section .suggest-box .text-box .text-top .text-top-text {
+    font-size: 18px;
+  }
+}
+
+section .suggest-box .text-box .text-top .text-top-text .line {
+  width: 100%;
+  height: 1px;
+  background: #898989;
+  margin: auto;
+  margin-top: 2%;
+}
+
+section .suggest-box .text-box .text-bottom {
+  width: 100%;
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section .suggest-box .text-box .text-bottom .contact-information {
+  width: 40%;
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+section .suggest-box .text-box .text-bottom .contact-information .contact-box {
+  width: 100%;
+  margin-top: 15%;
+}
+
+section .suggest-box .text-box .text-bottom .contact-information .contact-box li {
+  font-size: 28px;
+  color: #898989;
+  font-family: Microsoft JhengHei;
+  list-style-type: square;
+}
+
+@media screen and (max-width: 768px) {
+  section .suggest-box .text-box .text-bottom .contact-information .contact-box li {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 538px) {
+  section .suggest-box .text-box .text-bottom .contact-information .contact-box li {
+    font-size: 18px;
+  }
+}
+
+section .suggest-box .text-box .text-bottom .contact-information .contact-box .input-box {
+  width: 80%;
+  color: #898989;
+  font-size: 28px;
+  font-family: Microsoft JhengHei;
+  margin-left: 10%;
+  margin-top: 3%;
+}
+
+@media screen and (max-width: 768px) {
+  section .suggest-box .text-box .text-bottom .contact-information .contact-box .input-box {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 538px) {
+  section .suggest-box .text-box .text-bottom .contact-information .contact-box .input-box {
+    font-size: 18px;
+  }
+}
+
+section .suggest-box .text-box .text-bottom .suggest_and_button {
+  width: 50%;
+}
+
+@media screen and (max-width: 1321px) {
+  section .suggest-box .text-box .text-bottom .suggest_and_button {
+    width: 45%;
+  }
+}
+
+section .suggest-box .text-box .text-bottom .suggest_and_button .suggest {
+  width: 100%;
+  padding-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section .suggest-box .text-box .text-bottom .suggest_and_button .suggest li {
+  margin-top: 12%;
+  color: #898989;
+  font-size: 28px;
+  font-family: Microsoft JhengHei;
+  list-style-type: square;
+}
+
+@media screen and (max-width: 768px) {
+  section .suggest-box .text-box .text-bottom .suggest_and_button .suggest li {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 538px) {
+  section .suggest-box .text-box .text-bottom .suggest_and_button .suggest li {
+    font-size: 18px;
+  }
+}
+
+section .suggest-box .text-box .text-bottom .suggest_and_button .suggest textarea {
+  max-width: 80%;
+  color: #898989;
+  font-size: 28px;
+  font-family: Microsoft JhengHei;
+  margin-left: 15%;
+  margin-top: 5%;
+  resize: none;
+}
+
+@media screen and (max-width: 768px) {
+  section .suggest-box .text-box .text-bottom .suggest_and_button .suggest textarea {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 538px) {
+  section .suggest-box .text-box .text-bottom .suggest_and_button .suggest textarea {
+    font-size: 18px;
+  }
+}
+
+section .suggest-box .text-box .text-bottom .suggest_and_button .button {
+  width: 100%;
+}
+
+section .suggest-box .text-box .text-bottom .suggest_and_button .button .post-button {
+  width: 40%;
+  height: 13%;
+  color: white;
+  font-size: 28px;
+  font-family: Microsoft JhengHei;
+  border: 1px #c9bc9c solid;
+  border-radius: 7px;
+  background-color: #c9bc9c;
+  margin: auto;
+  margin-left: 14%;
+  padding: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  section .suggest-box .text-box .text-bottom .suggest_and_button .button .post-button {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 538px) {
+  section .suggest-box .text-box .text-bottom .suggest_and_button .button .post-button {
+    width: 45%;
+    font-size: 18px;
+  }
+}
+/*# sourceMappingURL=07-suggest.css.map */

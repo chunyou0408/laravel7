@@ -1,0 +1,453 @@
+@import "variable";
+*{
+    box-sizing: border-box;
+}
+body{
+    
+    max-width: 1920px;
+    display: flex;
+    @media (max-width: 768px){
+        display: initial;
+    }
+    nav{
+        width: 175px;
+        height: auto;
+        background-color: khaki;
+        @media (max-width: 768px){
+            width: 100%;
+            height: 10vh;
+        }
+
+    }
+    .all{
+        width: calc(100vw - 175px);
+        max-width: 1745px;
+        @media (max-width: 768px){
+            width: 85%;
+            margin:auto;
+        }
+        .page_title{
+            width: 100%;
+            height: auto;
+            & hover{
+                animation-name: bounce;
+                    animation-duration: 1s;
+              }
+            @media (max-width: 768px){
+                text-align: center;
+            }
+            .title_name{
+                font-size: $h1;
+                color: $text-title-color;
+                letter-spacing: 11px;
+                padding: 1% 0 0 1.5%;  
+                @media (max-width: 360px){
+                    font-size: $h5;
+                } 
+            }
+            
+            .title_underline{
+                width: 335px;
+                border:1px solid #f8f9f9;
+                margin-top: 0.5vh;
+                margin-left: 30px;
+                
+                @media (max-width: 768px){
+                    margin: auto;
+                    left:0;
+                }
+                @media (max-width: 360px){
+                    width: 250px;
+                }
+            }
+        }
+        .camp_area{
+            
+            @media (max-width: 768px){
+                margin-top: -2%;
+            }
+            .camp_area_grass{
+                width:100%;
+                height: auto;
+                display: flex;
+                margin-top: -10px;
+                position: relative;
+                z-index: -1;
+
+                
+
+                @media (max-width: 768px){
+                    width: 85%;
+                    margin: auto;
+                    display: initial;
+                }
+                img{
+                    width: 66%;
+                    max-width:777px;
+                    @media (max-width: 768px){
+                        width: 100%;
+                    }
+                }
+                .grass_text_box{
+                    width: 34%;
+                    
+                    height: auto;
+                    padding-top: 3%;
+                    padding-left: 9px;
+                    z-index: 1;
+                    @media (max-width: 837px){
+                        padding-left: 0;
+                        padding-top: 0;
+                    }
+                    @media (max-width: 768px){
+                        width: 100%;
+                        text-align: center;
+                        margin-top: -30px;
+                    }
+                    .grass_text_title{
+                        font-size: $h2; 
+                        color:$text-title-color;
+                        @media (max-width: 768px){
+                            color: white;
+                            font-size: $h4;
+                        }
+                        @media (max-width: 360px){
+                            color: white;
+                            font-size: $h6;
+                        }
+                    }
+                    .grass_text_title_underline{
+                        width: 180px;
+                        margin-top:-50px;
+                        margin-left: -30px;
+                        position: relative ;
+                        z-index: -1;
+                        @media (max-width: 768px){
+                            width: 140px;
+                            
+                            margin-top:-35px;
+                            margin-left: 0;
+                        }
+                    }
+                    .grass_text_content{
+                        font-size: $h3;
+                        color:$text-content-color ;
+                        margin-top: -20px;
+                        
+                        @media (max-width: 768px){
+                            font-size:$h6 ;
+                            margin-top: -20px;
+                            padding-bottom: 2%;
+                        }
+                        @media (max-width: 360px){
+                            font-size:$h8;
+                            margin-top: -18px;
+                        }
+                        p{
+                            margin-bottom: 0px;
+                            margin-top: -5px;
+                        }
+                    }
+                }    
+
+            }
+            .camp_area_wooden{
+                width: 100%;
+                height: auto;
+                margin-top: -100px;
+                @media (max-width: 768px){
+                    width: 100%;
+                    margin: auto;
+                    margin-top: 0;
+                }
+                img{
+                    width: 66%;
+                    max-width:777px;
+                    margin-left: 40%;
+                    @media (max-width: 1470px){
+                        margin-left: 34%;
+                    }  
+                    @media (max-width: 768px){
+                        width:100%;
+                        margin-left:0%;
+                    }
+                }
+                .wooden_text_box{
+                    width: 50%;
+                    min-width: 480px;
+                    height: 200px;
+                    background-color:$camping-reservation ;
+                    margin-top: -80px;
+                    margin-left: 16%;
+                    padding: 2px 0 4px 0;
+                    text-align: center;
+                    position: relative;
+                    z-index: 1;
+                        
+                    @media (max-width: 768px){
+                        width: 60%;
+                        height: 150px;
+                        min-width:initial;
+                        margin: auto;
+                        margin-top: -35px;
+                    }
+
+                    // @media (max-width: 680px){
+                    //     width: 60%;
+                       
+                    // }
+                    .wooden_text_title{
+                        font-size: $h2;
+                        color:$text-title-color ;
+                        @media (max-width: 768px){
+                            color: white;
+                            font-size: $h4;
+                        }
+                        @media (max-width: 360px){
+                            color: white;
+                            font-size: $h6;
+                            z-index: 1;
+                        }
+                    }
+                    .wooden_text_title_underline{
+                        width: 180px;
+
+                        @media (max-width: 768px){
+                            width: 140px;
+                        }
+                        
+                        margin-left: 0;
+                        margin-top: -45px;
+                        position: relative;
+                        z-index:-1;
+                    }
+                    .wooden_text_content{
+                        display: flex;
+                        text-align: left;
+                        color:$text-content-color ;
+                        font-size: $h3;
+                        margin-top: -20px;
+                        @media (max-width: 768px){
+                            font-size:$h6;
+                            padding-bottom: 2%;
+                        }
+                        @media (max-width: 605px){
+                            flex-direction:column;
+                        }
+                        @media (max-width: 360px){
+                            font-size:$h8;
+                        }
+                        .wooden_text_content_left{
+                            width: 50%;
+                            padding-left: 15%;
+                                
+                            @media (max-width: 1470px){
+                                padding-left: 8%;
+                            }
+                            @media (max-width: 605px){
+                                width: 100%;
+                                text-align: center;
+                            }
+                          
+                            p{
+                                margin-bottom: 0;
+                            }
+                        }
+                        .wooden_text_content_right{
+                            width: 50%;
+                            padding-left: 10%;
+                            
+                            @media (max-width: 605px){
+                                width: 100%;
+                                text-align: center;
+                                padding-left: 8%;
+                            }
+                            p{  
+                                margin-bottom: 0;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+        }
+        .camp_area_tent{
+            width: 100%;
+            height: auto;
+            margin-top: 10vh;
+            display: flex;
+
+            // animation: arrow 1s linear 1 both;
+            //     @keyframes arrow {
+            //         0% {
+            //             transform:translate(0px,100px)
+            //         }
+            //         100% {
+            //             transform:translate(0px,0px)
+            //         }
+
+            //     }
+
+            @media (max-width: 768px){
+                margin-top: 5vh;
+            }
+            
+            .tent_text_box{
+                width: 80%;
+                background-image: url(/img/03/air_area.jpg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                padding: 13vw 0;
+                flex-wrap: 2;
+                flex-basis: 1475px;
+                
+                
+                .tent_text_box_bgcolor{
+                    color: white;
+                    width: 50%;
+                    height: auto;
+                    background-color:rgba(226, 227, 223, 0.5) ;
+                    padding: 10px;
+                    text-align: center;
+                    margin: auto;
+                    @media (max-width: 886px){
+                        width: 60%;
+                    }
+                    @media (max-width: 768px){
+                        padding: 0px;
+                    }
+                    .tent_text_title{
+                        font-size: $h2;
+                        @media (max-width: 768px){
+                            font-size:  $h6;
+                        }
+                        @media (max-width: 360px){
+                            font-size:  $h8;  
+                        }
+                    }
+                    span{
+                        font-size: $h3;
+                        @media (max-width: 768px){
+                            font-size:  $h8;
+                        }
+                        @media (max-width: 360px){
+                            font-size:  $h9;
+                        }
+                    }
+                }
+            }
+        }
+        .coffee_area{
+            width: 100%;
+            height: auto;
+            margin-top: 6%;
+            margin-bottom: 6%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            @media (max-width: 768px){
+                width: 100%; 
+            }
+            .coffee_area_background_color{
+                width: 50%;
+                max-width: 870px;
+                height: 570px;
+                background-color: $camping-reservation;
+                @media (max-width: 1650px){
+                    width: 45vw;
+                    height: 30vw;
+                }
+                @media (max-width: 768px){
+                    width: 70% ;
+                    height:43vw;
+                }
+                .coffee_area_title{
+                    font-size: $h2;
+                    padding:10px 15px;
+                    position: relative;
+                    z-index: 2;
+                    @media (max-width: 768px){
+                        font-size: $h4;
+                    }
+                    @media (max-width: 360px){
+                        font-size: $h6;
+                    }
+                }
+                .coffee_area_title_underline{
+                    width: 180px;
+                    margin-top: -70px;
+                    margin-left: -15px;
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+            .coffee_img{
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: flex-end;
+                img{
+                    width: 870px;
+                    height: auto;
+                    margin-top: -520px;
+                    margin-right: 14vw; 
+                    @media (max-width: 1650px){
+                        width: 55%;
+                        height: 31.5vw;
+                        margin-top: -27.5vw;
+                    }  
+                    @media (max-width: 768px){
+                        width: 70% ;
+                        height:43vw;
+                        margin-top: -38vw;
+                        margin-right: 30%; 
+                    }
+                }
+            }
+            .coffee_area_background_img{
+                width: 20vw;
+                margin-top: -30vw;
+                margin-right: 78%;
+                @media (max-width: 768px){
+                    display:none ;
+                }
+                img{
+                    width: 100%;
+                    margin-bottom: -5.5vw; 
+                    
+                }
+            }
+        }   
+        .segmentation{
+            width: 50%;
+            border:2px solid #898989;
+            margin: 0; 
+        }
+        .swiper-container {
+            width: calc(100vw - 175px);
+            padding-top: 50px;
+            padding-bottom: 50px;
+            @media (max-width: 768px){
+                width: 100%;
+            }
+            @media (max-width: 360px){
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            .swiper-wrapper{
+                .swiper-slide {
+                    background-position: center;
+                    background-size: cover;
+                    width: 35%;
+                    height: 20vw;
+                    @media (max-width: 768px){
+                        width: 70%;
+                        height: 40vw;   
+                    }
+                }
+            }  
+        } 
+    }
+}

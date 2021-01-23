@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
-Route::get('/','FrontController@index');
-Route::get('/news','FrontController@news');
+// Route::get('/','FrontController@index');
+// Route::get('/news','FrontController@news');
 Route::get('/product','FrontController@product');
 
 Route::get('/test',function(){
@@ -61,7 +61,22 @@ Route::prefix('cart_ecpay')->group(function(){
 });
 
 
-// Route::get('/admin/login', '');
+//專題使用者區域
+Route::get('/','FrontController@index');
+Route::get('/about_us','FrontController@about_us');
+Route::get('/news','FrontController@news');
+Route::get('/camping','FrontController@camping');
+Route::get('/shopping','FrontController@shopping');
+Route::get('/suggest','FrontController@suggest');
+
+
+
+
+
+
+
+
+
 
 Route::group(['middleware' => ['auth','is_admin'],'prefix'=>'admin'], function () {
     Route::get('/', 'HomeController@index')->name('home');
@@ -150,6 +165,17 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix'=>'admin'], function (
         Route::get('/destroy/{id}', 'AreaTypeController@destroy');
     });
 
+
+    Route::group(['prefix' => 'suggest'], function () {
+        Route::get('/', 'SuggestController@index');
+        // Route::get('/create', 'SuggestController@create');
+        Route::post('/store', 'SuggestController@store');
+
+        // Route::get('/edit/{id}', 'SuggestController@edit');
+
+        // Route::post('/update/{id}', 'SuggestController@update');
+        Route::get('/destroy/{id}', 'SuggestController@destroy');
+    });
 
 
     Route::get('/test', function () {

@@ -1,0 +1,226 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  height: auto;
+}
+
+header .above {
+  width: 100%;
+  position: relative;
+}
+
+header .above .index_photo {
+  max-width: 100%;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+  opacity: 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../img/01/index_photo.jpg");
+  -webkit-animation: opening 5s linear 1 both;
+          animation: opening 5s linear 1 both;
+}
+
+@-webkit-keyframes opening {
+  0% {
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+  }
+  100% {
+    background-position: 50% 50%;
+    background-size: 120% 120%;
+  }
+}
+
+@keyframes opening {
+  0% {
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+  }
+  100% {
+    background-position: 50% 50%;
+    background-size: 120% 120%;
+  }
+}
+
+header .above .index_photo img {
+  width: 100%;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+  opacity: 0;
+}
+
+header .above .logo {
+  width: 8%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (max-width: 375px) {
+  header .above .logo {
+    top: 50%;
+  }
+}
+
+header .above .logo_horizontal {
+  width: 22%;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (max-width: 375px) {
+  header .above .logo_horizontal {
+    top: 58%;
+  }
+}
+
+header .above .logo_horizontal_en {
+  width: 21%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (max-width: 375px) {
+  header .above .logo_horizontal_en {
+    top: 62%;
+  }
+}
+
+header .above .text {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: Microsoft JhengHei;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+@media (max-width: 1080px) {
+  header .above .text {
+    bottom: 3%;
+  }
+}
+
+@media (max-width: 770px) {
+  header .above .text {
+    font-size: 14px;
+    bottom: 1%;
+  }
+}
+
+@media (max-width: 630px) {
+  header .above .text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  header .above .text {
+    bottom: 0%;
+  }
+}
+
+header .above .text i {
+  font-size: 30px;
+  text-shadow: 0em 0.3em rgba(255, 255, 255, 0.329);
+  -webkit-animation: arrow 0.8s linear infinite both;
+          animation: arrow 0.8s linear infinite both;
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    -webkit-transform: translate(0px, -6px);
+            transform: translate(0px, -6px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes arrow {
+  0% {
+    -webkit-transform: translate(0px, -6px);
+            transform: translate(0px, -6px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@media (max-width: 770px) {
+  header .above .text i {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 375px) {
+  header .above .text i {
+    font-size: 12px;
+  }
+}
+
+main {
+  width: 100%;
+  height: auto;
+}
+
+main .below {
+  width: 100%;
+}
+
+main .below .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+main .below .swiper-container .swiper-wrapper {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+main .below .swiper-container .swiper-wrapper .swiper-slide {
+  max-width: 100%;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+/*# sourceMappingURL=01-index.css.map */

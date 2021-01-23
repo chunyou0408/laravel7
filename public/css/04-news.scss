@@ -1,0 +1,80 @@
+@import "variable";
+* {
+    box-sizing: border-box;
+}
+
+section {
+    .news-title {
+        text-align: center;
+        margin: auto;
+        span {
+            font-size: $h2;
+            color: $text-title-color;
+            line-height: 100px;
+            letter-spacing: 5px;
+            border-bottom: 1px $text-line-color solid;
+            padding-bottom: 5px;
+            margin: auto;
+        }
+    }
+    .news-card-group {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: auto;
+        // border: 1px black solid;
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+        // 文字跟圖都是card
+        .card {
+            width: 45%;
+            height: auto;
+            // height: 450px;
+            color: $text-content-color;
+            letter-spacing: 2px;
+            // 看方塊
+            // border:1px black solid;
+            margin-top: 30px;
+            margin-bottom:30px ;
+            @media screen and (max-width: 1510px) {
+                width: 100%;
+                margin-left: 0;
+                margin: auto;
+            }
+            img {
+                width: 100%;
+
+            }
+
+        }
+        // 文字描述
+        .description {
+            width: 50%;
+            font-size: $h3;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            @media screen and (max-width: 1510px) {
+                width: 80%;
+                margin: 5% auto;
+            }
+            @media screen and (max-width: 768px) {
+                font-size: $h5;
+            }
+            @media screen and (max-width: 360px) {
+                font-size: $h6;
+            }
+
+            div {
+                width: 100%;
+                margin-top: 0;
+            }
+            p{
+                width: 100%;
+                margin: 14px 0;
+            }
+        }
+    }
+}

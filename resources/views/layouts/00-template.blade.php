@@ -39,7 +39,7 @@
         <ul>
             <li class="nav_hover"><a href="/about_us"><span>關於顏氏</span></a>
             </li>
-            <li class="nav_hover"><a href="/suggest"><span>牧場介紹</span></a>
+            <li class="nav_hover"><a href="/pasture"><span>牧場介紹</span></a>
                 <div class="line"></div>
             </li>
             <li class="nav_hover news_hover">
@@ -68,19 +68,21 @@
         <div class="fold_area">
             <img src="./img/00/bars-solid.svg" alt="" height="100%">
         </div>
-        <div class="logo_area">
-            <img src="./img/00/LOGO.png" alt="" height="80%">
-        </div>
+        <a href="/">
+            <div class="logo_area" style="height: 80px">
+                <img src="./img/00/LOGO.png" alt="" height="80%">
+            </div>
+        </a>
         <div class="box"></div>
         <ul id="nav02_box">
-            <li class="nav_hover"><a href=""><span>關於顏氏</span></a>
+            <li class="nav_hover"><a href="/about_us"><span>關於顏氏</span></a>
             </li>
-            <li class="nav_hover"><a href=""><span>牧場介紹</span></a>
+            <li class="nav_hover"><a href="/pasture"><span>牧場介紹</span></a>
             </li>
             <li id="nav02_news" class="nav_hover news_hover">
-                <a href=""><span>最新消息</span></a>
+                <a href="/news"><span>最新消息</span></a>
             </li>
-            <li class="nav_hover"><a href=""><span>場地活動</span>
+            <li class="nav_hover"><a href="/camping"><span>場地活動</span>
                 </a></li>
         </ul>
 

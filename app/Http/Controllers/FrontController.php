@@ -45,6 +45,9 @@ class FrontController extends Controller
     {
         return view('front.02-about_us');
     }
+    public function pasture(){
+        return view('front.03-pasture');
+    }
     public function news()
     {
         $newsData=News::get();

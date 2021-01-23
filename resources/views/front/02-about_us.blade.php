@@ -4,9 +4,8 @@
     <link rel="stylesheet" href="./css/02-about_us.css">
 @endsection
 
-</head>
-<body>
-    @section('main')
+
+@section('main')
         <div class="photo">
             <img src="./img/02/starry.png" alt="">
         </div>
@@ -34,5 +33,5 @@
                 </div>
                 <!-- / STAR ANIMATION -->
 			</div>
-    @endsection
+@endsection
 

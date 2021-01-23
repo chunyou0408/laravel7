@@ -64,6 +64,7 @@ Route::prefix('cart_ecpay')->group(function(){
 //專題使用者區域
 Route::get('/','FrontController@index');
 Route::get('/about_us','FrontController@about_us');
+Route::get('/pasture','FrontController@pasture');
 Route::get('/news','FrontController@news');
 Route::get('/camping','FrontController@camping');
 Route::get('/shopping','FrontController@shopping');

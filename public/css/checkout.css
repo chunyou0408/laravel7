@@ -63,7 +63,7 @@
 
 /* Body/Header stuff */
 body {
-  padding: 0px 30px 30px 20px;
+  padding: 0;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 100;
 }
@@ -81,7 +81,9 @@ label {
 }
 
 .shopping-cart {
-  margin-top: -45px;
+    height: calc(100vh - 362px);
+    margin-top: -45px;
+    padding-right: 30px;
 }
 
 /* Column headers */
@@ -183,6 +185,7 @@ label {
   .shopping-cart {
     margin: 0;
     padding-top: 20px;
+    padding-left: 20px;
     border-top: 1px solid #eee;
   }
   .column-labels {

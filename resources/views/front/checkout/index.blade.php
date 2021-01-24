@@ -1,10 +1,10 @@
-@extends('layouts.template')
+@extends('layouts.00-template')
 
 @section('css')
 <link rel="stylesheet" href={{asset("./css/checkout.css")}}>
 <style>
   main{
-    padding: 50px 100px;
+    padding: 50px 0px 0px;
     height: auto;
   }
 
@@ -85,7 +85,7 @@
 <script>
 /* Set rates + misc */
   var taxRate = 0.05;
-  var shippingRate = 0; 
+  var shippingRate = 0;
   var fadeTime = 300;
 
 
@@ -113,7 +113,7 @@
     })
     .then(function (response){
         return response.text()
-    }) 
+    })
     .catch(function (error){
         console.log('錯誤:',error);
     })
@@ -128,7 +128,7 @@
         }
         // console.log('成功:',data);
     });
-  
+
     updateQuantity(this);
   });
 
@@ -154,7 +154,7 @@
     })
     .then(function (response){
         return response.text()
-    }) 
+    })
     .catch(function (error){
         console.log('錯誤:',error);
     })
@@ -169,7 +169,7 @@
         }
         // console.log('成功:',data);
     });
-    
+
 
 
     removeItem(this);
@@ -180,17 +180,17 @@
   function recalculateCart()
   {
     var subtotal = 0;
-    
+
     /* Sum up row totals */
     $('.product').each(function () {
       subtotal += parseFloat($(this).children('.product-line-price').attr('data-price'));
     });
-    
+
     /* Calculate totals */
     var tax = subtotal * taxRate;
     var shipping = (subtotal > 0 ? shippingRate : 0);
     var total = subtotal + tax + shipping;
-    
+
     /* Update totals display */
     $('.totals-value').fadeOut(fadeTime, function() {
       $('#cart-subtotal').html(subtotal.toLocaleString());
@@ -215,7 +215,7 @@
     var price = parseFloat(productRow.children('.product-price').attr('data-price'));
     var quantity = $(quantityInput).val();
     var linePrice = price * quantity;
-    
+
     /* Update line price display and recalc cart totals */
     productRow.children('.product-line-price').each(function () {
       $(this).fadeOut(fadeTime, function() {
@@ -224,7 +224,7 @@
         recalculateCart();
         $(this).fadeIn(fadeTime);
       });
-    });  
+    });
   }
 
 

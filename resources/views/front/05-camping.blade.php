@@ -200,7 +200,7 @@
                         </div>
 
                             <div class="reservation-btn">
-                                <a href="#">
+                                <a href="/booking">
                                     我要預約
                                 </a>
                             </div>

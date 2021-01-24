@@ -27,7 +27,7 @@
         </thead>
         <tbody>
             <tr>
-                <td class="calendar-date">
+                {{-- <td class="calendar-date">
                     <div class="day">
                         <span class="day-num">1</span>
                         <ul>
@@ -38,7 +38,8 @@
                             <li>eeeeeee</li>
                         </ul>
                     </div>
-                </td>
+                </td> --}}
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>

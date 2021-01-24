@@ -74,6 +74,7 @@ main {
 
 h1 {
   font-weight: 100;
+  text-align: center;
 }
 
 label {
@@ -82,8 +83,10 @@ label {
 
 .shopping-cart {
     height: calc(100vh - 362px);
+    max-width: 1600px;
     margin-top: -45px;
     padding-right: 30px;
+    margin: auto;
 }
 
 /* Column headers */

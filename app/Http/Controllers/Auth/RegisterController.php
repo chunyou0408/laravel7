@@ -113,6 +113,8 @@ class RegisterController extends Controller
         return $request->wantsJson()
                     ? new JsonResponse([], 201)
                     : redirect($this->redirectPath());
+
+        // return redirect('/');
     }
 
     public function admin_register(Request $request)
@@ -127,6 +129,6 @@ class RegisterController extends Controller
             return $response;
         }
 
-        return redirect('/');
+        return redirect('/admin');
     }
 }

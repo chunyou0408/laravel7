@@ -1,6 +1,7 @@
 @import "variable";
 
 body{
+
     overflow-x: hidden;
     padding: 0;
     margin: 0;
@@ -102,7 +103,9 @@ body{
                             }
                             .input_area{
                                 .buy_button_quantity{
-                                    width: 25px;
+
+
+                                    width: 40px;
                                     height: 27px;
                                     text-align: center;
                                     line-height: 27px;
@@ -116,7 +119,7 @@ body{
 
                         }
                     }
-                    
+
                 }
                 .confirm{
                     width: 50%;
@@ -124,7 +127,7 @@ body{
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        
+
                         &:focus {
                             outline: initial;
                         }
@@ -150,6 +153,6 @@ body{
                 }
             }
         }
-        
-    }   
+
+    }
 }

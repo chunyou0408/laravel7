@@ -107,6 +107,30 @@
                         </li>
                     @endif
                 @else
+                <?php $type = Auth::user()->type;?>
+                    @if ($type== 'admin')
+                    <li class="nav-item">
+
+                        <a href="/admin"><i class="fas fa-tools" style="font-size:29px"></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fas fa-users-cog" style="font-size:29px"></i>{{ Auth::user()->name }}
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <img class="user_icon" src="/img/00/icon/user_icon.png" alt="" width="27px">{{ Auth::user()->name }}
@@ -124,6 +148,13 @@
                             </form>
                         </div>
                     </li>
+                    @endif
+
+
+
+
+
+
                 @endguest
                 </ul>
             </div>
@@ -162,15 +193,15 @@
                     <ul>
                         <li>
                             <i class="fas fa-home"></i>
-                            <div>545南投縣埔里鎮水上巷28號</div>
+                            545南投縣埔里鎮水上巷28號
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <div>049-2912041 / 0937-888102</div>
+                            049-2912041 / 0937-888102
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <div>yenfamily1985@yahoo.com.tw</div>
+                            yenfamily1985@yahoo.com.tw
                         </li>
                     </ul>
                 </div>

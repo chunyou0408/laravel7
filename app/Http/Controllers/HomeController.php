@@ -26,4 +26,10 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function userIndex()
+    {
+        return view('front.user_home');
+    }
+
 }

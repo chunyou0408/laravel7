@@ -35,7 +35,7 @@ Route::get('/create_order','FrontController@createOrder');
 Route::get('/booking','FrontController@booking');
 Route::post('/booking_search','FrontController@bookingSearch');
 Route::post('/booking_store', 'FrontController@bookingStore');
-Route::post('/area_types', 'FrontController@area_types');
+Route::post('/area_types', 'FrontController@areaTypes');
 
 Route::post('/add_cart','ShoppingCartController@addCart');
 Route::post('/del_cart','ShoppingCartController@delCart');
@@ -71,7 +71,7 @@ Route::get('/shopping','FrontController@shopping');
 Route::get('/suggest','FrontController@suggest');
 
 
-
+Route::get('/home', 'HomeController@userIndex');
 
 
 

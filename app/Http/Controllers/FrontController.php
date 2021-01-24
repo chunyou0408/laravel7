@@ -154,7 +154,7 @@ class FrontController extends Controller
     }
 
 
-    public function area_types(Request $request){
+    public function areaTypes(Request $request){
         $areaTypes=AreaType::get();
         return $areaTypes;
     }

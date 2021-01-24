@@ -173,8 +173,8 @@
                 $getTotalQty=\Cart::getTotalQuantity();
                 ?>
                     <i class="shopping_cart">
-                        <img src="{{asset("./storage/jpg/maxresdefault-removebg-preview.png")}}" alt="" width="100%">
-                        <img src="{{asset("./storage/jpg/cart2.png")}}" alt="" width="100%">
+                        <img src="{{asset("./uploaded_images/cart1.png")}}" alt="" width="100%">
+                        <img src="{{asset("./uploaded_images/cart2.png")}}" alt="" width="100%">
                         <div class="qty">{{$getTotalQty}}</div>
                     </i>
                 </a>

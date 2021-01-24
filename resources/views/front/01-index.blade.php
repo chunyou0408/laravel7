@@ -52,7 +52,14 @@
       </div>
 
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24533.3412719521!2d120.91057863607566!3d23.928488706117236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468d7faba4ce5ad%3A0x467f14176c87d2c5!2z6aGP5rCP54mn5aC0!5e0!3m2!1szh-TW!2stw!4v1611478417280!5m2!1szh-TW!2stw" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <section>
+        <div class="map-title">
+            <span>MAP</span>
+        </div>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24533.3412719521!2d120.91057863607566!3d23.928488706117236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468d7faba4ce5ad%3A0x467f14176c87d2c5!2z6aGP5rCP54mn5aC0!5e0!3m2!1szh-TW!2stw!4v1611478417280!5m2!1szh-TW!2stw" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </section>
+
   @endsection
 
   @section('js')
@@ -91,18 +98,20 @@
     <script>
         var header =document.querySelector('header');
 
+        // window.scrollTo(0, 0);
 
+        // window.onload=ShowHello;
+        // function ShowHello(){
+        //     console.log('hello');
+        //     window.scrollTo(0, 0);
+        // }
+
+        //當滾動卷軸時,將全版版面往上捲
         $(window).scroll(function(){
             header.classList.add('active')
         });
 
-
-
-
-
-        //  $(window).bind('mousewheel', function (event, delta) {
-        //     header.classList.add('active')
-        // });
     </script>
+
 @endsection
 

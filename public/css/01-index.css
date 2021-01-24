@@ -247,4 +247,19 @@ main .below .swiper-container .swiper-wrapper .swiper-slide {
   -ms-flex-align: center;
   align-items: center;
 }
+
+main .map-title {
+  text-align: center;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+main .map-title span {
+  font-size: 32px;
+  color: #727171;
+  letter-spacing: 5px;
+  border-bottom: 1px #898989 solid;
+  padding-bottom: 5px;
+  margin: auto;
+}
 /*# sourceMappingURL=01-index.css.map */

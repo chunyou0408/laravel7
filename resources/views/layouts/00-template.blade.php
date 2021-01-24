@@ -84,6 +84,11 @@
                 </li>
                 <li class="nav_hover"><a href="/camping"><span>場地活動</span>
                     </a></li>
+                <li class="nav_hover"><a href="/booking"><span>場地預約</span>
+                    </a></li>
+                <li class="nav_hover"><a href="/booking"><span>購買商品</span>
+                    </a></li>
+
             </ul>
 
         </nav>

@@ -208,5 +208,20 @@ main{
 
     }
 
+
+    .map-title {
+        text-align: center;
+        margin: auto;
+        padding-bottom: 20px;
+        span {
+            font-size: $h2;
+            color: $text-title-color;
+            letter-spacing: 5px;
+            border-bottom: 1px $text-line-color solid;
+            padding-bottom: 5px;
+            margin: auto;
+        }
+    }
+
 }
 

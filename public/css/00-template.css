@@ -643,6 +643,12 @@ main ul li a {
   color: #727171;
 }
 
+@media (max-width: 580px) {
+  main ul li {
+    margin: 0 5px;
+  }
+}
+
 main .icon_ {
   display: -webkit-box;
   display: -ms-flexbox;

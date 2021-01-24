@@ -578,6 +578,11 @@ width: calc(100% - 175px);
       a{
           color: $text-title-color;
       }
+
+      @media (max-width: 580px) {
+        margin: 0 5px;
+      }
+
     }
   }
   .icon_ {

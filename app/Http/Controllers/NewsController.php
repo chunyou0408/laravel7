@@ -48,8 +48,14 @@ class NewsController extends Controller
         $news = News::create($request->all());
         //圖片
         if($request->hasFile('img')){
-            $filePath=Storage::disk('public')->put('/images/news', $request->file('img'));
-            $news->img= Storage::url($filePath);
+            // $filePath=Storage::disk('public')->put('/images/news', $request->file('img'));
+            // $news->img= Storage::url($filePath);
+            // $news->save();
+
+
+            $imageName = time().'.'.$request->img->getClientOriginalExtension();
+            $request->img->move(public_path('/uploaded_images'), $imageName);
+            $news->img = '/uploaded_images/'.$imageName;
             $news->save();
 
         }else{
@@ -117,24 +123,14 @@ class NewsController extends Controller
         //put 存放檔案
         //disk(儲存資料夾) ->put(根目錄路徑,檔案)
 
-        $fileName=Storage::disk('public')->put('/images/news', $request->file('img'));
+        // $fileName=Storage::disk('public')->put('/images/news', $request->file('img'));
         //更新圖片路徑
-        $news->img = Storage::url($fileName);
+        // $news->img = Storage::url($fileName);
+
+        $imageName = time().'.'.$request->img->getClientOriginalExtension();
+        $request->img->move(public_path('/uploaded_images'), $imageName);
+        $news->img = '/uploaded_images/'.$imageName;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         $news->save();
 

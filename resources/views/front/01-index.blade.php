@@ -92,11 +92,17 @@
         var header =document.querySelector('header');
 
 
-
-         $(window).bind('mousewheel', function (event, delta) {
+        $(window).scroll(function(){
             header.classList.add('active')
-
         });
+
+
+
+
+
+        //  $(window).bind('mousewheel', function (event, delta) {
+        //     header.classList.add('active')
+        // });
     </script>
 @endsection
 

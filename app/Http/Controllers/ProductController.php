@@ -46,13 +46,21 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = Product::create($request->all());
+
+
+
         //主要圖片
         if($request->hasFile('img')){
-            $filePath=Storage::disk('public')->put('/images/product', $request->file('img'));
-            // $product->img = Storage::url($fileName);
-            // 或
-            // $product->img = '/storage/'.$fileName;
-            $product->img= Storage::url($filePath);
+            // $filePath=Storage::disk('public')->put('/images/product', $request->file('img'));
+            // $product->img= Storage::url($filePath);
+                // $product->img = Storage::url($fileName);
+                // 或
+                // $product->img = '/storage/'.$fileName;
+
+
+            $imageName = time().'.'.$request->img->getClientOriginalExtension();
+            $request->img->move(public_path('/uploaded_images'), $imageName);
+            $product->img = '/uploaded_images/'.$imageName;
             $product->save();
 
         }else{
@@ -152,9 +160,13 @@ class ProductController extends Controller
             //put 存放檔案
             //disk(儲存資料夾) ->put(根目錄路徑,檔案)
 
-            $fileName=Storage::disk('public')->put('/images/product', $request->file('img'));
+            // $fileName=Storage::disk('public')->put('/images/product', $request->file('img'));
             //更新圖片路徑
-            $product->img = Storage::url($fileName);
+            // $product->img = Storage::url($fileName);
+
+            $imageName = time().'.'.$request->img->getClientOriginalExtension();
+            $request->img->move(public_path('/uploaded_images'), $imageName);
+            $product->img = '/uploaded_images/'.$imageName;
         }
 
         $product->save();

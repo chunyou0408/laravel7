@@ -4,8 +4,22 @@ main {
 }
 
 .container {
-  padding-top: 80px;
+  padding-top: 40px;
   height: calc(100vh - 306px);
+}
+
+.container .booking-title {
+  text-align: center;
+  margin: auto;
+}
+
+.container .booking-title span {
+  font-size: 32px;
+  color: #727171;
+  letter-spacing: 5px;
+  border-bottom: 1px #898989 solid;
+  padding-bottom: 5px;
+  margin: auto;
 }
 
 table {

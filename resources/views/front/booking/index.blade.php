@@ -8,7 +8,9 @@
 
 @section('main')
 <div class="container">
-
+    <div class="booking-title">
+        <span>BOOKING</span>
+    </div>
     <table id="myTable" class="display" style="border-spacing: 2px;">
         <button id="prevMonth">上個月</button>
         <button id="nextMonth">下個月</button>

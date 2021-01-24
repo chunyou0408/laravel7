@@ -106,11 +106,6 @@
                         <li class="nav-item">
                             <a href="{{ route('login') }}"><img class="user_icon" src="/img/00/icon/user_icon.png" alt="" width="27px"></a>
                         </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
                     @else
                     <?php $type = Auth::user()->type;?>
                         @if ($type== 'admin')
@@ -274,6 +269,7 @@
 
         nav02_news.onclick = function () {
             if (!nav02_news.classList.contains('active')) {
+
                 nav02_news.classList.add('active')
                 nav02_news_box.classList.add('active')
             } else {
@@ -305,8 +301,15 @@
             user_icon.src = '/img/00/icon/user_icon.png';
         }
 
+        //偵測畫面寬度
+        $(document).ready(function(){
+            $(window).resize(function() {
+                console.log(document.body.clientWidth);
+            });
+        });
 
     </script>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     {{-- swiper --}}

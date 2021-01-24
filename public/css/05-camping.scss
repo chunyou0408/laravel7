@@ -52,7 +52,7 @@ section {
             width: 31%;
             padding-bottom: 40px;
             margin-bottom: -25px;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 866px) {
                 margin-bottom: -20px;
                 width: 47%;
             }
@@ -92,7 +92,7 @@ section {
                     opacity: 0;
                     transition: all 200ms ease-in;
                     bottom: 4px;
-                    @media screen and (max-width: 768px) {
+                    @media screen and (max-width: 866px) {
                         opacity: 1;
                     }
                     // 540跳板做data-os效果
@@ -101,14 +101,14 @@ section {
                     //         font-size: $h2;
                     //         opacity: 1;
                     //         // backface-visibility: visible;
-                            
+
                     //         width: 100%;
                     //         height: 98%;
                     //     }
                     // }
                     .set-show-768 {
                         display: none;
-                        @media screen and (max-width: 768px) {
+                        @media screen and (max-width: 866px) {
                             display: block;
                             color: white;
                             text-align: center;
@@ -126,7 +126,7 @@ section {
                         @media screen and (max-width: 900px) {
                             font-size: $h4;
                         }
-                        @media screen and (max-width: 768px) {
+                        @media screen and (max-width: 866px) {
                             margin-top: 20%;
                             font-size: $h3;
                         }
@@ -141,7 +141,7 @@ section {
                 // pt-box-img-text會被我顯示出來
                 &:hover .pt-box-img-text {
                     opacity: 0.8;
-                    @media screen and (max-width: 768px) {
+                    @media screen and (max-width: 866px) {
                         opacity: 1;
                     }
                 }
@@ -163,12 +163,12 @@ section {
                 left: 0px;
 
                 z-index: 1;
-                @media screen and (max-width: 768px) {
+                @media screen and (max-width: 866px) {
                     display: none;
                 }
                 .text-line {
                     width: 25%;
-                    
+
                     position: relative;
                     z-index: -1;
                     top: 10px;
@@ -178,7 +178,7 @@ section {
                         position: relative;
                         left: 80px;
                     }
-                    @media screen and (max-width: 768px) {
+                    @media screen and (max-width: 866px) {
                         width: 130px;
                         display: none;
                     }
@@ -187,13 +187,13 @@ section {
         }
         .pt-box7 {
             margin-left: 20%;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 866px) {
                 margin-left: 0%;
             }
         }
         .pt-box8 {
             margin-right: 15%;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 866px) {
                 margin-right: 0%;
             }
             .pt-box-text {
@@ -216,7 +216,7 @@ section {
                     @media screen and (max-width: 995px) {
                         width: 115px;
                     }
-                    @media screen and (max-width: 768px) {
+                    @media screen and (max-width: 866px) {
                         display: none;
                     }
                 }
@@ -234,7 +234,7 @@ section {
         justify-content: space-between;
 
         // border: 1px black solid;
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 866px) {
             margin-top: 30px;
         }
         // 露營注意事項
@@ -242,7 +242,7 @@ section {
             width: 49%;
 
             background-color: $camping-note;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 866px) {
                 width: 100%;
             }
 
@@ -260,7 +260,7 @@ section {
                     line-height: 45px;
                     margin-top: 10px;
                 }
-                @media screen and (max-width: 768px) {
+                @media screen and (max-width: 866px) {
                     font-size: $h3;
                 }
                 @media screen and (max-width: 360px) {
@@ -296,7 +296,7 @@ section {
                     width: 100%;
                 }
 
-                @media screen and (max-width: 768px) {
+                @media screen and (max-width: 866px) {
                     width: 70%;
                     // background-color:green;
                     font-size: $h5;
@@ -324,7 +324,7 @@ section {
             width: 49%;
             background-color: $camping-price;
             padding-bottom: 20px;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 866px) {
                 width: 100%;
                 margin-top: 30px;
             }
@@ -343,7 +343,7 @@ section {
                     line-height: 45px;
                     margin-top: 10px;
                 }
-                @media screen and (max-width: 768px) {
+                @media screen and (max-width: 866px) {
                     font-size: $h3;
                 }
                 @media screen and (max-width: 360px) {
@@ -375,15 +375,15 @@ section {
                 }
                 @media screen and (max-width: 1285px) {
                     font-size: $h4;
-                    
+
                 }
                 @media screen and (max-width: 816px) {
-                    
+
                     font-size: $h5;
                     line-height: 40px;
-                    
+
                 }
-               
+
                 @media screen and (max-width: 360px) {
                     font-size:$h8;
                 }
@@ -395,7 +395,7 @@ section {
                         margin-left:15%;
                         line-height:40px;
                     }
-                    @media screen and (max-width:768px) {
+                    @media screen and (max-width:866px) {
                         width:45%;
                         margin:auto;
                         line-height:40px;
@@ -431,7 +431,7 @@ section {
                     font-size: $h3;
                     margin-top: 10px;
                 }
-                @media screen and (max-width: 768px) {
+                @media screen and (max-width: 866px) {
                     font-size: $h3;
                 }
                 @media screen and (max-width: 360px) {
@@ -447,7 +447,7 @@ section {
                 @media screen and (max-width: 1271px) {
                     width: 18%;
                 }
-                @media screen and (max-width: 768px) {
+                @media screen and (max-width: 866px) {
                     width: 18%;
                 }
             }
@@ -465,7 +465,7 @@ section {
                 @media screen and (max-width: 1271px) {
                     font-size: $h4;
                 }
-                @media screen and (max-width: 768px) {
+                @media screen and (max-width: 866px) {
                     font-size: $h5;
                     line-height: 40px;
                 }
@@ -477,8 +477,8 @@ section {
                     margin: auto;
                 }
             }
-            
-               
+
+
                 .reservation-btn {
                     a {
                         text-decoration: none;
@@ -495,8 +495,8 @@ section {
                     background-color:$reservation-btn-color;
                     margin:auto;
                 }
-            
-            
+
+
         }
     }
 }

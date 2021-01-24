@@ -462,7 +462,7 @@ body .footer_container .footer_decoration img {
 }
 
 body .footer_container .footer_decoration .decoration_01 {
-  left: 30%;
+  left: 20%;
 }
 
 @media (max-width: 768px) {
@@ -473,7 +473,7 @@ body .footer_container .footer_decoration .decoration_01 {
 }
 
 body .footer_container .footer_decoration .decoration_02 {
-  left: 60%;
+  left: 50%;
 }
 
 @media (max-width: 768px) {
@@ -484,7 +484,7 @@ body .footer_container .footer_decoration .decoration_02 {
 }
 
 body .footer_container .footer_decoration .decoration_03 {
-  left: 80%;
+  left: 70%;
 }
 
 @media (max-width: 768px) {
@@ -647,6 +647,10 @@ main ul li a {
   main ul li {
     margin: 0 5px;
   }
+}
+
+main ul .nav-link.active {
+  display: none;
 }
 
 main .icon_ {

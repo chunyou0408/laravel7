@@ -60,7 +60,7 @@ section .camping-photo-card .pt-box {
   margin-bottom: -25px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-photo-card .pt-box {
     margin-bottom: -20px;
     width: 47%;
@@ -110,7 +110,7 @@ section .camping-photo-card .pt-box .img-hover .pt-box-img-text {
   bottom: 4px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-photo-card .pt-box .img-hover .pt-box-img-text {
     opacity: 1;
   }
@@ -120,7 +120,7 @@ section .camping-photo-card .pt-box .img-hover .pt-box-img-text .set-show-768 {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-photo-card .pt-box .img-hover .pt-box-img-text .set-show-768 {
     display: block;
     color: white;
@@ -148,7 +148,7 @@ section .camping-photo-card .pt-box .img-hover .pt-box-img-text div {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-photo-card .pt-box .img-hover .pt-box-img-text div {
     margin-top: 20%;
     font-size: 28px;
@@ -165,7 +165,7 @@ section .camping-photo-card .pt-box .img-hover:hover .pt-box-img-text {
   opacity: 0.8;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-photo-card .pt-box .img-hover:hover .pt-box-img-text {
     opacity: 1;
   }
@@ -186,7 +186,7 @@ section .camping-photo-card .pt-box .pt-box-text {
   z-index: 1;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-photo-card .pt-box .pt-box-text {
     display: none;
   }
@@ -208,7 +208,7 @@ section .camping-photo-card .pt-box .pt-box-text .text-line {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-photo-card .pt-box .pt-box-text .text-line {
     width: 130px;
     display: none;
@@ -219,7 +219,7 @@ section .camping-photo-card .pt-box7 {
   margin-left: 20%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-photo-card .pt-box7 {
     margin-left: 0%;
   }
@@ -229,7 +229,7 @@ section .camping-photo-card .pt-box8 {
   margin-right: 15%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-photo-card .pt-box8 {
     margin-right: 0%;
   }
@@ -259,7 +259,7 @@ section .camping-photo-card .pt-box8 .pt-box-text .text-line-8 {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-photo-card .pt-box8 .pt-box-text .text-line-8 {
     display: none;
   }
@@ -279,7 +279,7 @@ section .camping-introduction-box {
           justify-content: space-between;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-introduction-box {
     margin-top: 30px;
   }
@@ -290,7 +290,7 @@ section .camping-introduction-box .camping-notes-box {
   background-color: #f8f9f9;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-introduction-box .camping-notes-box {
     width: 100%;
   }
@@ -314,7 +314,7 @@ section .camping-introduction-box .camping-notes-box .camping-notes-title {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-introduction-box .camping-notes-box .camping-notes-title {
     font-size: 28px;
   }
@@ -367,7 +367,7 @@ section .camping-introduction-box .camping-notes-box .camping-notes-text {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-introduction-box .camping-notes-box .camping-notes-text {
     width: 70%;
     font-size: 20px;
@@ -399,7 +399,7 @@ section .camping-introduction-box .camping-price {
   padding-bottom: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-introduction-box .camping-price {
     width: 100%;
     margin-top: 30px;
@@ -425,7 +425,7 @@ section .camping-introduction-box .camping-price .camping-price-title {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-introduction-box .camping-price .camping-price-title {
     font-size: 28px;
   }
@@ -498,7 +498,7 @@ section .camping-introduction-box .camping-price .camping-price-text p {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-introduction-box .camping-price .camping-price-text p {
     width: 45%;
     margin: auto;
@@ -545,7 +545,7 @@ section .camping-introduction-box .camping-reservation .camping-reservation-titl
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-introduction-box .camping-reservation .camping-reservation-title {
     font-size: 28px;
   }
@@ -571,7 +571,7 @@ section .camping-introduction-box .camping-reservation .line {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-introduction-box .camping-reservation .line {
     width: 18%;
   }
@@ -595,7 +595,7 @@ section .camping-introduction-box .camping-reservation .camping-reservation-text
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 866px) {
   section .camping-introduction-box .camping-reservation .camping-reservation-text {
     font-size: 20px;
     line-height: 40px;

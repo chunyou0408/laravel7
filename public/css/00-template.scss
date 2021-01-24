@@ -401,21 +401,21 @@ body {
           }
         }
         .decoration_01{
-          left: 30%;
+          left: 20%;
           @media (max-width: 768px) {
             left: 5%;
             bottom: 27px;
           }
         }
         .decoration_02{
-          left: 60%;
+          left: 50%;
           @media (max-width: 768px) {
             left: 40%;
             bottom: 27px;
           }
         }
         .decoration_03{
-          left: 80%;
+          left: 70%;
           @media (max-width: 768px) {
             left: 70%;
             bottom: 27px;
@@ -583,6 +583,9 @@ width: calc(100% - 175px);
         margin: 0 5px;
       }
 
+    }
+    .nav-link.active{
+        display: none;
     }
   }
   .icon_ {

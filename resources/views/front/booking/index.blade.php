@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.00-template')
 
 @section('css')
 <link rel="stylesheet" href="/css/booking.css">
@@ -9,7 +9,7 @@
 @section('main')
 <div class="container">
 
-    <table id="myTable" class="display">
+    <table id="myTable" class="display" style="border-spacing: 2px;">
         <button id="prevMonth">上個月</button>
         <button id="nextMonth">下個月</button>
         <thead>
@@ -486,7 +486,7 @@
                     modal.find('.modal-body .name').text(data.name)
                     modal.find('.modal-body .phone').text(data.phone)
                     modal.find('.modal-body .email').text(data.email)
-                    modal.find('.modal-body .area_id').text(data.booking_type.name)
+                    modal.find('.modal-body .area_id').text(data.area_type.name)
                     modal.find('.modal-body .date').text(data.date)
                 });
             }

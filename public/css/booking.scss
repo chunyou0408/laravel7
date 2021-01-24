@@ -1,16 +1,28 @@
 main{
-    margin-top: 50px;
-    height: auto;
+    height: 100vh;
+    overflow: hidden;
+}
+.container{
+    padding-top: 80px;
+    height: calc(100vh - 306px);
 }
 
 
 
 table {
+    max-width: 1200px;
+    border-spacing: 2px;
+
     .prev-month,.next-month{
         cursor: pointer;
     }
-    max-width: 1200px;
-    
+
+    tr{
+        th{
+            text-align: center;
+        }
+    }
+
 
     td {
         border: none;
@@ -18,7 +30,9 @@ table {
         position: relative;
         ul{
             display: none;
-            
+
+            padding: 0;
+            width: 200px;
             background-color: #666666;
             position: absolute;
             top: 50px;

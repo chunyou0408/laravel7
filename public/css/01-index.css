@@ -7,7 +7,36 @@
 header {
   width: 100%;
   height: auto;
+  position: fixed;
+  z-index: 10000;
   border-bottom: 3px solid #727171;
+}
+
+header.active {
+  -webkit-animation: mousewheel 1s linear 1 both;
+          animation: mousewheel 1s linear 1 both;
+}
+
+@-webkit-keyframes mousewheel {
+  0% {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(0%, -100%);
+            transform: translate(0%, -100%);
+  }
+}
+
+@keyframes mousewheel {
+  0% {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(0%, -100%);
+            transform: translate(0%, -100%);
+  }
 }
 
 header .above {
@@ -19,7 +48,6 @@ header .above .index_photo {
   max-width: 100%;
   -webkit-filter: brightness(50%);
           filter: brightness(50%);
-  opacity: 80%;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("../img/01/index_photo.jpg");

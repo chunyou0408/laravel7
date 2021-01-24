@@ -87,5 +87,15 @@
         },
       });
     </script>
+    <script>
+        var header =document.querySelector('header');
+
+
+
+         $(window).bind('mousewheel', function (event, delta) {
+            header.classList.add('active')
+
+        });
+    </script>
 @endsection
 

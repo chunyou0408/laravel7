@@ -66,7 +66,7 @@ class BookingController extends Controller
     public function edit($id)
     {
         //
-        $bookingTypes = AreaType::get();
+        $areaTypes = AreaType::get();
         $booking=Booking::find($id);
 
         return view('admin.booking.edit',compact('booking','areaTypes'));

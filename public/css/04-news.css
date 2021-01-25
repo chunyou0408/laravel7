@@ -47,7 +47,7 @@ section .news-card-group .card {
   margin-bottom: 30px;
 }
 
-@media screen and (max-width: 1510px) {
+@media screen and (max-width: 1730px) {
   section .news-card-group .card {
     width: 100%;
     margin-left: 0;
@@ -72,7 +72,7 @@ section .news-card-group .description {
           align-items: center;
 }
 
-@media screen and (max-width: 1510px) {
+@media screen and (max-width: 1730px) {
   section .news-card-group .description {
     width: 80%;
     margin: 5% auto;

@@ -71,12 +71,25 @@ class ProductController extends Controller
 
         //其他圖片
         if($request->hasFile('imgs')){
+            $count = 0;
             foreach ($request->imgs as $img){
-                $filePath=Storage::disk('public')->put('/images/product', $img);
+
+                $imageName = time().$count.'.'.$img->getClientOriginalExtension();
+                $img->move(public_path('/uploaded_images'), $imageName);
+                $product->img = '/uploaded_images/'.$imageName;
+
                 ProductImg::create([
                     'product_id'=>$product->id,
-                    'url'=>Storage::url($filePath),
+                    'url'=>$product->img,
                 ]);
+                $count =$count + 1;
+                // $filePath=Storage::disk('public')->put('/images/product', $img);
+
+                // ProductImg::create([
+                //     'product_id'=>$product->id,
+                //     'url'=>Storage::url($filePath),
+                // ]);
+
             }
         }
 
@@ -175,12 +188,25 @@ class ProductController extends Controller
 
         //其他圖片
         if($request->hasFile('imgs')){
+            $count = 0;
             foreach ($request->imgs as $img){
-                $filePath=Storage::disk('public')->put('/images/product', $img);
+
+                $imageName = time().$count.'.'.$img->getClientOriginalExtension();
+                $img->move(public_path('/uploaded_images'), $imageName);
+                $product->img = '/uploaded_images/'.$imageName;
+
                 ProductImg::create([
                     'product_id'=>$product->id,
-                    'url'=>Storage::url($filePath),
+                    'url'=>$product->img,
                 ]);
+                $count =$count + 1;
+                // $filePath=Storage::disk('public')->put('/images/product', $img);
+
+                // ProductImg::create([
+                //     'product_id'=>$product->id,
+                //     'url'=>Storage::url($filePath),
+                // ]);
+
             }
         }
 

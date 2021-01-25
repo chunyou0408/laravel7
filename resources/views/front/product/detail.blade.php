@@ -1,4 +1,4 @@
-@extends('layouts.template')
+@extends('layouts.00-template')
 
 
 @section('css')

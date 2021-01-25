@@ -46,6 +46,7 @@ header .above {
 
 header .above .index_photo {
   max-width: 100%;
+  height: 100vh;
   -webkit-filter: brightness(50%);
           filter: brightness(50%);
   background-size: cover;

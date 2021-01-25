@@ -1,8 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.00-template')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
+@section('css')
+<style>
+    .container{
+       min-height: calc(100vh - 306px);
+
+    }
+
+</style>
+    
+@endsection
+
+@section('main')
+<div class="container ">
+    <div class="row justify-content-center align-items-center" style="height:calc(100vh - 306px)">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -52,7 +63,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-8 offset-md-4 flex">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
@@ -62,6 +73,9 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                                @if (Route::has('register'))
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                 @endif
                             </div>
                         </div>
                     </form>

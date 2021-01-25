@@ -17,7 +17,7 @@
               <picture>
                 <source srcset="./img/01/index_photo375w.jpg"
                 media="(max-width:375px)">
-                <img src="./img/01/index_photo.jpg" alt="">
+                {{-- <img src="./img/01/index_photo.jpg" alt=""> --}}
               </picture>
             </div>
             <div class="logo">

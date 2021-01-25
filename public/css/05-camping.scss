@@ -222,6 +222,90 @@ section {
                 }
             }
         }
+        // 露營注意事項
+        .campin_introduction_box{
+            width: 100%;
+            margin: auto;
+            margin-top: 60px;
+            .campin_introduction_box_img{
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+            .camping-notes-box{
+                width: 65%;
+                margin: 35px auto 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
+                .camping-notes-title{
+                    width: 25%;
+                    font-size: $h3;
+                    color: $text-title-color;
+                    text-align: center;
+                    padding-bottom: 5px;
+                    margin: auto;
+                    margin-top: 30px;
+                    @media screen and (max-width: 1271px) {
+                        width: 100%;
+                        font-size: $h5;
+                    }
+                    @media screen and (max-width: 768px) {
+                        font-size: $h6;
+                    }
+                    @media screen and (max-width: 360px) {
+                        font-size: $h8;
+                    }
+                }
+                .camping-notes-text{
+                    width: 75%;
+                    height: auto;
+                    font-size: $h4;
+                    color: $text-content-color;
+                    line-height: 40px;
+                    letter-spacing: 3px;
+                    padding-left: 20px;
+                    margin: auto;
+                    margin-top: 30px;
+                    @media screen and (max-width: 1271px) {
+                        font-size: $h6;
+                    }
+                    @media screen and (max-width: 768px) {
+                        width: 85%;
+                        font-size: $h7;
+                        line-height: 30px;
+                        margin-top: 5px;
+                    }
+                    @media screen and (max-width: 360px) {
+                        font-size: $h9;
+                    }
+                    p{
+                        width: 80%;
+                        margin: auto;
+                    }
+                }
+                .reservation-btn {
+                    width: 100%;
+                    width:170px;
+                    font-size:$h3;
+                    font-family:$font-family;
+                    text-align:center;
+                    padding:5px 20px;
+                    border:1px $reservation-btn-color solid;
+                    border-radius: 10px;
+                    background-color:$reservation-btn-color;
+                    margin:20px auto auto auto;
+                    a {
+                        text-decoration: none;
+                        color:white;
+                    }
+                    
+                }
+            }
+        }
     }
 
     // 露營文字區塊
@@ -237,266 +321,7 @@ section {
         @media screen and (max-width: 866px) {
             margin-top: 30px;
         }
-        // 露營注意事項
-        .camping-notes-box {
-            width: 49%;
 
-            background-color: $camping-note;
-            @media screen and (max-width: 866px) {
-                width: 100%;
-            }
-
-            // 露營注意事項標題
-            .camping-notes-title {
-                width: 100%;
-                font-size: $h2;
-                color: $text-title-color;
-                text-align: center;
-                line-height: 60px;
-                margin: auto;
-                margin-top: 20px;
-                @media screen and (max-width: 1271px) {
-                    font-size: $h3;
-                    line-height: 45px;
-                    margin-top: 10px;
-                }
-                @media screen and (max-width: 866px) {
-                    font-size: $h3;
-                }
-                @media screen and (max-width: 360px) {
-                    font-size: $h6;
-                }
-            }
-            // 標題線
-            .line {
-                width: 24%;
-                height: 1px;
-                background: $text-line-color;
-                margin: auto;
-            }
-            // 露營注意事項文字區塊
-            .camping-notes-text {
-                width: 80%;
-                font-size: $h3;
-                font-family: $font-family;
-                color: $text-content-color;
-                line-height: 60px;
-                margin: auto;
-                padding-bottom: 10px;
-                @media screen and (max-width: 1271px) {
-                    font-size: $h4;
-                }
-                @media screen and (max-width: 565px) {
-                    width: 100%;
-                }
-                @media screen and (max-width: 545px) {
-                    width: 90%;
-                }
-                @media screen and (max-width: 530px) {
-                    width: 100%;
-                }
-
-                @media screen and (max-width: 866px) {
-                    width: 70%;
-                    // background-color:green;
-                    font-size: $h5;
-                    line-height: 40px;
-                    margin: auto;
-                }
-                @media screen and (max-width: 360px) {
-                    font-size: $h8;
-                }
-                p {
-                    width: 100%;
-                    // 文字直接貼邊
-                    // background-color: yellow;
-                    // margin-left: 12.5%;
-                    margin-top: 20px;
-                    @media screen and (max-width: 360px) {
-                        margin: auto;
-                    }
-                }
-            }
-        }
-
-        // 露營收費區塊
-        .camping-price {
-            width: 49%;
-            background-color: $camping-price;
-            padding-bottom: 20px;
-            @media screen and (max-width: 866px) {
-                width: 100%;
-                margin-top: 30px;
-            }
-            // 露營收費標題
-            .camping-price-title {
-                width: 100%;
-                height: auto;
-                font-size: $h2;
-                line-height: 60px;
-                color: $text-title-color;
-                text-align: center;
-                margin: auto;
-                margin-top: 20px;
-                @media screen and (max-width: 1271px) {
-                    font-size: $h3;
-                    line-height: 45px;
-                    margin-top: 10px;
-                }
-                @media screen and (max-width: 866px) {
-                    font-size: $h3;
-                }
-                @media screen and (max-width: 360px) {
-                    font-size: $h6;
-                }
-            }
-            .line {
-                width: 16%;
-                height: 1px;
-                background: $text-line-color;
-                margin: auto;
-            }
-            .camping-price-text {
-                width: 80%;
-                font-size: $h3;
-                color: $text-content-color;
-                line-height: 50px;
-                // margin: auto;
-                // background-color:yellow;
-                margin-top: 25px;
-                margin-left:13%;
-                @media screen and (max-width:1592px) {
-                    margin-left:5%;
-                }
-                @media screen and (max-width:1014px) {
-                    width:100%;
-                    margin-left:0;
-                    word-wrap:break-word;
-                }
-                @media screen and (max-width: 1285px) {
-                    font-size: $h4;
-
-                }
-                @media screen and (max-width: 816px) {
-
-                    font-size: $h5;
-                    line-height: 40px;
-
-                }
-
-                @media screen and (max-width: 360px) {
-                    font-size:$h8;
-                }
-                p {
-                    width:75%;
-                    // background-color:green;
-                    margin:auto;
-                    @media screen and (max-width:1098px) {
-                        margin-left:15%;
-                        line-height:40px;
-                    }
-                    @media screen and (max-width:866px) {
-                        width:45%;
-                        margin:auto;
-                        line-height:40px;
-                    }
-                    @media screen and (max-width:572px) {
-                        width:100%;
-                        margin-left:20%;
-                    }
-                    @media screen and (max-width: 360px) {
-                        width:70%;
-                        margin:auto;
-                     }
-                }
-            }
-        }
-        // 露營預約區塊
-        .camping-reservation {
-            width: 100%;
-            background-color: $camping-reservation;
-            margin-top: 35px;
-            padding-bottom: 50px;
-            margin-bottom:80px;
-            // 露營預約標題
-            .camping-reservation-title {
-                width: 100%;
-                font-size: $h2;
-                color: $text-title-color;
-                text-align: center;
-                padding-bottom: 5px;
-                margin: auto;
-                margin-top: 30px;
-                @media screen and (max-width: 1271px) {
-                    font-size: $h3;
-                    margin-top: 10px;
-                }
-                @media screen and (max-width: 866px) {
-                    font-size: $h3;
-                }
-                @media screen and (max-width: 360px) {
-                    font-size: $h6;
-                }
-            }
-            .line {
-                width: 8%;
-                height: 1px;
-                background: $text-line-color;
-                margin: auto;
-                margin-top: 5px;
-                @media screen and (max-width: 1271px) {
-                    width: 18%;
-                }
-                @media screen and (max-width: 866px) {
-                    width: 18%;
-                }
-            }
-            // 露營預約文字區塊
-            .camping-reservation-text {
-                width: 100%;
-                height: auto;
-                font-size: $h3;
-                color: $text-content-color;
-                line-height: 50px;
-                letter-spacing: 3px;
-                padding-bottom:20px;
-                margin: auto;
-                margin-top: 30px;
-                @media screen and (max-width: 1271px) {
-                    font-size: $h4;
-                }
-                @media screen and (max-width: 866px) {
-                    font-size: $h5;
-                    line-height: 40px;
-                }
-                @media screen and (max-width: 360px) {
-                    font-size: $h8;
-                }
-                p {
-                    width: 80%;
-                    margin: auto;
-                }
-            }
-
-
-                .reservation-btn {
-                    a {
-                        text-decoration: none;
-                        color:white;
-                    }
-                    width:170px;
-                    font-size:$h3;
-                    font-family:$font-family;
-                    text-align:center;
-                    // margin-top:60px;
-                    padding:5px 20px;
-                    border:1px $reservation-btn-color solid;
-                    border-radius: 10px;
-                    background-color:$reservation-btn-color;
-                    margin:auto;
-                }
-
-
-        }
     }
 }
+        

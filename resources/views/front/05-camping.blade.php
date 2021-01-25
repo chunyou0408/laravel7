@@ -145,11 +145,12 @@
                     </div>
                 </div>
                 <!-- 露營注意事項、預約等文字 -->
-                <div class="camping-introduction-box">
-                    <div class="camping-notes-box" data-aos="fade-right" data-aos-delay="500">
+                <div class="campin_introduction_box">
+                    <div class="campin_introduction_box_img">
+                        <img src="./img/05/未命名.png" alt="">
+                    </div>
+                    <div class="camping-notes-box">
                         <div class="camping-notes-title">露營注意事項</div>
-                        <div class="line"></div>
-                        <!-- 露營注意文字區塊 -->
                         <div class="camping-notes-text">
                             <p>
                                 一. 垃圾菸蒂請勿落地，勿施放煙火。
@@ -166,26 +167,27 @@
                             </p>
                         </div>
                     </div>
-                    <div class="camping-price" data-aos="fade-left" data-aos-delay="500">
-                        <div class="camping-price-title">露營收費</div>
-                        <div class="line"></div>
+                    <div class="camping-notes-box">
+                        <div class="camping-notes-title">露營收費</div>
                         <!-- 露營收費文字區塊 -->
-                        <div class="camping-price-text">
+                        <div class="camping-notes-text">
                             <p>
-                                    空帳收費&emsp;&emsp;&nbsp;&nbsp;&nbsp;$1300/帳
-                                    <br>
-                                    地帳收費&emsp;&emsp;&nbsp;&nbsp;&nbsp;$800/帳
-                                    <br>
-                                    <br>
-                                    可進場2位人3小孩或3位大人，
-                                    每多1位大人$250小孩$100
-                                </p>
+                                空帳收費&emsp;&emsp;&nbsp;&nbsp;&nbsp;$1300/帳
+                                <br>
+                                地帳收費&emsp;&emsp;&nbsp;&nbsp;&nbsp;$800/帳
+                                <br>
+                                <br>
+                                可進場2位人3小孩或3位大人，
+                                每多1位大人$250小孩$100
+                            </p>
                         </div>
                     </div>
-                    <div class="camping-reservation" data-aos="zoom-in" data-aos-delay="500">
-                        <div class="camping-reservation-title">露營預約</div>
-                        <div class="line"></div>
-                        <div class="camping-reservation-text">
+                    <div class="camping-notes-box">
+                        <div class="camping-notes-title">
+                            露營預約
+                        </div>
+                        
+                        <div class="camping-notes-text">
                             <p>
                                 牧場採線上預約，露營日期前一個月開放預約，您必須提前12小時預約，並且于收到預約確認信後完成預約。
                                 <br>
@@ -196,16 +198,17 @@
                                 遇事件或活動，顏氏牧場可能停止或僅開放部分露營區。
                                 <br>
                             </p>
-                        </div>
-
                             <div class="reservation-btn">
-                                <a href="/booking">
-                                    我要預約
-                                </a>
-                            </div>
-
+                            <a href="/booking">
+                                我要預約
+                            </a>
+                        </div>
+                        </div>
+                       
+                        
                     </div>
                 </div>
+                
         </section>
         @endsection
         @section('js')

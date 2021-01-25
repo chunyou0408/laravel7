@@ -305,7 +305,7 @@ section .camping-photo-card .campin_introduction_box .camping-notes-box .camping
   margin-top: 30px;
 }
 
-@media screen and (max-width: 1271px) {
+@media screen and (max-width: 1410px) {
   section .camping-photo-card .campin_introduction_box .camping-notes-box .camping-notes-title {
     width: 100%;
     font-size: 20px;
@@ -336,9 +336,10 @@ section .camping-photo-card .campin_introduction_box .camping-notes-box .camping
   margin-top: 30px;
 }
 
-@media screen and (max-width: 1271px) {
+@media screen and (max-width: 1410px) {
   section .camping-photo-card .campin_introduction_box .camping-notes-box .camping-notes-text {
     font-size: 18px;
+    width: 100%;
   }
 }
 
@@ -362,6 +363,12 @@ section .camping-photo-card .campin_introduction_box .camping-notes-box .camping
   margin: auto;
 }
 
+@media screen and (max-width: 1410px) {
+  section .camping-photo-card .campin_introduction_box .camping-notes-box .camping-notes-text p {
+    width: 100%;
+  }
+}
+
 section .camping-photo-card .campin_introduction_box .camping-notes-box .reservation-btn {
   width: 100%;
   width: 170px;
@@ -372,7 +379,7 @@ section .camping-photo-card .campin_introduction_box .camping-notes-box .reserva
   border: 1px #c9bc9c solid;
   border-radius: 10px;
   background-color: #c9bc9c;
-  margin: 20px auto auto auto;
+  margin: 50px auto auto auto;
 }
 
 section .camping-photo-card .campin_introduction_box .camping-notes-box .reservation-btn a {

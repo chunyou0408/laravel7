@@ -108,7 +108,7 @@
                             <a href="/shopping"><a href="/booking"><img class="booking_icon" src="/img/00/icon/booking_icon.png" alt="" width="30px"></a></a>
                         </li>
                         <li class="nav-item">
-                            <a href="/shopping"><img class="shopping_icon" src="/img/00/icon/shopping_icon.png" alt="" width="35px"></a>
+                            <a href="/shopping"><img class="shop_icon" src="/img/00/icon/shop_icon.png" alt="" width="35px"></a>
                         </li>
                         @guest
                         <li class="nav-item">
@@ -119,11 +119,14 @@
                         @if ($type== 'admin')
                         <li class="nav-item">
 
-                            <a href="/admin"><i class="fas fa-tools" style="font-size:29px"></i></a>
+                            <a href="/admin">
+                                {{-- <i class="fas fa-tools" style="font-size:29px"></i> --}}
+                                <img class="booking_icon" src="/img/00/icon/tools_icon.png" alt="" width="29px">
+                            </a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fas fa-users-cog" style="font-size:29px"></i>{{ Auth::user()->name }}
+                                <img class="booking_icon" src="/img/00/icon/admin_icon.png" alt="" width="35px">{{ Auth::user()->name }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -250,7 +253,7 @@
 
 
         var booking_icon = document.querySelector('.booking_icon');
-        var shopping_icon = document.querySelector('.shopping_icon');
+        var shop_icon = document.querySelector('.shop_icon');
         var user_icon = document.querySelector('.user_icon');
         var fold_area = document.querySelector('.fold_area');
         var nav02_box = document.querySelector('#nav02_box');
@@ -294,11 +297,11 @@
             booking_icon.src = '/img/00/icon/booking_icon.png';
         }
 
-        shopping_icon.onmouseover = function () {
-            shopping_icon.src = '/img/00/icon/shopping_icon_hover.png';
+        shop_icon.onmouseover = function () {
+            shop_icon.src = '/img/00/icon/shop_icon_hover.png';
         }
-        shopping_icon.onmouseout = function () {
-            shopping_icon.src = '/img/00/icon/shopping_icon.png';
+        shop_icon.onmouseout = function () {
+            shop_icon.src = '/img/00/icon/shop_icon.png';
         }
 
         user_icon.onmouseover = function () {

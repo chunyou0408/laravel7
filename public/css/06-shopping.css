@@ -68,6 +68,7 @@ body .container .shop_title samp {
 body .container .cards .card {
   border: initial;
   background-color: initial;
+  margin-bottom: 30px;
 }
 
 body .container .cards .card .card-body {

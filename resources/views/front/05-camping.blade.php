@@ -198,13 +198,13 @@
                                 遇事件或活動，顏氏牧場可能停止或僅開放部分露營區。
                                 <br>
                             </p>
-                            <div class="reservation-btn">
+  
+                        </div>
+                        <div class="reservation-btn">
                             <a href="/booking">
-                                我要預約
+                                點我預約
                             </a>
                         </div>
-                        </div>
-                       
                         
                     </div>
                 </div>

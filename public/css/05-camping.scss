@@ -249,9 +249,10 @@ section {
                     padding-bottom: 5px;
                     margin: auto;
                     margin-top: 30px;
-                    @media screen and (max-width: 1271px) {
+                    @media screen and (max-width: 1410px) {
                         width: 100%;
                         font-size: $h5;
+
                     }
                     @media screen and (max-width: 768px) {
                         font-size: $h6;
@@ -270,8 +271,9 @@ section {
                     padding-left: 20px;
                     margin: auto;
                     margin-top: 30px;
-                    @media screen and (max-width: 1271px) {
+                    @media screen and (max-width: 1410px) {
                         font-size: $h6;
+                        width: 100%;
                     }
                     @media screen and (max-width: 768px) {
                         width: 85%;
@@ -282,10 +284,16 @@ section {
                     @media screen and (max-width: 360px) {
                         font-size: $h9;
                     }
+                    
                     p{
                         width: 80%;
                         margin: auto;
+
+                        @media screen and (max-width: 1410px) {
+                            width: 100%;
+                        }
                     }
+
                 }
                 .reservation-btn {
                     width: 100%;
@@ -297,7 +305,7 @@ section {
                     border:1px $reservation-btn-color solid;
                     border-radius: 10px;
                     background-color:$reservation-btn-color;
-                    margin:20px auto auto auto;
+                    margin: 50px auto auto auto;
                     a {
                         text-decoration: none;
                         color:white;

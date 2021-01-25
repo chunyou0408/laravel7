@@ -413,7 +413,7 @@ body .nav02 .box {
 body .footer_container {
   width: 100%;
   height: auto;
-  margin-top: 100px;
+  margin-top: 180px;
   padding: 30px 0;
   background-color: #b5b5b6;
   display: -webkit-box;
@@ -424,7 +424,7 @@ body .footer_container {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   float: right;
-  font-size: 20px;
+  font-size: 16px;
   color: #f7f8f8;
 }
 

@@ -220,8 +220,8 @@
                                 <div><img src="./img/00/顏氏牧場-橫版.png" alt="" width="90%"></div>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="https://zh-tw.facebook.com/Yenpasture/"><i class="fab fa-facebook-square"></i></a>
+                                <a href="https://www.instagram.com/yenpasture2/?hl=zh-tw"><i class="fab fa-instagram"></i></a>
                                 <a href="/suggest"><i class="far fa-comment-dots"></i></a>
                             </li>
                         </ul>
@@ -287,27 +287,27 @@
         }
 
 
-        // booking_icon.onmouseover = function () {
-        //     booking_icon.src = '/img/00/icon/booking_icon_hover.png';
-        // }
-        // booking_icon.onmouseout = function () {
-        //     booking_icon.src = '/img/00/icon/booking_icon.png';
-        // }
+        booking_icon.onmouseover = function () {
+            booking_icon.src = '/img/00/icon/booking_icon_hover.png';
+        }
+        booking_icon.onmouseout = function () {
+            booking_icon.src = '/img/00/icon/booking_icon.png';
+        }
 
-        // shopping_icon.onmouseover = function () {
-        //     shopping_icon.src = '/img/00/icon/shopping_icon_hover.png';
-        // }
-        // shopping_icon.onmouseout = function () {
-        //     shopping_icon.src = '/img/00/icon/shopping_icon.png';
-        // }
+        shopping_icon.onmouseover = function () {
+            shopping_icon.src = '/img/00/icon/shopping_icon_hover.png';
+        }
+        shopping_icon.onmouseout = function () {
+            shopping_icon.src = '/img/00/icon/shopping_icon.png';
+        }
 
-        // user_icon.onmouseover = function () {
-        //     user_icon.src = '/img/00/icon/user_icon_hover.png';
+        user_icon.onmouseover = function () {
+            user_icon.src = '/img/00/icon/user_icon_hover.png';
 
-        // }
-        // user_icon.onmouseout = function () {
-        //     user_icon.src = '/img/00/icon/user_icon.png';
-        // }
+        }
+        user_icon.onmouseout = function () {
+            user_icon.src = '/img/00/icon/user_icon.png';
+        }
 
         //偵測畫面寬度
         // $(document).ready(function(){

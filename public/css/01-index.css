@@ -92,11 +92,21 @@ header .above .logo {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 950px) {
   header .above .logo {
-    top: 50%;
+    width: 12%;
+    top: 30%;
+  }
+}
+
+@media (max-width: 600px) {
+  header .above .logo {
+    width: 20%;
+    top: 25%;
   }
 }
 
@@ -107,11 +117,21 @@ header .above .logo_horizontal {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 950px) {
   header .above .logo_horizontal {
-    top: 58%;
+    width: 20%;
+    top: 38%;
+  }
+}
+
+@media (max-width: 600px) {
+  header .above .logo_horizontal {
+    width: 40%;
+    top: 35%;
   }
 }
 
@@ -122,11 +142,21 @@ header .above .logo_horizontal_en {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 950px) {
   header .above .logo_horizontal_en {
-    top: 62%;
+    width: 19%;
+    top: 42%;
+  }
+}
+
+@media (max-width: 600px) {
+  header .above .logo_horizontal_en {
+    width: 38%;
+    top: 40%;
   }
 }
 

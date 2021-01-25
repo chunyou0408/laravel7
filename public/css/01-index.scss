@@ -69,21 +69,44 @@ header{
             top:35%;
             left: 50%;
             transform: translate(-50%, -50%);
+            transition: 1s;
 
-            @media (max-width: 375px){
-                top:50%;
+            @media (max-width: 950px){
+                width: 12%;
+                top: 30%;
             }
+
+            @media (max-width: 600px){
+                width: 20%;
+                top: 25%;
+            }
+
+            // @media (max-width: 375px){
+            //     top:50%;
+            // }
 
         }
         .logo_horizontal{
             width: 22%;
             position: absolute;
-            top:48%;
+            top: 48%;
             left: 50%;
             transform: translate(-50%, -50%);
-            @media (max-width: 375px){
-                top:58%;
+            transition: 1s;
+
+            @media (max-width: 950px){
+                width: 20%;
+                top: 38%;
             }
+
+            @media (max-width: 600px){
+                width: 40%;
+                top: 35%;
+            }
+
+            // @media (max-width: 375px){
+            //     top:58%;
+            // }
 
         }
         .logo_horizontal_en{
@@ -92,10 +115,21 @@ header{
             top:55%;
             left: 50%;
             transform: translate(-50%, -50%);
-            @media (max-width: 375px){
-                top:62%;
+            transition: 1s;
 
+            @media (max-width: 950px){
+                width: 19%;
+                top: 42%;
             }
+
+            @media (max-width: 600px){
+                width: 38%;
+                top: 40%;
+            }
+
+            // @media (max-width: 375px){
+            //     top:62%;
+            // }
 
         }
         .text{

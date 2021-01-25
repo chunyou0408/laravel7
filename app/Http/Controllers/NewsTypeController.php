@@ -17,7 +17,7 @@ class NewsTypeController extends Controller
         //
         // $newsTypes=NewsType::with('newss')->get();
         $newsTypes=NewsType::get();
-        return view('admin.newsType.index',compact('newsTypes'));
+        return view('admin.zxc321.index',compact('newsTypes'));
     }
 
     /**
@@ -28,7 +28,7 @@ class NewsTypeController extends Controller
     public function create()
     {
         //
-        return view('admin.newsType.create');
+        return view('admin.zxc321.create');
 
     }
 
@@ -67,7 +67,7 @@ class NewsTypeController extends Controller
     {
         //
         $newsType=NewsType::find($id);
-        return view('admin.newsType.edit',compact('newsType'));
+        return view('admin.zxc321.edit',compact('newsType'));
     }
 
     /**

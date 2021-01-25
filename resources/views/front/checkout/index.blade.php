@@ -52,17 +52,17 @@
   <?php
     $subtotal=\Cart::getSubTotal();
     $tax = $subtotal*0.05;
-    $total = $subtotal + $tax;
+    $total = $subtotal ;
   ?>
   <div class="totals">
     <div class="totals-item">
       <label>小計</label>
       <div class="totals-value" id="cart-subtotal" data-subtotal="$subtotal">{{number_format($subtotal)}}</div>
     </div>
-    <div class="totals-item">
+    {{-- <div class="totals-item">
       <label>稅金 (5%)</label>
       <div class="totals-value" id="cart-tax" data-tax="{{$tax}}">{{number_format($tax)}}</div>
-    </div>
+    </div> --}}
     <div class="totals-item">
       <label>運費</label>
       <div class="totals-value" id="cart-shipping">0</div>
@@ -189,7 +189,7 @@
     /* Calculate totals */
     var tax = subtotal * taxRate;
     var shipping = (subtotal > 0 ? shippingRate : 0);
-    var total = subtotal + tax + shipping;
+    var total = subtotal  + shipping;
 
     /* Update totals display */
     $('.totals-value').fadeOut(fadeTime, function() {

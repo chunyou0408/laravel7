@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    @yield('banner')
+    {{-- @yield('banner') --}}
     <section class="flex">
         <nav class="nav01">
             <div class="nav_logo_box">

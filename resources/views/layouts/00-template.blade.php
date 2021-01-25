@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="/css/00-template.css">
       <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+
     <!-- import font awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     {{-- swiper CDN --}}
@@ -306,16 +308,17 @@
         }
 
         //偵測畫面寬度
-        $(document).ready(function(){
-            $(window).resize(function() {
-                console.log(document.body.clientWidth);
-            });
-        });
+        // $(document).ready(function(){
+        //     $(window).resize(function() {
+        //         console.log(document.body.clientWidth);
+        //     });
+        // });
 
     </script>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+
     {{-- swiper --}}
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     {{-- bootstrap --}}

@@ -29,7 +29,7 @@ Route::get('/test',function(){
 
 Route::get('/product_detail/{id}','FrontController@productDetail');
 
-Route::get('/checkout','FrontController@checkout');
+// Route::get('/checkout','FrontController@checkout');
 Route::get('/create_order','FrontController@createOrder');
 
 Route::get('/booking','FrontController@booking');
@@ -74,9 +74,9 @@ Route::get('/suggest','FrontController@suggest');
 Route::get('/home', 'HomeController@userIndex');
 
 
-
-
-
+Route::group(['middleware' => ['auth'],'prefix'=>'/'], function () {
+Route::get('/checkout','FrontController@checkout');
+});
 
 
 Route::group(['middleware' => ['auth','is_admin'],'prefix'=>'admin'], function () {

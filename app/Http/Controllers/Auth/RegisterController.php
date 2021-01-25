@@ -89,7 +89,7 @@ class RegisterController extends Controller
     //給一般使用者用
     public function showRegistrationForm()
     {
-        return view('front.register');
+        return view('front.auth.register');
     }
 
     //給管理員用

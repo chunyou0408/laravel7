@@ -1,4 +1,5 @@
 @extends('layouts.00-template')
+{{-- @extends('layouts.app') --}}
 
 @section('css')
     <link rel="stylesheet" href="css/06-shopping.css">
@@ -53,6 +54,7 @@
         @endsection
         @section('js')
         <script>
+        console.log('{{Auth::guest()}}');
 
         'use strict';
 
@@ -84,42 +86,47 @@
         //綁定點擊事件
         addCartBtns.forEach(function (addCartBtn){
             addCartBtn.onclick=function(){
+                //如果沒有登入狀態,轉址到登入畫面 
+                if('{{Auth::guest()}}'!= '1' ){
+                    var id =this.getAttribute('data-id');
+                    // var qty =parseInt(this.previousSibling.previousSibling.value);
+                    var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                    var qty =parseInt(this.parentNode.previousSibling.previousSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.value);
 
-                var id =this.getAttribute('data-id');
-                // var qty =parseInt(this.previousSibling.previousSibling.value);
-                var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-                var qty =parseInt(this.parentNode.previousSibling.previousSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.value);
+                    var formData = new FormData;
+                    formData.append('id',id);
+                    formData.append('qty',qty);
+                    formData.append('_token',_token);
 
-                var formData = new FormData;
-                formData.append('id',id);
-                formData.append('qty',qty);
-                formData.append('_token',_token);
+                    console.log(formData);
 
-                console.log(formData);
+                    fetch('/add_cart', {
+                        method:'POST',
+                        body:formData,
+                    })
+                    .then(function (response){
+                        return response.text()
+                    })
+                    .catch(function (error){
+                        console.log('錯誤:',error);
+                    })
+                    .then(function(data){
+                        //回傳的資料
+                        if(data == "false"){
+                            //fales(代表找不到產品)
+                            alert('找不到該項產品');
+                        }else{
+                            //車子有多少數量的商品
+                            $('.shopping_cart .qty').text(data);
+                        }
+                        console.log('成功:',data);
+                    });
 
-                fetch('/add_cart', {
-                    method:'POST',
-                    body:formData,
-                })
-                .then(function (response){
-                    return response.text()
-                })
-                .catch(function (error){
-                    console.log('錯誤:',error);
-                })
-                .then(function(data){
-                    //回傳的資料
-                    if(data == "false"){
-                        //fales(代表找不到產品)
-                        alert('找不到該項產品');
-                    }else{
-                        //車子有多少數量的商品
-                        $('.shopping_cart .qty').text(data);
-                    }
-                    console.log('成功:',data);
-                });
-
-            };
+                }else{
+                    console.log('請登入');
+                    document.location.href="/login";
+                }
+            }
         });
         </script>
 

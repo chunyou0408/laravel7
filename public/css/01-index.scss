@@ -4,6 +4,7 @@
     box-sizing: border-box;
     margin: 0;
 }
+
 header{
     width: 100%;
     height: auto;
@@ -15,15 +16,14 @@ header{
     &.active{
         animation: mousewheel 1s linear 1 both;
         @keyframes mousewheel {
-                0% {
-                    transform: translate(0%, 0%);
-                }
-                100% {
-                    transform: translate(0%, -100%);
-                }
-
+            0% {
+                transform: translate(0%, 0%);
+            }
+            100% {
+                transform: translate(0%, -100%);
             }
         }
+    }
 
     .above{
         // display: none;

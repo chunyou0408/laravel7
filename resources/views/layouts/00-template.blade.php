@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/img\00\icon\tree.png" type="image/x-icon"/>
 
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- import font awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -121,12 +121,12 @@
 
                             <a href="/admin">
                                 {{-- <i class="fas fa-tools" style="font-size:29px"></i> --}}
-                                <img class="booking_icon" src="/img/00/icon/tools_icon.png" alt="" width="29px">
+                                <img class="tools_icon" src="/img/00/icon/tools_icon.png" alt="" width="29px">
                             </a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img class="booking_icon" src="/img/00/icon/admin_icon.png" alt="" width="35px">{{ Auth::user()->name }}
+                                <img class="admin_icon" src="/img/00/icon/admin_icon.png" alt="" width="35px">{{ Auth::user()->name }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -179,8 +179,10 @@
                 $getTotalQty=\Cart::getTotalQuantity();
                 ?>
                     <i class="shopping_cart">
-                        <img src="{{asset("./uploaded_images/cart1.png")}}" alt="" width="100%">
-                        <img src="{{asset("./uploaded_images/cart2.png")}}" alt="" width="100%">
+                        {{-- <img src="{{asset("./uploaded_images/cart1.png")}}" alt="" width="100%">
+                        <img src="{{asset("./uploaded_images/cart2.png")}}" alt="" width="100%"> --}}
+                        <img src="{{asset("./img/00/icon/shopping_icon.png")}}" alt="" width="100%">
+                        <img src="{{asset("./img/00/icon/shopping_icon_hover.png")}}" alt="" width="100%">
                         <div class="qty">{{$getTotalQty}}</div>
                     </i>
                 </a>
@@ -241,6 +243,16 @@
 
 
 
+    <!-- Scripts -->
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    {{-- swiper --}}
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    {{-- bootstrap --}}
+
+
 
 
 
@@ -255,6 +267,8 @@
         var booking_icon = document.querySelector('.booking_icon');
         var shop_icon = document.querySelector('.shop_icon');
         var user_icon = document.querySelector('.user_icon');
+        var tools_icon = document.querySelector('.tools_icon');
+        var admin_icon = document.querySelector('.admin_icon');
         var fold_area = document.querySelector('.fold_area');
         var nav02_box = document.querySelector('#nav02_box');
         var nav02_news = document.querySelector('#nav02_news');
@@ -304,13 +318,34 @@
             shop_icon.src = '/img/00/icon/shop_icon.png';
         }
 
-        user_icon.onmouseover = function () {
-            user_icon.src = '/img/00/icon/user_icon_hover.png';
+        if(user_icon != null){
+            user_icon.onmouseover = function () {
+                user_icon.src = '/img/00/icon/user_icon_hover.png';
+            }
+            user_icon.onmouseout = function () {
+                user_icon.src = '/img/00/icon/user_icon.png';
+            }
+        }
 
+        if(tools_icon != null){
+            tools_icon.onmouseover = function () {
+                tools_icon.src = '/img/00/icon/tools_icon_hover.png';
+            }
+            tools_icon.onmouseout = function () {
+                tools_icon.src = '/img/00/icon/tools_icon.png';
+            }
         }
-        user_icon.onmouseout = function () {
-            user_icon.src = '/img/00/icon/user_icon.png';
+        if(admin_icon != null){
+            admin_icon.onmouseover = function () {
+                admin_icon.src = '/img/00/icon/admin_icon_hover.png';
+            }
+            admin_icon.onmouseout = function () {
+                admin_icon.src = '/img/00/icon/admin_icon.png';
+            }
         }
+
+
+
 
         //偵測畫面寬度
         // $(document).ready(function(){
@@ -318,15 +353,7 @@
         //         console.log(document.body.clientWidth);
         //     });
         // });
-
     </script>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-
-    {{-- swiper --}}
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    {{-- bootstrap --}}
 
     {{-- JS --}}
     @yield('js')

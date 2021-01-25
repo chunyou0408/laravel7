@@ -32,14 +32,14 @@
             <div class="nav_logo_box">
                 <a href="/">
                     <div class="logo_area">
-                        <img src="./img/00/LOGO.png" alt="">
+                        <img src="../img/00/LOGO.png" alt="">
                     </div>
                     <div class="logo_text">
                         <div class="logo_text_left">
-                            <img src="./img/00/logo_pasture_en.png" alt="">
+                            <img src="../img/00/logo_pasture_en.png" alt="">
                         </div>
                         <div class="logo_text_right">
-                            <img src="./img/00/logo_pasture_zh.png" alt="">
+                            <img src="../img/00/logo_pasture_zh.png" alt="">
                         </div>
                     </div>
                 </a>
@@ -74,11 +74,11 @@
         </nav>
         <nav class="nav02">
             <div class="fold_area">
-                <img src="./img/00/bars-solid.svg" alt="" height="100%">
+                <img src="../img/00/bars-solid.svg" alt="" height="100%">
             </div>
             <a href="/">
                 <div class="logo_area" style="height: 80px">
-                    <img src="./img/00/LOGO.png" alt="" height="80%">
+                    <img src="../img/00/LOGO.png" alt="" height="80%">
                 </div>
             </a>
             <div class="box"></div>
@@ -181,8 +181,8 @@
                     <i class="shopping_cart">
                         {{-- <img src="{{asset("./uploaded_images/cart1.png")}}" alt="" width="100%">
                         <img src="{{asset("./uploaded_images/cart2.png")}}" alt="" width="100%"> --}}
-                        <img src="{{asset("./img/00/icon/shopping_icon.png")}}" alt="" width="100%">
-                        <img src="{{asset("./img/00/icon/shopping_icon_hover.png")}}" alt="" width="100%">
+                        <img src="{{asset("../img/00/icon/shopping_icon.png")}}" alt="" width="100%">
+                        <img src="{{asset("../img/00/icon/shopping_icon_hover.png")}}" alt="" width="100%">
                         <div class="qty">{{$getTotalQty}}</div>
                     </i>
                 </a>
@@ -190,9 +190,9 @@
             <footer class="footer">
                 <div class="footer_container">
                     <div class="footer_decoration">
-                        <img src="./img/00/footer_decoration_01.png"  style="height:100px;" alt="" class="decoration_01">
-                        <img src="./img/00/footer_decoration_02.png" style="height:70px;" alt="" class="decoration_02">
-                        <img src="./img/00/footer_decoration_03.png" style="height:80px;" alt="" class="decoration_03">
+                        <img src="../img/00/footer_decoration_01.png"  style="height:100px;" alt="" class="decoration_01">
+                        <img src="../img/00/footer_decoration_02.png" style="height:70px;" alt="" class="decoration_02">
+                        <img src="../img/00/footer_decoration_03.png" style="height:80px;" alt="" class="decoration_03">
                     </div>
                     <div class="footer_left">
                         <ul>
@@ -221,8 +221,8 @@
                     <div class="footer_right">
                         <ul>
                             <li>
-                                <div><img src="./img/00/LOGO_white.png" alt="" height="40px"></div>
-                                <div><img src="./img/00/顏氏牧場-橫版.png" alt="" width="90%"></div>
+                                <div><img src="../img/00/LOGO_white.png" alt="" height="40px"></div>
+                                <div><img src="../img/00/顏氏牧場-橫版.png" alt="" width="90%"></div>
                             </li>
                             <li>
                                 <a href="https://zh-tw.facebook.com/Yenpasture/"><i class="fab fa-facebook-square"></i></a>

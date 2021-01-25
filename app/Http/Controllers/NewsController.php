@@ -20,7 +20,7 @@ class NewsController extends Controller
         //
         $newsData=News::get();
         $newsTypes=NewsType::get();
-        return view('admin.zxc123.index',compact('newsData','newsTypes'));
+        return view('admin.news.index',compact('newsData','newsTypes'));
     }
 
     /**
@@ -32,7 +32,7 @@ class NewsController extends Controller
     {
         //
         $newsTypes = NewsType::get();
-        return view('admin.zxc123.create',compact('newsTypes'));
+        return view('admin.news.create',compact('newsTypes'));
     }
 
     /**
@@ -91,7 +91,7 @@ class NewsController extends Controller
         $newsTypes = NewsType::get();
         $news=News::find($id);
 
-        return view('admin.zxc123.edit',compact('news','newsTypes'));
+        return view('admin.news.edit',compact('news','newsTypes'));
     }
 
     /**

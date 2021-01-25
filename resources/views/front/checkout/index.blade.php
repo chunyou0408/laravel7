@@ -91,7 +91,7 @@
 
   /* Assign actions */
   $('.product-quantity input').change( function() {
-    console.log($(this).attr('data-id'));
+    // console.log($(this).attr('data-id'));
     //拿到購物車產品ID
     var id =$(this).attr('data-id');
     var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');

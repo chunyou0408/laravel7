@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="/css/00-template.css">
       <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
+    <link rel="icon" href="/img\00\icon\tree.png" type="image/x-icon"/>
+
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 
     <!-- import font awesome CSS -->
@@ -92,7 +94,7 @@
                     </a></li>
                 <li class="nav_hover"><a href="/booking"><span>場地預約</span>
                     </a></li>
-                <li class="nav_hover"><a href="/booking"><span>購買商品</span>
+                <li class="nav_hover"><a href="/shopping"><span>購買商品</span>
                     </a></li>
 
             </ul>
@@ -285,27 +287,27 @@
         }
 
 
-        booking_icon.onmouseover = function () {
-            booking_icon.src = '/img/00/icon/booking_icon_hover.png';
-        }
-        booking_icon.onmouseout = function () {
-            booking_icon.src = '/img/00/icon/booking_icon.png';
-        }
+        // booking_icon.onmouseover = function () {
+        //     booking_icon.src = '/img/00/icon/booking_icon_hover.png';
+        // }
+        // booking_icon.onmouseout = function () {
+        //     booking_icon.src = '/img/00/icon/booking_icon.png';
+        // }
 
-        shopping_icon.onmouseover = function () {
-            shopping_icon.src = '/img/00/icon/shopping_icon_hover.png';
-        }
-        shopping_icon.onmouseout = function () {
-            shopping_icon.src = '/img/00/icon/shopping_icon.png';
-        }
+        // shopping_icon.onmouseover = function () {
+        //     shopping_icon.src = '/img/00/icon/shopping_icon_hover.png';
+        // }
+        // shopping_icon.onmouseout = function () {
+        //     shopping_icon.src = '/img/00/icon/shopping_icon.png';
+        // }
 
-        user_icon.onmouseover = function () {
-            user_icon.src = '/img/00/icon/user_icon_hover.png';
+        // user_icon.onmouseover = function () {
+        //     user_icon.src = '/img/00/icon/user_icon_hover.png';
 
-        }
-        user_icon.onmouseout = function () {
-            user_icon.src = '/img/00/icon/user_icon.png';
-        }
+        // }
+        // user_icon.onmouseout = function () {
+        //     user_icon.src = '/img/00/icon/user_icon.png';
+        // }
 
         //偵測畫面寬度
         // $(document).ready(function(){
@@ -317,14 +319,12 @@
     </script>
 
     <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+    <script src="{{ asset('js/app.js') }}"></script>
 
     {{-- swiper --}}
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     {{-- bootstrap --}}
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
     {{-- JS --}}
     @yield('js')
 </body>

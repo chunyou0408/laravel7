@@ -22,8 +22,8 @@ use Illuminate\Support\Facades\Storage;
 Route::get('/product','FrontController@product');
 
 Route::get('/test',function(){
-    dd('test');
-})->middleware('is_admin');
+    dd(public_path(),public_path('/uploaded_images'),is_dir('uploaded_images/'));
+});
 
 
 

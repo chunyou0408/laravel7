@@ -80,7 +80,7 @@
   display: flex;
   margin-top: -10px;
   position: relative;
-  z-index: -1;
+  z-index: -2;
 }
 
 @media (max-width: 768px) {
@@ -107,7 +107,7 @@
   height: auto;
   padding-top: 3%;
   padding-left: 9px;
-  z-index: 1;
+  z-index: 0;
 }
 
 @media (max-width: 837px) {
@@ -149,7 +149,7 @@
   margin-top: -50px;
   margin-left: -30px;
   position: relative;
-  z-index: -1;
+  z-index: -2;
 }
 
 @media (max-width: 768px) {
@@ -229,7 +229,7 @@
   padding: 2px 0 4px 0;
   text-align: center;
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
 @media (max-width: 768px) {
@@ -265,7 +265,7 @@
   .all .camp_area .camp_area_wooden .wooden_text_box .wooden_text_title {
     color: white;
     font-size: 18px;
-    z-index: 1;
+    z-index: 0;
   }
 }
 
@@ -274,7 +274,7 @@
   margin-left: 0;
   margin-top: -45px;
   position: relative;
-  z-index: -1;
+  z-index: -2;
 }
 
 @media (max-width: 768px) {
@@ -481,7 +481,7 @@
   font-size: 32px;
   padding: 10px 15px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 @media (max-width: 1650px) {
@@ -508,7 +508,7 @@
   margin-top: -70px;
   margin-left: -15px;
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
 .all .coffee_area .coffee_img {
@@ -550,7 +550,7 @@
   width: 20vw;
   margin-top: -30vw;
   margin-right: 78%;
-  z-index: -1;
+  z-index: -2;
 }
 
 @media (max-width: 768px) {

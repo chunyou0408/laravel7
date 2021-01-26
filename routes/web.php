@@ -32,9 +32,7 @@ Route::get('/product_detail/{id}','FrontController@productDetail');
 // Route::get('/checkout','FrontController@checkout');
 Route::get('/create_order','FrontController@createOrder');
 
-Route::get('/booking','FrontController@booking');
-Route::post('/booking_search','FrontController@bookingSearch');
-Route::post('/booking_store', 'FrontController@bookingStore');
+
 Route::post('/area_types', 'FrontController@areaTypes');
 
 Route::post('/add_cart','ShoppingCartController@addCart');
@@ -80,6 +78,9 @@ Route::get('/home', 'HomeController@userIndex');
 
 Route::group(['middleware' => ['auth'],'prefix'=>'/'], function () {
     Route::get('/checkout','FrontController@checkout');
+    Route::get('/booking','FrontController@booking');
+    Route::post('/booking_search','FrontController@bookingSearch');
+    Route::post('/booking_store', 'FrontController@bookingStore');
 });
 
 

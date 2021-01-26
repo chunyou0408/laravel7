@@ -61,7 +61,6 @@
 
 
                 @media (max-width: 768px){
-                    z-index: initial;
                     width: 85%;
                     margin: auto;
                     display: initial;
@@ -81,7 +80,6 @@
                     padding-left: 9px;
                     z-index: 1;
                     @media (max-width: 837px){
-                        z-index: initial;
                         padding-left: 0;
                         padding-top: 0;
                     }
@@ -109,7 +107,6 @@
                         position: relative ;
                         z-index: -1;
                         @media (max-width: 768px){
-                            z-index: initial;
                             width: 140px;
 
                             margin-top:-35px;
@@ -172,7 +169,6 @@
                     z-index: 1;
 
                     @media (max-width: 768px){
-                        z-index: initial;
                         width: 100%;
                         height: 150px;
                         min-width:initial;
@@ -204,7 +200,6 @@
                         z-index:-1;
 
                         @media (max-width: 768px){
-                            z-index: initial;
                             width: 140px;
                         }
 
@@ -365,7 +360,6 @@
                     @media (max-width: 768px){
                         font-size: $h4;
                         padding:1.5vw 2vw;
-                        z-index: initial;
                     }
                     @media (max-width: 360px){
                         font-size: $h6;
@@ -408,7 +402,6 @@
                 margin-right: 78%;
                 z-index: -1;
                 @media (max-width: 768px){
-                    z-index: initial;
                     display:none ;
                 }
                 img{

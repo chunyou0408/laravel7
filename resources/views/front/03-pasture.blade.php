@@ -156,7 +156,7 @@
 
 
 
-                console.log(tt+"總長:"+scrollheight+"a1:"+a1y+" a2:"+a2y);
+                // console.log(tt+"總長:"+scrollheight+"a1:"+a1y+" a2:"+a2y);
                 lax.init()
 
                 // Add a driver that we use to control our animations

@@ -70,18 +70,21 @@ class ProductController extends Controller
 
         //其他圖片
         if($request->hasFile('imgs')){
-            $count = 0;
+            // $count = 0;
             foreach ($request->imgs as $img){
 
-                $imageName = time().$count.'.'.$img->getClientOriginalExtension();
-                $img->move(public_path('/uploaded_images'), $imageName);
-                $product->img = '/uploaded_images/'.$imageName;
+                // $imageName = time().$count.'.'.$img->getClientOriginalExtension();
+                // $img->move(public_path('/uploaded_images'), $imageName);
+                // $product->img = '/uploaded_images/'.$imageName;
+
+                $image = \Imgur::upload($img);
 
                 ProductImg::create([
                     'product_id'=>$product->id,
-                    'url'=>$product->img,
+                    'url'=>$image->link(),
                 ]);
-                $count =$count + 1;
+
+                // $count =$count + 1;
                 // $filePath=Storage::disk('public')->put('/images/product', $img);
 
                 // ProductImg::create([
@@ -162,11 +165,13 @@ class ProductController extends Controller
         //$request->hasFile() 查詢是否有檔案
         if ($request->hasFile('img')){
             //刪除舊圖片
-            if(file_exists(public_path().$product->img)){
-                if(public_path().$product->img != 'C:\github\laravel7\public/images/no-image-found-360x250.png'){
-                    File::delete(public_path().$product->img);
-                };
-            }
+
+            // if(file_exists(public_path().$product->img)){
+            //     if(public_path().$product->img != 'C:\github\laravel7\public/images/no-image-found-360x250.png'){
+            //         File::delete(public_path().$product->img);
+            //     };
+            // }
+
             //儲存圖片取得路徑
             //disk指定位置
             //put 存放檔案
@@ -176,9 +181,12 @@ class ProductController extends Controller
             //更新圖片路徑
             // $product->img = Storage::url($fileName);
 
-            $imageName = time().'.'.$request->img->getClientOriginalExtension();
-            $request->img->move(public_path('/uploaded_images'), $imageName);
-            $product->img = '/uploaded_images/'.$imageName;
+            // $imageName = time().'.'.$request->img->getClientOriginalExtension();
+            // $request->img->move(public_path('/uploaded_images'), $imageName);
+            // $product->img = '/uploaded_images/'.$imageName;
+
+            $image = \Imgur::upload($request->file('img'));
+            $product->img = $image->link();
         }
 
         $product->save();
@@ -187,18 +195,19 @@ class ProductController extends Controller
 
         //其他圖片
         if($request->hasFile('imgs')){
-            $count = 0;
+            // $count = 0;
             foreach ($request->imgs as $img){
 
-                $imageName = time().$count.'.'.$img->getClientOriginalExtension();
-                $img->move(public_path('/uploaded_images'), $imageName);
-                $product->img = '/uploaded_images/'.$imageName;
+                // $imageName = time().$count.'.'.$img->getClientOriginalExtension();
+                // $img->move(public_path('/uploaded_images'), $imageName);
+                // $product->img = '/uploaded_images/'.$imageName;
+                $image = \Imgur::upload($img);
 
                 ProductImg::create([
                     'product_id'=>$product->id,
-                    'url'=>$product->img,
+                    'url'=>$image->link(),
                 ]);
-                $count =$count + 1;
+                // $count =$count + 1;
                 // $filePath=Storage::disk('public')->put('/images/product', $img);
 
                 // ProductImg::create([

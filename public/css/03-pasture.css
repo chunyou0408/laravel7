@@ -85,7 +85,6 @@
 
 @media (max-width: 768px) {
   .all .camp_area .camp_area_grass {
-    z-index: initial;
     width: 85%;
     margin: auto;
     display: initial;
@@ -113,7 +112,6 @@
 
 @media (max-width: 837px) {
   .all .camp_area .camp_area_grass .grass_text_box {
-    z-index: initial;
     padding-left: 0;
     padding-top: 0;
   }
@@ -156,7 +154,6 @@
 
 @media (max-width: 768px) {
   .all .camp_area .camp_area_grass .grass_text_box .grass_text_title_underline {
-    z-index: initial;
     width: 140px;
     margin-top: -35px;
     margin-left: 0;
@@ -237,7 +234,6 @@
 
 @media (max-width: 768px) {
   .all .camp_area .camp_area_wooden .wooden_text_box {
-    z-index: initial;
     width: 100%;
     height: 150px;
     min-width: initial;
@@ -283,7 +279,6 @@
 
 @media (max-width: 768px) {
   .all .camp_area .camp_area_wooden .wooden_text_box .wooden_text_title_underline {
-    z-index: initial;
     width: 140px;
   }
 }
@@ -499,7 +494,6 @@
   .all .coffee_area .coffee_area_background_color .coffee_area_title {
     font-size: 22px;
     padding: 1.5vw 2vw;
-    z-index: initial;
   }
 }
 
@@ -561,7 +555,6 @@
 
 @media (max-width: 768px) {
   .all .coffee_area .coffee_area_background_img {
-    z-index: initial;
     display: none;
   }
 }

@@ -53,9 +53,12 @@ class NewsController extends Controller
             // $news->save();
 
 
-            $imageName = time().'.'.$request->img->getClientOriginalExtension();
-            $request->img->move(public_path('/uploaded_images'), $imageName);
-            $news->img = '/uploaded_images/'.$imageName;
+            // $imageName = time().'.'.$request->img->getClientOriginalExtension();
+            // $request->img->move(public_path('/uploaded_images'), $imageName);
+            // $news->img = '/uploaded_images/'.$imageName;
+
+            $image = \Imgur::upload($request->file('img'));
+            $news->img = $image->link();
             $news->save();
 
         }else{
@@ -111,13 +114,16 @@ class NewsController extends Controller
         $news->date = $request->date;
 
         //$request->hasFile() 查詢是否有檔案
+
         if ($request->hasFile('img')){
+
         //刪除舊圖片
-        if(file_exists(public_path().$news->img)){
-            if(public_path().$news->img != 'C:\github\laravel7\public/images/no-image-found-360x250.png'){
-                File::delete(public_path().$news->img);
-            };
-        }
+        // if(file_exists(public_path().$news->img)){
+        //     if(public_path().$news->img != 'C:\github\laravel7\public/images/no-image-found-360x250.png'){
+        //         File::delete(public_path().$news->img);
+        //     };
+        // }
+
         //儲存圖片取得路徑
         //disk指定位置
         //put 存放檔案
@@ -127,9 +133,11 @@ class NewsController extends Controller
         //更新圖片路徑
         // $news->img = Storage::url($fileName);
 
-        $imageName = time().'.'.$request->img->getClientOriginalExtension();
-        $request->img->move(public_path('/uploaded_images'), $imageName);
-        $news->img = '/uploaded_images/'.$imageName;
+        // $imageName = time().'.'.$request->img->getClientOriginalExtension();
+        // $request->img->move(public_path('/uploaded_images'), $imageName);
+        // $news->img = '/uploaded_images/'.$imageName;
+        $image = \Imgur::upload($request->file('img'));
+        $news->img = $image->link();
         }
 
         $news->save();

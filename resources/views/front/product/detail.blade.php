@@ -99,10 +99,10 @@
                     <div class="swiper-slide" style="background-image:url({{secure_asset($product->img)}})"></div>
 
                     @foreach ($product->productImgs as $productImg)
-                        @if (file_exists(public_path().$productImg->url))
+                        {{-- @if (file_exists(public_path().$productImg->url)) --}}
                             <div class="swiper-slide" style="background-image:url({{secure_asset($productImg->url)}})"></div>
-                        @endif
-                    
+                        {{-- @endif --}}
+
                     @endforeach
                 </div>
                 <!-- Add Arrows -->
@@ -113,9 +113,9 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide" style="background-image:url({{secure_asset($product->img)}})"></div>
                     @foreach ($product->productImgs as $productImg)
-                    @if (file_exists(public_path().$productImg->url))
+                    {{-- @if (file_exists(public_path().$productImg->url)) --}}
                         <div class="swiper-slide" style="background-image:url({{secure_asset($productImg->url)}})"></div>
-                    @endif
+                    {{-- @endif --}}
                     @endforeach
                 </div>
             </div>

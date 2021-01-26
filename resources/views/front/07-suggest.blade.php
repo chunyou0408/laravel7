@@ -24,7 +24,7 @@
                         </div>
 
                     </div>
-                    <form class="text-bottom" action="/admin/suggest/store" method="post">
+                    <form class="text-bottom" action="/suggest/store" method="post">
                         @csrf
                         <div class="contact-information">
                             <div class="contact1 contact-box">

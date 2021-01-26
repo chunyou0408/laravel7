@@ -117,7 +117,7 @@
         // }
 
         // //當滾動卷軸時,將全版版面往上捲
-      
+
         // $(document).ready(function () {
         //   console.log("123");
         //   window.setTimeout(function () {
@@ -129,10 +129,16 @@
         //   var body = document.querySelector('body');
         //   // body.classList.add('active')
         //   header.classList.add('active')
-          
+
 
         // });
-        
+
+
+
+        // $(window).scroll(function() {
+        //     console.log(123);
+        // });
+
     </script>
 
 @endsection

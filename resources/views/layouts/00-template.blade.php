@@ -73,7 +73,7 @@
 
         </nav>
         <nav class="nav02">
-            <div class="fold_area">
+            <div class="fold_area" id="fold_area">
                 <img src="../img/00/bars-solid.svg" alt="" height="100%">
             </div>
             <a href="/">
@@ -279,16 +279,16 @@
             }
         }
 
-        nav02_news.onclick = function () {
-            if (!nav02_news.classList.contains('active')) {
+        // nav02_news.onclick = function () {
+        //     if (!nav02_news.classList.contains('active')) {
 
-                nav02_news.classList.add('active')
-                nav02_news_box.classList.add('active')
-            } else {
-                nav02_news.classList.remove('active')
-                nav02_news_box.classList.remove('active')
-            }
-        }
+        //         nav02_news.classList.add('active')
+        //         nav02_news_box.classList.add('active')
+        //     } else {
+        //         nav02_news.classList.remove('active')
+        //         nav02_news_box.classList.remove('active')
+        //     }
+        // }
 
 
         booking_icon.onmouseover = function () {
@@ -332,6 +332,16 @@
         }
 
 
+
+        //當滾輪啟動時,收起漢堡條方塊
+        $(document).ready(function(){
+            $(window).scroll(function() {
+                $('#nav02_box').removeAttr('class');
+                $('#fold_area').attr('class' ,'fold_area');
+                // $('nav02_news').classList.remove('active')
+                // nav02_news_box.classList.remove('active')
+            });
+        });
 
 
         //偵測畫面寬度

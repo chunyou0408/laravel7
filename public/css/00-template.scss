@@ -73,6 +73,7 @@ body {
         // background-color: lightskyblue;
         width: 100%;
 
+
         @media (max-width: 768px) {
           width: auto;
           height: 100%;
@@ -301,8 +302,9 @@ body {
       .fold_area {
         height: 100%;
         width: 100px;
-
+        position: relative;
         padding: 10px 25px;
+
         &.active {
           background-color:#b5b5b6;
         }
@@ -310,6 +312,10 @@ body {
 
       .logo_area {
         display: flex;
+        position: absolute;
+
+        top: 0;
+        left: calc(50% - 32px);
 
         // background-color: lightseagreen;
         img {
@@ -323,6 +329,7 @@ body {
 
       top: 80px;
       left: -600px;
+      z-index: 500;
       width: 100%;
       height: calc(100vh - 80px);
       text-align: center;
@@ -334,6 +341,7 @@ body {
       font-size: 60px;
       background-color: $footer-bg-color;
       transition: 1s;
+
       li {
         padding: 10px 0;
         border: 1px solid black;
@@ -560,7 +568,6 @@ width: calc(100% - 175px);
         display: none;
       }
     }
-
   }
   ul {
     list-style: none;

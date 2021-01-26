@@ -96,10 +96,10 @@
             <!-- Swiper -->
             <div class="swiper-container gallery-top">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url({{$product->img}})"></div>
+                    <div class="swiper-slide" style="background-image:url({{secure_asset($product->img)}})"></div>
 
                     @foreach ($product->productImgs as $productImg)
-                    <div class="swiper-slide" style="background-image:url({{$productImg->url}})"></div>
+                    <div class="swiper-slide" style="background-image:url({{secure_asset($productImg->url)}})"></div>
                     @endforeach
                 </div>
                 <!-- Add Arrows -->
@@ -108,9 +108,9 @@
             </div>
             <div class="swiper-container gallery-thumbs">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url({{$product->img}})"></div>
+                    <div class="swiper-slide" style="background-image:url({{secure_asset($product->img)}})"></div>
                     @foreach ($product->productImgs as $productImg)
-                    <div class="swiper-slide" style="background-image:url({{$productImg->url}})"></div>
+                    <div class="swiper-slide" style="background-image:url({{secure_asset($productImg->url)}})"></div>
                     @endforeach
                 </div>
             </div>

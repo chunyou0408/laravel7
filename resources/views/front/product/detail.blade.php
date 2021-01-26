@@ -128,7 +128,7 @@
     </div>
     <div class="product_description_area">
         <div class="product_description_text">
-            <h1>產品描述:</h1><h3>{{$product->description}}</h3>
+            <h1>產品描述:</h1><h3>{!!$product->description!!}</h3>
         </div>
     </div>
 </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endsection
 
 @section('main')
@@ -79,5 +79,10 @@
 @endsection
 
 @section('js')
-
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#description').summernote();
+    });
+</script>
 @endsection

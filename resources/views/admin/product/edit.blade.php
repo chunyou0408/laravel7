@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <style>
     .img_area{
         position: relative;
@@ -129,6 +130,13 @@
 @endsection
 
 @section('js')
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#description').summernote();
+    });
+</script>
+
 <script>
     var del_btns= document.querySelectorAll('.del_btn');
     del_btns.forEach(function(del_btn){
@@ -163,6 +171,10 @@
 
     //     });
     // });
+
+
+
+
 
 </script>
 @endsection

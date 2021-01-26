@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/img\00\icon\tree.png" type="image/x-icon"/>
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 
     <!-- import font awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -179,10 +179,10 @@
                 $getTotalQty=\Cart::getTotalQuantity();
                 ?>
                     <i class="shopping_cart">
-                        {{-- <img src="{{asset("./uploaded_images/cart1.png")}}" alt="" width="100%">
-                        <img src="{{asset("./uploaded_images/cart2.png")}}" alt="" width="100%"> --}}
-                        <img src="{{asset("../img/00/icon/shopping_icon.png")}}" alt="" width="100%">
-                        <img src="{{asset("../img/00/icon/shopping_icon_hover.png")}}" alt="" width="100%">
+                        {{-- <img src="{{secure_asset("./uploaded_images/cart1.png")}}" alt="" width="100%">
+                        <img src="{{secure_asset("./uploaded_images/cart2.png")}}" alt="" width="100%"> --}}
+                        <img src="{{secure_asset("../img/00/icon/shopping_icon.png")}}" alt="" width="100%">
+                        <img src="{{secure_asset("../img/00/icon/shopping_icon_hover.png")}}" alt="" width="100%">
                         <div class="qty">{{$getTotalQty}}</div>
                     </i>
                 </a>
@@ -244,7 +244,7 @@
 
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ secure_asset('js/app.js') }}"></script>
 
     {{-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> --}}
 

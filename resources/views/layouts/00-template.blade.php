@@ -112,7 +112,7 @@
                         </li>
                         @guest
                         <li class="nav-item">
-                            <a href="{{ route('login') }}"><img class="user_icon" src="/img/00/icon/user_icon.png" alt="" width="27px"></a>
+                            <a href="/member"><img class="user_icon" src="/img/00/icon/user_icon.png" alt="" width="27px"></a>
                         </li>
                     @else
                     <?php $type = Auth::user()->type;?>

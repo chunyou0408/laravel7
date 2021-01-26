@@ -6,7 +6,15 @@
     <link rel="stylesheet" href="./css/01-index.css">
     <!-- import Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <style>
+      body{
+        /* overflow: hidden; */
+      }
+      body.active{
+        /* overflow: auto; */
+      }
 
+    </style>
 @endsection
 
 @section('banner')
@@ -107,10 +115,22 @@
         // }
 
         //當滾動卷軸時,將全版版面往上捲
-        $(window).scroll(function(){
-            header.classList.add('active')
+      
+        $(document).ready(function () {
+          console.log("123");
+          window.setTimeout(function () {
+            $(window).scrollTop(0);
+            console.log("123");
+          },300);
         });
+        window.addEventListener('wheel',function () {
+          var body = document.querySelector('body');
+          // body.classList.add('active')
+          header.classList.add('active')
+          
 
+        });
+        
     </script>
 
 @endsection

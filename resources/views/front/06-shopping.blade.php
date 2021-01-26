@@ -21,9 +21,11 @@
                 <div class="cards row">
                     @foreach ($products as $product)
                     <div class="card col-6 col-md-4 col-lg-3">
-                        <div class="card-img-top">
-                            <img src="{{$product->img}}" width="100%" alt="">
-                        </div>
+                        <a href="/product_detail/{{$product->id}}">
+                            <div class="card-img-top">
+                                <img src="{{$product->img}}" width="100%" alt="">
+                            </div>
+                        </a>
                         <div class="card-body">
                             <h5 class="card-title">{{$product->name}}</h5>
                             <p class="card-text">NT${{$product->price}}</p>
@@ -87,45 +89,40 @@
         addCartBtns.forEach(function (addCartBtn){
             addCartBtn.onclick=function(){
                 //如果沒有登入狀態,轉址到登入畫面 
-                if('{{Auth::guest()}}'!= '1' ){
-                    var id =this.getAttribute('data-id');
-                    // var qty =parseInt(this.previousSibling.previousSibling.value);
-                    var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-                    var qty =parseInt(this.parentNode.previousSibling.previousSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.value);
 
-                    var formData = new FormData;
-                    formData.append('id',id);
-                    formData.append('qty',qty);
-                    formData.append('_token',_token);
+                var id =this.getAttribute('data-id');
+                // var qty =parseInt(this.previousSibling.previousSibling.value);
+                var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                var qty =parseInt(this.parentNode.previousSibling.previousSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.value);
 
-                    console.log(formData);
+                var formData = new FormData;
+                formData.append('id',id);
+                formData.append('qty',qty);
+                formData.append('_token',_token);
 
-                    fetch('/add_cart', {
-                        method:'POST',
-                        body:formData,
-                    })
-                    .then(function (response){
-                        return response.text()
-                    })
-                    .catch(function (error){
-                        console.log('錯誤:',error);
-                    })
-                    .then(function(data){
-                        //回傳的資料
-                        if(data == "false"){
-                            //fales(代表找不到產品)
-                            alert('找不到該項產品');
-                        }else{
-                            //車子有多少數量的商品
-                            $('.shopping_cart .qty').text(data);
-                        }
-                        console.log('成功:',data);
-                    });
+                console.log(formData);
 
-                }else{
-                    console.log('請登入');
-                    document.location.href="/login";
-                }
+                fetch('/add_cart', {
+                    method:'POST',
+                    body:formData,
+                })
+                .then(function (response){
+                    return response.text()
+                })
+                .catch(function (error){
+                    console.log('錯誤:',error);
+                })
+                .then(function(data){
+                    //回傳的資料
+                    if(data == "false"){
+                        //fales(代表找不到產品)
+                        alert('找不到該項產品');
+                    }else{
+                        //車子有多少數量的商品
+                        $('.shopping_cart .qty').text(data);
+                    }
+                    console.log('成功:',data);
+                });
             }
         });
         </script>

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Closure;
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
@@ -48,7 +51,8 @@ class LoginController extends Controller
         if(Auth::user()->type == 'admin'){
             return '/admin';
         }else{
-            return '/';
+            // return $next($request);
         }
     }
+
 }

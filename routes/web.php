@@ -41,7 +41,10 @@ Route::post('/add_cart','ShoppingCartController@addCart');
 Route::post('/del_cart','ShoppingCartController@delCart');
 Route::post('/update_cart','ShoppingCartController@updateCart');
 
-
+Route::get('/member',function ()
+{
+    return redirect('/');
+})->middleware('auth');
 
 Auth::routes([
     // 'register' => false,
@@ -75,7 +78,7 @@ Route::get('/home', 'HomeController@userIndex');
 
 
 Route::group(['middleware' => ['auth'],'prefix'=>'/'], function () {
-Route::get('/checkout','FrontController@checkout');
+    Route::get('/checkout','FrontController@checkout');
 });
 
 

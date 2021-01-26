@@ -71,7 +71,7 @@ class FrontController extends Controller
         return view('front.07-suggest');
     }
 
-    public function suggest_store($request){
+    public function suggest_store(Request $request){
         Suggest::create($request->all());
         return redirect('/suggest');
     }

@@ -56,18 +56,18 @@
 
     .swiper {
         width: 40%;
-        height: 60vh;
+        height: 50vh;
     }
 
     .product_name_swiper {
+        padding-top: 100px;
+        /* width: auto; */
         display: flex;
     }
 
     .text{
         display: flex;
         flex-direction: column;
-
-
     }
 
     .product_name_area {
@@ -75,59 +75,63 @@
     }
 
     .product_name_text,
-    .product_price_text {}
+    .product_price_text {
+
+    }
 
     .product_description_text {
         border: 1px solid black;
         padding: 10px 100px;
     }
     .product_description_text h1{
-
     }
 </style>
 @endsection
 
 @section('main')
 
+<div class="container">
+    <div class="product_name_swiper">
+        <div class="swiper">
+            <!-- Swiper -->
+            <div class="swiper-container gallery-top">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url({{$product->img}})"></div>
 
-<div class="product_name_swiper">
-    <div class="swiper">
-        <!-- Swiper -->
-        <div class="swiper-container gallery-top">
-            <div class="swiper-wrapper">
-                @foreach ($product->productImgs as $productImg)
-                <div class="swiper-slide" style="background-image:url({{$productImg->url}})"></div>
-                @endforeach
+                    @foreach ($product->productImgs as $productImg)
+                    <div class="swiper-slide" style="background-image:url({{$productImg->url}})"></div>
+                    @endforeach
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
             </div>
-            <!-- Add Arrows -->
-            <div class="swiper-button-next swiper-button-white"></div>
-            <div class="swiper-button-prev swiper-button-white"></div>
+            <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url({{$product->img}})"></div>
+                    @foreach ($product->productImgs as $productImg)
+                    <div class="swiper-slide" style="background-image:url({{$productImg->url}})"></div>
+                    @endforeach
+                </div>
+            </div>
         </div>
-        <div class="swiper-container gallery-thumbs">
-            <div class="swiper-wrapper">
-                @foreach ($product->productImgs as $productImg)
-                <div class="swiper-slide" style="background-image:url({{$productImg->url}})"></div>
-                @endforeach
+        <div class="product_name_area">
+            <div class="text">
+                <div class="product_name_text">
+                    <h1>商品名稱:{{$product->name}}</h1>
+                </div>
+                <div class="product_price_text">
+                    <h1>價格:{{$product->price}}元</h1>
+                </div>
             </div>
         </div>
     </div>
-    <div class="product_name_area">
-        <div class="text">
-            <div class="product_name_text">
-                <h1>商品名稱:{{$product->name}}</h1>
-            </div>
-            <div class="product_price_text">
-                <h1>價格:{{$product->price}}元</h1>
-            </div>
+    <div class="product_description_area">
+        <div class="product_description_text">
+            <h1>產品描述:</h1><h3>{{$product->description}}</h3>
         </div>
     </div>
 </div>
-<div class="product_description_area">
-    <div class="product_description_text">
-        <h1>產品描述:</h1><h3>{{$product->description}}</h3>
-    </div>
-</div>
-
 
 @endsection
 

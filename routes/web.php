@@ -72,7 +72,6 @@ Route::get('/shopping','FrontController@shopping');
 Route::get('/suggest','FrontController@suggest');
 Route::post('/suggest/store', 'FrontController@suggest_store');
 
-
 Route::get('/home', 'HomeController@userIndex');
 
 

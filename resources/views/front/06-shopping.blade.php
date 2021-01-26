@@ -33,12 +33,12 @@
                         <div class="card-footer">
                             <div class="button_content">
                                 <div class="buy_button">
-                                    <div id="buy_button_left" class="buy_button_left hvr-pop">+</div>
+                                    <div id="buy_button_left" class="buy_button_left hvr-pop">-</div>
                                     <div class="input_area">
                                         <input type="text" class="buy_button_quantity" id="buy_button_quantity"
                                             value="0">
                                     </div>
-                                    <div id="buy_button_right" class="buy_button_right hvr-pop">-</div>
+                                    <div id="buy_button_right" class="buy_button_right hvr-pop">+</div>
                                 </div>
                             </div>
                             <div class="confirm">
@@ -71,13 +71,13 @@
                 let target = e.target;
 
                 if (target.classList.contains('buy_button_right')) {
+                    buy_button_quantity[i].value++;
 
+                } else if (target.classList.contains('buy_button_left')) {
+                    
                     if (buy_button_quantity[i].value > 0) {
                         buy_button_quantity[i].value--;
                     }
-
-                } else if (target.classList.contains('buy_button_left')) {
-                    buy_button_quantity[i].value++;
                 }
 
             });

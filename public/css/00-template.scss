@@ -595,7 +595,7 @@ width: calc(100% - 175px);
     color: black;
     font-size: 48px;
     position: fixed;
-    right: 40px;
+    right: 30px;
     bottom: 30vh;
     z-index: 9999;
 }
@@ -616,14 +616,14 @@ width: calc(100% - 175px);
 .shopping_cart .qty{
     position: absolute;
     color: #000;
-    width:35px;
-    height: 35px;
+    width:30px;
+    height: 30px;
     border: 1px solid #000;
     border-radius: 50%;
     background: #FFF;
     font-size: 16px;
     top:0;
-    right: 0;
+    right: 10px;
     transform: translate(40%,-40%);
     display: flex;
     justify-content: center;

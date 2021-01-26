@@ -683,7 +683,7 @@ main .box {
   color: black;
   font-size: 48px;
   position: fixed;
-  right: 40px;
+  right: 30px;
   bottom: 30vh;
   z-index: 9999;
 }
@@ -707,14 +707,14 @@ main .box {
 .shopping_cart .qty {
   position: absolute;
   color: #000;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border: 1px solid #000;
   border-radius: 50%;
   background: #FFF;
   font-size: 16px;
   top: 0;
-  right: 0;
+  right: 10px;
   -webkit-transform: translate(40%, -40%);
           transform: translate(40%, -40%);
   display: -webkit-box;

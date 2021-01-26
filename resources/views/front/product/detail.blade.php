@@ -92,6 +92,10 @@
             display: block;
         }
 
+        .swiper {
+        width: 100%;
+        }
+
 
     }
 </style>

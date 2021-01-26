@@ -6,6 +6,7 @@ use App\News;
 use App\Order;
 use App\Booking;
 use App\Product;
+use App\Suggest;
 use App\AreaType;
 use Carbon\Carbon;
 use App\OrderDetail;
@@ -68,6 +69,11 @@ class FrontController extends Controller
 
     public function suggest(){
         return view('front.07-suggest');
+    }
+
+    public function suggest_store($request){
+        Suggest::create($request->all());
+        return redirect('/suggest');
     }
 
     // public function news()

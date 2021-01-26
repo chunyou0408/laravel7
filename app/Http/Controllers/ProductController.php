@@ -48,7 +48,6 @@ class ProductController extends Controller
         $product = Product::create($request->all());
 
 
-
         //主要圖片
         if($request->hasFile('img')){
             // $filePath=Storage::disk('public')->put('/images/product', $request->file('img'));

@@ -48,9 +48,21 @@
                     </div>
                     @endforeach
                 </div>
+            </div>
 
-
-
+            <div class="shopping_cart">
+                <a href="/checkout">
+                <?php
+                $getTotalQty=\Cart::getTotalQuantity();
+                ?>
+                    <i class="shopping_cart">
+                        {{-- <img src="{{secure_asset("./uploaded_images/cart1.png")}}" alt="" width="100%">
+                        <img src="{{secure_asset("./uploaded_images/cart2.png")}}" alt="" width="100%"> --}}
+                        <img src="{{secure_asset("../img/00/icon/shopping_icon.png")}}" alt="" width="80%">
+                        <img src="{{secure_asset("../img/00/icon/shopping_icon_hover.png")}}" alt="" width="80%">
+                        <div class="qty">{{$getTotalQty}}</div>
+                    </i>
+                </a>
             </div>
         </section>
         @endsection

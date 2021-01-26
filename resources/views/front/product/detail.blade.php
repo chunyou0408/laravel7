@@ -84,6 +84,15 @@
         padding: 10px 100px;
     }
     .product_description_text h1{
+
+    }
+
+    @media (max-width: 768px) {
+        .product_name_swiper{
+            display: block;
+        }
+
+
     }
 </style>
 @endsection

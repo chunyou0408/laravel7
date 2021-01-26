@@ -17,7 +17,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.4",
-        "tsaiyihua/laravel-ecpay": "^2.4"
+        "tsaiyihua/laravel-ecpay": "^2.4",
+        "yish/imgur": "1.1.x"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

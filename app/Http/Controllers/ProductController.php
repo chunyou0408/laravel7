@@ -56,11 +56,11 @@ class ProductController extends Controller
                 // $product->img = Storage::url($fileName);
                 // 或
                 // $product->img = '/storage/'.$fileName;
+            $image = \Imgur::upload($request->file('img'));
 
-
-            $imageName = time().'.'.$request->img->getClientOriginalExtension();
-            $request->img->move(public_path('/uploaded_images'), $imageName);
-            $product->img = '/uploaded_images/'.$imageName;
+            // $imageName = time().'.'.$request->img->getClientOriginalExtension();
+            // $request->img->move(public_path('/uploaded_images'), $imageName);
+            $product->img = $image->link();
             $product->save();
 
         }else{

@@ -11,7 +11,7 @@
         <section>
             <div class="container">
                 <div class="nav">
-                    <div class="nav_bg ">
+                    <div class="nav_bg">
                         <img src="./img/06/野餐-01.jpg" alt="" width="100%">
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                     @foreach ($products as $product)
                     <div class="card col-6 col-md-4 col-lg-3">
                         <a href="/product_detail/{{$product->id}}">
-                            <div class="card-img-top">
+                            <div class="card-img-top hvr-push">
                                 <img src="{{$product->img}}" width="100%" alt="">
                             </div>
                         </a>
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                             <div class="confirm">
-                                <a href="#" class=" btn btn-primary add_cart" data-id={{$product->id}}>選購</a>
+                                <a href="#" class=" btn btn-primary add_cart hvr-wobble-top" data-id={{$product->id}}>選購</a>
                             </div>
                         </div>
                     </div>

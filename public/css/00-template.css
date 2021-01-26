@@ -3,6 +3,10 @@
           box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -332,11 +336,14 @@ body .nav01 .box2 p {
 }
 
 body .nav02 {
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   z-index: 1000;
   display: none;
   width: 100%;
   height: 80px;
+  background-color: white;
 }
 
 @media (max-width: 768px) {

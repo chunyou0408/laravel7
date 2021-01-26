@@ -446,24 +446,24 @@
         createBooking_btn.onclick=function(){
 
             var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            var name = document.querySelector('#name').value;
-            var phone = document.querySelector('#phone').value;
-            var area_id = document.querySelector('#area_id').value;
-            var email= document.querySelector('#email').value;
-            var date = document.querySelector('#date').value;
+            var name = document.querySelector('#name');
+            var phone = document.querySelector('#phone');
+            var area_id = document.querySelector('#area_id');
+            var email= document.querySelector('#email');
+            var date = document.querySelector('#date');
 
             //判斷表單有沒有沒填入的資料
-            if (name == "" || phone == "" || area_id == "" || email == "" || date == "") {
+            if (name.value == "" || phone.value == "" || area_id.value == "" || email.value == "" || date.value == "") {
                 alert('有資料還沒輸入');
             }else{
                 //建立表單
                 var formData = new FormData;
                 //存入資料庫
-                formData.append('name',name);
-                formData.append('phone',phone);
-                formData.append('email',email);
-                formData.append('area_id',area_id);
-                formData.append('date',date);
+                formData.append('name',name.value);
+                formData.append('phone',phone.value);
+                formData.append('email',email.value);
+                formData.append('area_id',area_id.value);
+                formData.append('date',date.value);
                 formData.append('_token',_token);
 
                 fetch('/booking_store', {
@@ -491,6 +491,12 @@
                     modal.find('.modal-body .email').text(data.email)
                     modal.find('.modal-body .area_id').text(data.area_type.name)
                     modal.find('.modal-body .date').text(data.date)
+                    name.value = "";
+                    phone.value = "";
+                    area_id.value = "";
+                    email.value = "";
+                    date.value = "";
+
                 });
             }
         }

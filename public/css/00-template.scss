@@ -2,6 +2,9 @@
 * {
   box-sizing: border-box;
 }
+html{
+  scroll-behavior: smooth;
+}
 body {
     padding: 0;
     margin: 0;
@@ -12,6 +15,7 @@ body {
     font-family: 'Microsoft JhengHei';
 
     overflow-x: hidden;
+
 
     //防止反白
     -webkit-user-select:none;
@@ -278,11 +282,13 @@ body {
     }
   }
   .nav02 {
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 1000;
     display: none;
     width: 100%;
     height: 80px;
+    background-color: white;
 
     // background-color: lightgrey;
 
@@ -487,29 +493,6 @@ body {
 
       }
 
-
-    // .footer_middle {
-    //   width: 372px;
-    //   padding-left:2px;
-    //   @media (max-width: 950px) {
-    //     width:55%;
-    //     padding-top: 5%;
-    //     padding-left:0;
-    //   }
-    //   @media (max-width: 768px) {
-    //     width: auto;
-    //   }
-    //   ul {
-    //     li {
-    //       display: flex;
-    //       align-items: center;
-
-    //       div {
-    //         padding-left: 22px;
-    //       }
-    //     }
-    //   }
-    // }
     .footer_right{
       width: 263px;
       padding-left:2px;

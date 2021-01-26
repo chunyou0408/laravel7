@@ -18,6 +18,7 @@
 @endsection
 
 @section('banner')
+<a href="#main">
   <header>
     <div class="above">
 
@@ -41,25 +42,26 @@
 
         </div>
   </header>
+</a>
  @endsection
 
   @section('main')
-
-    <div class="below">
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" ><img src="./img/01/grassland.jpg" alt="" width="100%"></div>
-          <div class="swiper-slide" ><img src="./img/01/tent.jpg" alt="" width="100%"></div>
-          <div class="swiper-slide" ><img src="./img/01/coffee_shop.jpg" alt="" width="100%"></div>
-          <div class="swiper-slide" ><img src="./img/01/night.jpg" alt="" width="100%"></div>
-
-        </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+  <div class="space"></div>
+  <div class="below">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" ><img src="./img/01/grassland.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide" ><img src="./img/01/tent.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide" ><img src="./img/01/coffee_shop.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide" ><img src="./img/01/night.jpg" alt="" width="100%"></div>
 
       </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
 
     </div>
+
+  </div>
     <section>
         <div class="map-title">
             <span>MAP</span>
@@ -114,22 +116,22 @@
         //     window.scrollTo(0, 0);
         // }
 
-        //當滾動卷軸時,將全版版面往上捲
+        // //當滾動卷軸時,將全版版面往上捲
       
-        $(document).ready(function () {
-          console.log("123");
-          window.setTimeout(function () {
-            $(window).scrollTop(0);
-            console.log("123");
-          },300);
-        });
-        window.addEventListener('wheel',function () {
-          var body = document.querySelector('body');
-          // body.classList.add('active')
-          header.classList.add('active')
+        // $(document).ready(function () {
+        //   console.log("123");
+        //   window.setTimeout(function () {
+        //     $(window).scrollTop(0);
+        //     console.log("123");
+        //   },300);
+        // });
+        // window.addEventListener('wheel',function () {
+        //   var body = document.querySelector('body');
+        //   // body.classList.add('active')
+        //   header.classList.add('active')
           
 
-        });
+        // });
         
     </script>
 

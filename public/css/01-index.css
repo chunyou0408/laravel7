@@ -7,8 +7,6 @@
 header {
   width: 100%;
   height: auto;
-  position: fixed;
-  z-index: 10000;
   border-bottom: 3px solid #727171;
 }
 
@@ -246,6 +244,12 @@ header .above .text i {
   header .above .text i {
     font-size: 12px;
   }
+}
+
+main .space {
+  width: 100%;
+  height: 60px;
+  background-color: white;
 }
 
 main .below {

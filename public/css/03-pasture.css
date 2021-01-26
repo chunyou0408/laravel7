@@ -80,11 +80,12 @@
   display: flex;
   margin-top: -10px;
   position: relative;
-  z-index: -2;
+  z-index: -1;
 }
 
 @media (max-width: 768px) {
   .all .camp_area .camp_area_grass {
+    z-index: initial;
     width: 85%;
     margin: auto;
     display: initial;
@@ -107,11 +108,12 @@
   height: auto;
   padding-top: 3%;
   padding-left: 9px;
-  z-index: 0;
+  z-index: 1;
 }
 
 @media (max-width: 837px) {
   .all .camp_area .camp_area_grass .grass_text_box {
+    z-index: initial;
     padding-left: 0;
     padding-top: 0;
   }
@@ -149,11 +151,12 @@
   margin-top: -50px;
   margin-left: -30px;
   position: relative;
-  z-index: -2;
+  z-index: -1;
 }
 
 @media (max-width: 768px) {
   .all .camp_area .camp_area_grass .grass_text_box .grass_text_title_underline {
+    z-index: initial;
     width: 140px;
     margin-top: -35px;
     margin-left: 0;
@@ -229,11 +232,12 @@
   padding: 2px 0 4px 0;
   text-align: center;
   position: relative;
-  z-index: 0;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
   .all .camp_area .camp_area_wooden .wooden_text_box {
+    z-index: initial;
     width: 100%;
     height: 150px;
     min-width: initial;
@@ -265,7 +269,7 @@
   .all .camp_area .camp_area_wooden .wooden_text_box .wooden_text_title {
     color: white;
     font-size: 18px;
-    z-index: 0;
+    z-index: 1;
   }
 }
 
@@ -274,11 +278,12 @@
   margin-left: 0;
   margin-top: -45px;
   position: relative;
-  z-index: -2;
+  z-index: -1;
 }
 
 @media (max-width: 768px) {
   .all .camp_area .camp_area_wooden .wooden_text_box .wooden_text_title_underline {
+    z-index: initial;
     width: 140px;
   }
 }
@@ -481,7 +486,7 @@
   font-size: 32px;
   padding: 10px 15px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 @media (max-width: 1650px) {
@@ -494,6 +499,7 @@
   .all .coffee_area .coffee_area_background_color .coffee_area_title {
     font-size: 22px;
     padding: 1.5vw 2vw;
+    z-index: initial;
   }
 }
 
@@ -508,7 +514,7 @@
   margin-top: -70px;
   margin-left: -15px;
   position: relative;
-  z-index: 0;
+  z-index: 1;
 }
 
 .all .coffee_area .coffee_img {
@@ -550,11 +556,12 @@
   width: 20vw;
   margin-top: -30vw;
   margin-right: 78%;
-  z-index: -2;
+  z-index: -1;
 }
 
 @media (max-width: 768px) {
   .all .coffee_area .coffee_area_background_img {
+    z-index: initial;
     display: none;
   }
 }

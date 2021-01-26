@@ -36,7 +36,7 @@
                                 <ul style="list-style-type:square;"></ul>
                                 <li>聯絡電話</li>
                                 <!-- <input class="input-box" type="text" maxlength="10"> -->
-                                <input type="text" class="input-box form-control match-rotation-input" maxlength="10"
+                                <input type="text" class="input-box" maxlength="10"
                                     onkeyup="value=value.replace(/[^\d]/g,'')" onblur="value=value.replace(/[^\d]/g,'')"
                                     ng-model="schedule.round" id="phone" name="phone" required >
                             </div>

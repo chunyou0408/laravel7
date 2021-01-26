@@ -104,10 +104,10 @@
             <section>
                 <div class="icon_area">
                     <ul class="icon_">
-                        <li class="nav-item">
-                            <a href="/shopping"><a href="/booking"><img class="booking_icon" src="/img/00/icon/booking_icon.png" alt="" width="30px"></a></a>
+                        <li class="nav-item booking">
+                            <a href="/booking"><img class="booking_icon" src="/img/00/icon/booking_icon.png" alt="" width="30px"></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item shopping">
                             <a href="/shopping"><img class="shop_icon" src="/img/00/icon/shop_icon.png" alt="" width="35px"></a>
                         </li>
                         @guest

@@ -549,6 +549,18 @@ width: calc(100% - 175px);
     // background-color: aqua;
     z-index: 2000;
     position: relative;
+
+    .booking{
+      @media (max-width: 580px) {
+        display: none;
+      }
+    }
+    .shopping{
+      @media (max-width: 580px) {
+        display: none;
+      }
+    }
+
   }
   ul {
     list-style: none;

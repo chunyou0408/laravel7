@@ -636,6 +636,18 @@ main .icon_area {
   position: relative;
 }
 
+@media (max-width: 580px) {
+  main .icon_area .booking {
+    display: none;
+  }
+}
+
+@media (max-width: 580px) {
+  main .icon_area .shopping {
+    display: none;
+  }
+}
+
 main ul {
   list-style: none;
   margin: 16px 0;

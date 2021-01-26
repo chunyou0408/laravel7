@@ -137,7 +137,7 @@ class NewsController extends Controller
         // $request->img->move(public_path('/uploaded_images'), $imageName);
         // $news->img = '/uploaded_images/'.$imageName;
         $image = \Imgur::upload($request->file('img'));
-        $news->img = $image->link();
+        $news->img = '$image->link()';
         }
 
         $news->save();

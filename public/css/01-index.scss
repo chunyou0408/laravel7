@@ -39,6 +39,10 @@ header{
             background-repeat: no-repeat;
             background-image: url('../img/01/index_photo.jpg');
 
+            @media (max-width: 768px){
+                background-image: url('../img/01/index_photo375w.jpg');
+            }
+
             animation: opening 5s linear 1 both;
             @keyframes opening {
                 0% {

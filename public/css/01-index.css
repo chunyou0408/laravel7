@@ -54,6 +54,12 @@ header .above .index_photo {
           animation: opening 5s linear 1 both;
 }
 
+@media (max-width: 768px) {
+  header .above .index_photo {
+    background-image: url("../img/01/index_photo375w.jpg");
+  }
+}
+
 @-webkit-keyframes opening {
   0% {
     background-position: 50% 50%;

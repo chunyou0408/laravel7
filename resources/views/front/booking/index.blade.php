@@ -63,7 +63,7 @@
                     <form>
                         @csrf
                         <?php $name = Auth::user()->name;
-                        $phone = Auth::user()->phone;
+                        // $phone = Auth::user()->phone;
                         $email = Auth::user()->email;
                         ?>
                         <div class="form-group">
@@ -72,7 +72,7 @@
                         </div>
                         <div class="form-group">
                             <label for="content">電話:</label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="{{$phone}}" required>
+                            <input type="text" class="form-control" id="phone" name="phone" required>
                         </div>
                         <div class="form-group">
                             <label for="content">Email:</label>

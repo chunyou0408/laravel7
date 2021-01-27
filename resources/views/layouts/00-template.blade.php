@@ -335,14 +335,17 @@
 
         //當滾輪啟動時,收起漢堡條方塊
         $(document).ready(function(){
+
             $(window).scroll(function() {
                 $('#nav02_box').removeAttr('class');
                 $('#fold_area').attr('class' ,'fold_area');
             });
-            $(window).onresize(function() { 
+
+            $(window).resize(function() { 
                 $('#nav02_box').removeAttr('class');
                 $('#fold_area').attr('class' ,'fold_area');
             });
+
         });
 
 

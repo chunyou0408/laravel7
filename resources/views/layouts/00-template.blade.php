@@ -338,8 +338,10 @@
             $(window).scroll(function() {
                 $('#nav02_box').removeAttr('class');
                 $('#fold_area').attr('class' ,'fold_area');
-                // $('nav02_news').classList.remove('active')
-                // nav02_news_box.classList.remove('active')
+            });
+            $(window).onresize(function() { 
+                $('#nav02_box').removeAttr('class');
+                $('#fold_area').attr('class' ,'fold_area');
             });
         });
 

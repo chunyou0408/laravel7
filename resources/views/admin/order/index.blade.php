@@ -9,6 +9,7 @@
     <table id="myTable" class="display">
         <thead>
             <tr>
+                <th>訂單狀態</th>
                 <th>訂單編號</th>
                 <th>姓名</th>
                 <th>電話</th>
@@ -19,6 +20,7 @@
         <tbody>
             @foreach ($orders as $order)
             <tr>
+                <td>{{$order->status}}</td>
                 <td>{{$order->order_number}}</td>
                 <td>{{$order->name}}</td>
                 <td>{{$order->phone}}</td>

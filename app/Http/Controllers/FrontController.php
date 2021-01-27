@@ -258,7 +258,7 @@ class FrontController extends Controller
                 
                 $order_number = $serverPost["MerchantTradeNo"];
                 $order = Order::where('order_number',$order_number)->first();
-                $order->status = "已完成";
+                $order->status = "已付款完成";
                 $order->save();
 
                 return redirect("/checkoutend/{$order_number}");

@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
             <label for="img">內容:</label>
-            <input type="text" class="form-control" value="{{$suggest->content}}" readonly unselectable="on">
+            <textarea type="text" class="form-control" readonly unselectable="on">{{$suggest->content}}</textarea>
         </div>
         </form>
 

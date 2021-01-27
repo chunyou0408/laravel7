@@ -74,6 +74,20 @@ class OrderController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $order = Order::find($id);
+        $order->user_id = "1";
+        $order->total_price = $request->total_price;
+        $order->total_qty = $request->total_qty;
+        $order->order_number = $request->order_number;
+        $order->name = $request->name;
+        $order->phone = $request->phone;
+        $order->address = $request->address;
+        $order->email = $request->email;
+
+        $order->save();
+
+        //重新導向路徑
+        return redirect('/admin/order');
     }
 
     /**

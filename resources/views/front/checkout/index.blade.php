@@ -35,7 +35,7 @@
       <div class="product-title">{{$product->name}}</div>
       {{-- 內容太多字先不用 --}}
       {{-- <p class="product-description">{!!$product->description!!}</p> --}}
-      <p class="product-description">{{$product->name}}</p>
+      <a href="/product_detail/{{$product->id}}">商品頁面</a>
 
     </div>
     {{-- <div class="product-price">{{number_format($product->price)}}</div> --}}

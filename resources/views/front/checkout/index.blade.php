@@ -77,7 +77,7 @@
   {{-- <a href="/information" class="checkout">Checkout</a> --}}
 
 <hr>
-<form action="/create_order02" method="post">
+<form action="/create_order" method="post">
   @csrf
     <div class="form-group offset-3 col-6">
         <label for="name">姓名:</label>

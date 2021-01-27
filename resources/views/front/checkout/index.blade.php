@@ -33,9 +33,10 @@
     </div>
     <div class="product-details">
       <div class="product-title">{{$product->name}}</div>
-      {{-- 限制字串長度 --}}
-      {{-- <td>{{\Illuminate\Support\Str::limit($news->content, 30)}}</td> --}}
-      <p class="product-description" style="text-overflow: ellipsis;">{!!$product->description!!}</p>
+      {{-- 內容太多字先不用 --}}
+      {{-- <p class="product-description">{!!$product->description!!}</p> --}}
+      <p class="product-description">{{$product->name}}</p>
+
     </div>
     {{-- <div class="product-price">{{number_format($product->price)}}</div> --}}
     <div class="product-price" data-price="{{$product->price}}">{{(number_format($product->price))}}</div>

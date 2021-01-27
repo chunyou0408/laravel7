@@ -32,7 +32,7 @@
         </div>
         <div class="form-group">
             <label for="qty">總金額:</label>
-            <input type="number" class="form-control"  value="{{$order->qty}}" min="1" required >
+            <input type="number" class="form-control"  value="{{$order->total_qty}}" min="1" required >
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

@@ -166,6 +166,13 @@ class FrontController extends Controller
         return view('front.checkout.information');
     }
 
+    public function tracking(){
+        $id = Auth::user()->id;
+        $orders = Order::where('user_id',$id)->get();
+        // dd($orders);
+        return view('front.tracking.index',compact('orders'));
+    }
+
     public function createOrder02(Request $request)
     {
         $dt=Carbon::now();
@@ -268,7 +275,7 @@ class FrontController extends Controller
 
     public function checkoutend($order_number){
         $new_order = Order::where('order_number',$order_number)->first();
-        
+
 
         // $new_order = Order::where('order_number',$order_number)->with('orderitems')->first();
         // $userId = auth()->user()->id;

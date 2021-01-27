@@ -26,9 +26,6 @@
                     @foreach ($new_order->details as $detail)
                     <p>商品名稱:{{$detail->name}} 價格: {{$detail->price}} 數量: {{$detail->qty}}  </p>
                     @endforeach
-
-
-                    {{-- {{$new_order,$total,$getContent}} --}}
                 </div>
             </div>
         </div>

@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                             <div class="confirm">
-                                <a href="#" class=" btn btn-primary add_cart hvr-wobble-top" data-id={{$product->id}}>選購</a>
+                                <div class=" btn btn-primary add_cart hvr-wobble-top" data-id={{$product->id}}>選購</div>
                             </div>
                         </div>
                     </div>

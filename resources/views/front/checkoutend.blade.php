@@ -21,6 +21,11 @@
                     <hr>
                     <p>總數量:{{$new_order->total_qty}}</p>
                     <p>總金額:{{$new_order->total_price}}</p>
+                    <hr>
+                    <p>訂單商品明細</p>
+                    @foreach ($new_order->details as $detail)
+                    <p>商品名稱:{{$detail->name}} 價格: {{$detail->price}} 數量: {{$detail->qty}}  </p>
+                    @endforeach
 
 
                     {{-- {{$new_order,$total,$getContent}} --}}

@@ -255,7 +255,7 @@ class FrontController extends Controller
                 //付款完成，下面接下來要將購物車訂單狀態改為已付款
                 //目前是顯示所有資料將其DD出來
                 // dd($this->checkoutResponse->collectResponse($serverPost));
-                
+
                 $order_number = $serverPost["MerchantTradeNo"];
                 $order = Order::where('order_number',$order_number)->first();
                 $order->status = "已付款完成";
@@ -268,15 +268,16 @@ class FrontController extends Controller
 
     public function checkoutend($order_number){
         $new_order = Order::where('order_number',$order_number)->first();
+        
 
         // $new_order = Order::where('order_number',$order_number)->with('orderitems')->first();
         // $userId = auth()->user()->id;
         // $total = \Cart::session($userId)->getTotal();
         // $getContent = \Cart::session($userId)->getContent()->sort();
-        
-        return view('front.checkoutend',compact( 'new_order'));
+
+        return view('front.checkoutend',compact('new_order'));
    }
-    
+
 
 
     public function areaTypes(Request $request){

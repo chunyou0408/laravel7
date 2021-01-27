@@ -72,7 +72,6 @@ Route::get('/camping','FrontController@camping');
 Route::get('/shopping','FrontController@shopping');
 Route::get('/suggest','FrontController@suggest');
 Route::post('/suggest/store', 'FrontController@suggest_store');
-Route::get('/checkoutend/{order_number}', 'FrontController@checkoutend');
 
 Route::get('/home', 'HomeController@userIndex');
 
@@ -80,6 +79,8 @@ Route::get('/home', 'HomeController@userIndex');
 Route::group(['middleware' => ['auth'],'prefix'=>'/'], function () {
     Route::get('/checkout','FrontController@checkout');
     Route::get('/information','FrontController@checkoutInformation');
+    Route::get('/checkoutend/{order_number}', 'FrontController@checkoutend');
+
 
     Route::get('/booking','FrontController@booking');
     Route::post('/booking_search','FrontController@bookingSearch');

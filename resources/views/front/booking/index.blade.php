@@ -62,18 +62,21 @@
                 <div class="modal-body">
                     <form>
                         @csrf
-                        <?php $name = Auth::user()->name;?>
+                        <?php $name = Auth::user()->name;
+                        $phone = Auth::user()->phone;
+                        $email = Auth::user()->email;
+                        ?>
                         <div class="form-group">
                             <label for="name">姓名:</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{$name}}" required>
                         </div>
                         <div class="form-group">
                             <label for="content">電話:</label>
-                            <input type="text" class="form-control" id="phone" name="phone" required>
+                            <input type="text" class="form-control" id="phone" name="phone" value="{{$phone}}" required>
                         </div>
                         <div class="form-group">
                             <label for="content">Email:</label>
-                            <input type="text" class="form-control" id="email" name="email" required>
+                            <input type="text" class="form-control" id="email" name="email" value="{{$email}}" required>
                         </div>
                         <div class="form-group">
                             <label for="area_id">區域:</label>

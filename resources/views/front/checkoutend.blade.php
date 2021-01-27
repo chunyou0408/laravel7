@@ -1,8 +1,8 @@
-@extends('layouts.userapp')
+@extends('layouts.00-template')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
+@section('main')
+<div class="container" >
+    <div class="row justify-content-center align-items-center" style="min-height: calc(100vh - 382px);padding-top:80px;">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">付款結果</div>

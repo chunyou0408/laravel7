@@ -35,7 +35,7 @@
       <div class="product-title">{{$product->name}}</div>
       {{-- 限制字串長度 --}}
       {{-- <td>{{\Illuminate\Support\Str::limit($news->content, 30)}}</td> --}}
-      <p class="product-description">limit({!!$product->description!!},30)</p>
+      <p class="product-description">{!!limit($product->description,30)!!}</p>
     </div>
     {{-- <div class="product-price">{{number_format($product->price)}}</div> --}}
     <div class="product-price" data-price="{{$product->price}}">{{(number_format($product->price))}}</div>

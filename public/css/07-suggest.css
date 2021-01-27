@@ -12,6 +12,13 @@ section {
 section .suggest-title {
   text-align: center;
   margin: auto;
+  padding-top: 60px;
+}
+
+@media screen and (max-width: 538px) {
+  section .suggest-title {
+    padding-top: 30px;
+  }
 }
 
 section .suggest-title span {

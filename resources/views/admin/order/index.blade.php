@@ -2,10 +2,40 @@
 
 @section('css')
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+<style>
+    .title_erea{
+       display: flex;
+       justify-content: center;
+    }
+
+    .title{
+        position: relative;
+        font-size: 32px;
+        margin: 0 auto;
+    }
+
+    .title img{
+        position: absolute;
+        top: 20px;
+        left: -15px;
+        width: 120%;
+        z-index: -1;
+    }
+
+    .margin-bottom{
+        margin-bottom: 20px;
+    }
+</style>
 @endsection
 
 @section('main')
 <div class="container">
+    <div class="title_erea">
+        <span class="title">
+            產品管理
+            <img src="\img\03\underline.png" alt="">
+        </span>
+    </div>
     <table id="myTable" class="display">
         <thead>
             <tr>
@@ -42,5 +72,5 @@
     $(document).ready( function () {
         $('#myTable').DataTable();
     } );
-</script>  
+</script>
 @endsection

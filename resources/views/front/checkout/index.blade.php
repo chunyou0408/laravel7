@@ -35,12 +35,12 @@
       <div class="product-title">{{$product->name}}</div>
       {{-- 限制字串長度 --}}
       {{-- <td>{{\Illuminate\Support\Str::limit($news->content, 30)}}</td> --}}
-      <p class="product-description">{!!limit($product->description,30)!!}</p>
+      <p class="product-description" style="text-overflow: ellipsis;">{!!$product->description!!}</p>
     </div>
     {{-- <div class="product-price">{{number_format($product->price)}}</div> --}}
     <div class="product-price" data-price="{{$product->price}}">{{(number_format($product->price))}}</div>
     <div class="product-quantity">
-      <input type="number" value="{{$cart->quantity}}" min="1" data-id="{{$cart->id}}">
+      <input type="number" onkeyup="this.value=this.value.replace(/\D/g,‘‘)" onafterpaste="this.value=this.value.replace(/\D/g,‘‘)" value="{{$cart->quantity}}" min="1" data-id="{{$cart->id}}">
     </div>
     <div class="product-removal">
       <button class="remove-product" data-id="{{$cart->id}}">

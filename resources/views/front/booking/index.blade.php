@@ -62,9 +62,10 @@
                 <div class="modal-body">
                     <form>
                         @csrf
+                        <?php $name = Auth::user()->name;?>
                         <div class="form-group">
                             <label for="name">姓名:</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <input type="text" class="form-control" id="name" name="name" value="{{$name}}" required>
                         </div>
                         <div class="form-group">
                             <label for="content">電話:</label>
@@ -165,7 +166,7 @@
 <script>
     $('#exampleModal').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget) // Button that triggered the modal
-    var recipient = button.data('area_id') // Extract info from data-* attributes
+    var area_id = button.data('area_id') // Extract info from data-* attributes
     var date = button.data('date')
     // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
     // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
@@ -173,7 +174,7 @@
     //將文字加入到MODEL上
     var modal = $(this)
     modal.find('.modal-title').text('露營預約')
-    modal.find('.modal-body #area_id').val(recipient)
+    modal.find('.modal-body #area_id').val(area_id)
     modal.find('.modal-body #date').val(year+"-"+pad((month+1),2)+"-"+pad(date,2))
 
     })

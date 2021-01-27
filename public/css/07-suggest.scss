@@ -11,6 +11,13 @@ section {
         text-align: center;
         margin: auto;
         // span裡面的SUGGEST
+        padding-top: 60px;
+
+        @media screen and (max-width:538px) {
+            padding-top: 30px;
+        }
+
+
         span {
             font-size: $h1;
             font-family: $font-family;

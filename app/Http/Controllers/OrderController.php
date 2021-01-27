@@ -99,5 +99,7 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+        Order::find($id)->delete();
+        return redirect('/admin/order');
     }
 }

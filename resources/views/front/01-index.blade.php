@@ -51,9 +51,9 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" ><img src="./img/01/grassland.jpg" alt="" width="100%"></div>
-        <div class="swiper-slide" ><img src="./img/01/tent.jpg" alt="" width="100%"></div>
+        <div class="swiper-slide" ><img src="./img/01/tent.tiff" alt="" width="100%"></div>
         <div class="swiper-slide" ><img src="./img/01/coffee_shop.tiff" alt="" width="100%"></div>
-        <div class="swiper-slide" ><img src="./img/01/night.tiff" alt="" width="100%"></div>
+        <div class="swiper-slide" ><img src="./img/01/night.jpg" alt="" width="100%"></div>
 
       </div>
       <!-- Add Pagination -->

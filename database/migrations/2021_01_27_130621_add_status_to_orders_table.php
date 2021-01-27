@@ -15,7 +15,7 @@ class AddStatusToOrdersTable extends Migration
     {
         Schema::table('orders', function (Blueprint $table) {
             //
-            $table->string('status');
+            $table->string('status')->nullable();
         });
     }
 

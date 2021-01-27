@@ -13,5 +13,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
+        'cart_ecpay/return','cart_ecpay/notify'
     ];
 }

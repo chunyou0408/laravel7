@@ -31,6 +31,7 @@ Route::get('/product_detail/{id}','FrontController@productDetail');
 
 // Route::get('/checkout','FrontController@checkout');
 Route::get('/create_order','FrontController@createOrder');
+Route::post('/create_order','FrontController@createOrder02');
 
 
 Route::post('/area_types', 'FrontController@areaTypes');
@@ -55,10 +56,10 @@ Route::get('/test_check_out','FrontController@test_check_out');
 Route::prefix('cart_ecpay')->group(function(){
 
     //當消費者付款完成後，綠界會將付款結果參數以幕後(Server POST)回傳到該網址。
-    Route::post('notify', 'CartController@notifyUrl')->name('notify');
+    Route::post('notify', 'FrontController@notifyUrl')->name('notify');
 
     //付款完成後，綠界會將付款結果參數以幕前(Client POST)回傳到該網址
-    Route::post('return', 'CartController@returnUrl')->name('return');
+    Route::post('return', 'FrontController@returnUrl')->name('return');
 });
 
 
@@ -71,12 +72,15 @@ Route::get('/camping','FrontController@camping');
 Route::get('/shopping','FrontController@shopping');
 Route::get('/suggest','FrontController@suggest');
 Route::post('/suggest/store', 'FrontController@suggest_store');
+Route::get('/checkoutend/{order_number}', 'FrontController@checkoutend');
 
 Route::get('/home', 'HomeController@userIndex');
 
 
 Route::group(['middleware' => ['auth'],'prefix'=>'/'], function () {
     Route::get('/checkout','FrontController@checkout');
+    Route::get('/information','FrontController@checkoutInformation');
+
     Route::get('/booking','FrontController@booking');
     Route::post('/booking_search','FrontController@bookingSearch');
     Route::post('/booking_store', 'FrontController@bookingStore');

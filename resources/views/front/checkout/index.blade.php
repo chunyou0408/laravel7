@@ -12,17 +12,16 @@
 @endsection
 
 @section('main')
-<h1>Shopping Cart</h1>
+<h1>購物車</h1>
 
 <div class="shopping-cart">
-
   <div class="column-labels">
-    <label class="product-image">Image</label>
-    <label class="product-details">Product</label>
-    <label class="product-price">Price</label>
-    <label class="product-quantity">Quantity</label>
-    <label class="product-removal">Remove</label>
-    <label class="product-line-price">Total</label>
+    <label class="product-image">圖片</label>
+    <label class="product-details">商品</label>
+    <label class="product-price">價格</label>
+    <label class="product-quantity">數量</label>
+    <label class="product-removal">移除</label>
+    <label class="product-line-price">金額</label>
   </div>
 
   @foreach ($carts as $cart)
@@ -32,8 +31,9 @@
       <img src="{{$product->img}}">
     </div>
     <div class="product-details">
-      <div class="product-title">{{$product->name}}</div>
-      <a href="/product_detail/{{$product->id}}">商品頁面</a>
+      <a href="/product_detail/{{$product->id}}">
+        <span class="product-title" style="color: black; margin-right: 0px;">{{$product->name}}</span>
+      </a>
     </div>
     <div class="product-price" data-price="{{$product->price}}">{{(number_format($product->price))}}</div>
     <div class="product-quantity">
@@ -41,7 +41,7 @@
     </div>
     <div class="product-removal">
       <button class="remove-product" data-id="{{$cart->id}}">
-        Remove
+        移除
       </button>
     </div>
     <div class="product-line-price" data-price="{{$cart->quantity * $product->price}}">{{number_format($cart->quantity * $product->price)}}</div>
@@ -70,9 +70,33 @@
       <label>總計</label>
       <div class="totals-value" id="cart-total" data-total="{{$total}}">{{number_format($total)}}</div>
     </div>
+    <div class="clearfix"></div>
   </div>
 
-  <a href="/create_order" class="checkout">Checkout</a>
+
+  {{-- <a href="/information" class="checkout">Checkout</a> --}}
+
+<hr>
+<form action="/create_order02" method="post">
+  @csrf
+    <div class="form-group offset-3 col-6">
+        <label for="name">姓名:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group offset-3 col-6">
+        <label for="phone">電話:</label>
+        <input type="text" class="form-control" id="phone" name="phone" required>
+    </div>
+    <div class="form-group offset-3 col-6">
+        <label for="email">信箱:</label>
+        <input type="text" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="form-group offset-3 col-6">
+        <label for="address">地址:</label>
+        <input type="text" class="form-control" id="address" name="address" required>
+    </div>
+  <button type="submit" class="btn btn-primary checkout" >結帳</button>
+</form>
 
 
 </div>
@@ -86,7 +110,6 @@
   var taxRate = 0.05;
   var shippingRate = 0;
   var fadeTime = 300;
-
 
   /* Assign actions */
   $('.product-quantity input').change( function() {

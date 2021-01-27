@@ -14,6 +14,7 @@ use App\ProductType;
 use Illuminate\Http\Request;
 use TsaiYiHua\ECPay\Checkout;
 use Illuminate\Support\Facades\Auth;
+use TsaiYiHua\ECPay\Services\StringService;
 
 class FrontController extends Controller
 {
@@ -114,6 +115,7 @@ class FrontController extends Controller
             'name'=>'測試測試',
             'email'=>'9999@gmail.com',
             'order_number'=>$order_number,
+            'status'=>'未付款',
         ]);
 
         //取得車內所有物品
@@ -155,9 +157,126 @@ class FrontController extends Controller
 
         \Cart::clear();
 
-        return $this->checkout->setNotifyUrl(route('notify'))->setReturnUrl(route('return'))->setPostData($formData)->send();
         // return redirect('/admin/order');
+
+        return $this->checkout->setNotifyUrl(route('notify'))->setReturnUrl(route('return'))->setPostData($formData)->send();
+
     }
+    public function checkoutInformation(){
+        return view('front.checkout.information');
+    }
+
+    public function createOrder02(Request $request)
+    {
+        $dt=Carbon::now();
+        $order_number = 'DP'.$dt->year.$dt->month.$dt->day.$dt->hour.$dt->minute.$dt->second;
+
+        //取得車內所有物品
+        $cartCollectinon= \Cart::getContent();
+
+        $order = Order::create([
+            'user_id'=>Auth::user()->id,
+            'total_price'=>\Cart::getTotal(),
+            'total_qty'=>\Cart::getTotalQuantity(),
+            'name'=> $request->name,
+            'phone'=> $request->phone,
+            'address'=> $request->address,
+            'email'=> $request->email,
+            'order_number'=>$order_number,
+            'status'=>'未付款',
+        ]);
+
+
+
+        $items=[];
+
+        foreach ($cartCollectinon as $item) {
+            $product =Product::find($item->id);
+
+            OrderDetail::create([
+                'product_id'=>$product->id,
+                'order_id'=>$order->id,
+                'name'=>$product->name,
+                'price'=>$product->price,
+                'qty'=>$item->quantity,
+                'img'=>$product->img,
+            ]);
+
+            $new_ary = [
+                'name' => $product->name,
+                'qty' => $item->quantity,
+                'price' => $product->price,
+                'unit' => '個'
+            ];
+
+            array_push($items, $new_ary);
+        }
+
+         //第三方支付
+         $formData = [
+            'UserId' => Auth::user()->id, // 用戶ID , Optional
+            'OrderId' => 'DP'.$dt->year.$dt->month.$dt->day.$dt->hour.$dt->minute.$dt->second,
+            'ItemDescription' => '產品簡介',
+            'Items' => $items,
+            'TotalAmount' => \Cart::getTotal(),
+            'PaymentMethod' => 'Credit', // ALL, Credit, ATM, WebATM
+        ];
+
+        \Cart::clear();
+
+        // return redirect('/admin/order');
+
+        return $this->checkout->setNotifyUrl(route('notify'))->setReturnUrl(route('return'))->setPostData($formData)->send();
+
+    }
+
+    public function notifyUrl(Request $request){
+        $serverPost = $request->post();
+        $checkMacValue = $request->post('CheckMacValue');
+        unset($serverPost['CheckMacValue']);
+        $checkCode = StringService::checkMacValueGenerator($serverPost);
+        if ($checkMacValue == $checkCode) {
+            return '1|OK';
+        } else {
+            return '0|FAIL';
+        }
+    }
+
+    public function returnUrl(Request $request){
+        $serverPost = $request->post();
+        $checkMacValue = $request->post('CheckMacValue');
+        unset($serverPost['CheckMacValue']);
+        $checkCode = StringService::checkMacValueGenerator($serverPost);
+        if ($checkMacValue == $checkCode) {
+            if (!empty($request->input('redirect'))) {
+                return redirect($request->input('redirect'));
+            } else {
+
+                //付款完成，下面接下來要將購物車訂單狀態改為已付款
+                //目前是顯示所有資料將其DD出來
+                // dd($this->checkoutResponse->collectResponse($serverPost));
+                
+                $order_number = $serverPost["MerchantTradeNo"];
+                $order = Order::where('order_number',$order_number)->first();
+                $order->status = "已完成";
+                $order->save();
+
+                return redirect("/checkoutend/{$order_number}");
+            }
+        }
+    }
+
+    public function checkoutend($order_number){
+        $new_order = Order::where('order_number',$order_number)->first();
+
+        // $new_order = Order::where('order_number',$order_number)->with('orderitems')->first();
+        // $userId = auth()->user()->id;
+        // $total = \Cart::session($userId)->getTotal();
+        // $getContent = \Cart::session($userId)->getContent()->sort();
+        
+        return view('front.checkoutend',compact( 'new_order'));
+   }
+    
 
 
     public function areaTypes(Request $request){

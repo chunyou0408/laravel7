@@ -33,15 +33,11 @@
     </div>
     <div class="product-details">
       <div class="product-title">{{$product->name}}</div>
-      {{-- 內容太多字先不用 --}}
-      {{-- <p class="product-description">{!!$product->description!!}</p> --}}
       <a href="/product_detail/{{$product->id}}">商品頁面</a>
-
     </div>
-    {{-- <div class="product-price">{{number_format($product->price)}}</div> --}}
     <div class="product-price" data-price="{{$product->price}}">{{(number_format($product->price))}}</div>
     <div class="product-quantity">
-      <input type="number" onkeyup="this.value=this.value.replace(/\D/g,‘‘)" onafterpaste="this.value=this.value.replace(/\D/g,‘‘)" value="{{$cart->quantity}}" min="1" data-id="{{$cart->id}}">
+      <input type="number" value="{{$cart->quantity}}" min="1" data-id="{{$cart->id}}">
     </div>
     <div class="product-removal">
       <button class="remove-product" data-id="{{$cart->id}}">

@@ -88,4 +88,14 @@ class SuggestController extends Controller
         Suggest::find($id)->delete();
         return redirect('/admin/suggest');
     }
+
+
+    public function detail($id)
+    {
+        //
+        $suggest=Suggest::find($id);
+
+        return view('admin.suggest.detail',compact('suggest'));
+
+    }
 }

@@ -177,6 +177,7 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix'=>'admin'], function (
         Route::post('/store', 'SuggestController@store');
 
         // Route::get('/edit/{id}', 'SuggestController@edit');
+        Route::get('/detail/{id}', 'SuggestController@detail');
 
         // Route::post('/update/{id}', 'SuggestController@update');
         Route::get('/destroy/{id}', 'SuggestController@destroy');

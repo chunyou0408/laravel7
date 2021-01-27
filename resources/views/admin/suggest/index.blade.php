@@ -7,7 +7,6 @@
 @section('main')
 
 <div class="container">
-    <a class="btn btn-success" href="/admin/news/create">新增最新消息</a>
     <table id="myTable" class="display">
         <thead>
             <tr>
@@ -29,7 +28,7 @@
                 <td>{{$suggest->email}}</td>
                 <td>{!!$suggest->content!!}</td>
                 <td>
-                    <a class="btn btn-success" href="/admin/suggest/edit/{{$suggest->id}}">編輯</a>
+                    <a class="btn btn-success" href="/admin/suggest/detail/{{$suggest->id}}">詳細</a>
                     <a class="btn btn-danger" href="/admin/suggest/destroy/{{$suggest->id}}">刪除</a>
                 </td>
             </tr>

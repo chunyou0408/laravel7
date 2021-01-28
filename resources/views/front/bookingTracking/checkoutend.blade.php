@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <p>訂單編號:{{$new_order->order_number}}</p>
+                    <p>預約編號:{{$new_order->order_number}}</p>
                     <p>日期:{{$new_order->date}}</p>
                     <p>區域:{{$new_order->areaType->name}}</p>
                     <p>姓名:{{$new_order->name}}</p>

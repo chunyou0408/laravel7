@@ -26,7 +26,7 @@ class Booking extends Model
     /**
      * @var array
      */
-    protected $fillable = ['user_id','name', 'phone', 'email', 'area_id', 'date', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id', 'order_number','name', 'phone', 'email', 'area_id', 'date', 'created_at', 'updated_at'];
 
     public function areaType()
     {

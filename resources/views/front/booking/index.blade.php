@@ -508,6 +508,8 @@
                     email.value = "";
                     date.value = "";
 
+                    console.log("年:"+year+"月:"+month);
+                    booking_search(year,month);
                 });
             }
         }

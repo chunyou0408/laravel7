@@ -80,7 +80,7 @@
     }
 
     .product_description_text {
-        border: 1px solid black;
+        /* border: 1px solid black; */
         padding: 10px 100px;
     }
     .product_description_text h1{
@@ -145,6 +145,7 @@
         </div>
     </div>
     <div class="product_description_area">
+        <img src="../img/00/線.png" alt="" width="100%">
         <div class="product_description_text">
             <h1>產品描述:</h1><h3>{!!$product->description!!}</h3>
         </div>

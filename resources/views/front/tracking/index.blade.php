@@ -3,6 +3,10 @@
 @section('css')
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
 <style>
+    .container{
+        padding-top: 55px;
+        min-height: calc(100vh - 382px);
+    }
     .title_erea{
        display: flex;
        justify-content: center;

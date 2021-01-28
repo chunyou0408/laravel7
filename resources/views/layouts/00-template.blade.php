@@ -133,6 +133,9 @@
                                 <a class="dropdown-item" href="/tracking">
                                     查詢訂單
                                 </a>
+                                <a class="dropdown-item" href="/booking_tracking">
+                                    查詢預約
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">

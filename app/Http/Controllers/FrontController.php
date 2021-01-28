@@ -173,6 +173,13 @@ class FrontController extends Controller
         return view('front.orderTracking.index',compact('orders'));
     }
 
+    public function bookingCheckoutend(){
+        $id = Auth::user()->id;
+        $bookings = Booking::where('user_id',$id)->get();
+        // dd($orders);
+        return view('front.bookingTracking.index',compact('bookings'));
+    }
+
     public function createOrder02(Request $request)
     {
         $dt=Carbon::now();

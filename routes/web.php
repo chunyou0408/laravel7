@@ -83,6 +83,7 @@ Route::group(['middleware' => ['auth'],'prefix'=>'/'], function () {
 
     Route::get('/order_tracking', 'FrontController@orderTracking');
     Route::get('/booking_tracking', 'FrontController@bookingTracking');
+    Route::get('/booking_checkoutend/{order_number}', 'FrontController@bookingCheckoutend');
 
     Route::get('/booking','FrontController@booking');
     Route::post('/booking_search','FrontController@bookingSearch');

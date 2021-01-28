@@ -56,7 +56,7 @@
 
     .swiper {
         width: 40%;
-        height: 50vh;
+        height: 58vh;
     }
 
     .product_name_swiper {

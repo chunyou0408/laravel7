@@ -166,11 +166,11 @@ class FrontController extends Controller
         return view('front.checkout.information');
     }
 
-    public function tracking(){
+    public function orderTracking(){
         $id = Auth::user()->id;
         $orders = Order::where('user_id',$id)->get();
         // dd($orders);
-        return view('front.tracking.index',compact('orders'));
+        return view('front.orderTracking.index',compact('orders'));
     }
 
     public function createOrder02(Request $request)

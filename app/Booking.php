@@ -26,11 +26,16 @@ class Booking extends Model
     /**
      * @var array
      */
-    protected $fillable = ['name', 'phone', 'email', 'area_id', 'date', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id','name', 'phone', 'email', 'area_id', 'date', 'created_at', 'updated_at'];
 
     public function areaType()
     {
         return $this->hasOne('App\AreaType','id','area_id');
+    }
+
+    public function user()
+    {    
+        return $this->hasOne('App\User','id','user_id');
     }
 
 }

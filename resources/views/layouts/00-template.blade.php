@@ -151,8 +151,11 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/tracking">
+                                <a class="dropdown-item" href="/order_tracking">
                                     查詢訂單
+                                </a>
+                                <a class="dropdown-item" href="/booking_tracking">
+                                    查詢預約
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();

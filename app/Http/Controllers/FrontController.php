@@ -340,7 +340,7 @@ class FrontController extends Controller
             'name'=> $request->name,
             'phone'=> $request->phone,
             'email'=> $request->email,
-            'order_number'=>$order_number,
+            'order_number'=>"123456789",
         ]);
         
         $data->areaType;

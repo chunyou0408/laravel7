@@ -125,9 +125,6 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="dropdown-item" href="/tracking">
-                                查詢訂單
-                            </a>
                             <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <img class="admin_icon" src="/img/00/icon/admin_icon.png" alt="" width="35px">{{ Auth::user()->name }}
                             </a>
@@ -154,6 +151,9 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/tracking">
+                                    查詢訂單
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">

@@ -68,6 +68,8 @@
     .text{
         display: flex;
         flex-direction: column;
+
+        padding-left: 100px;
     }
     .text h1{
         font-size: 30px;
@@ -102,6 +104,9 @@
 
         .swiper {
         width: 100%;
+        }
+        .text{
+            padding-left: 0px;
         }
 
 

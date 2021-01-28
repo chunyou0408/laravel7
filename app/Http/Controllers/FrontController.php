@@ -329,7 +329,20 @@ class FrontController extends Controller
 
     public function bookingStore(Request $request){
         //
-        $data = Booking::create($request->all());
+        $dt=Carbon::now();
+        $order_number = 'BP'.$dt->year.$dt->month.$dt->day.$dt->hour.$dt->minute.$dt->second;
+
+        
+        $data = Booking::create([
+            'user_id'=>Auth::user()->id,
+            'date'=>$request->date,
+            'area_id'=> $request->area_id,
+            'name'=> $request->name,
+            'phone'=> $request->phone,
+            'email'=> $request->email,
+            'order_number'=>$order_number,
+        ]);
+        
         $data->areaType;
         return $data;
     }

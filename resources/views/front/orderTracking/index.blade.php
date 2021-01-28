@@ -47,6 +47,7 @@
                 <th>訂單編號</th>
                 <th>姓名</th>
                 <th>電話</th>
+                <th>地址</th>
                 <th style="width: 120px">功能</th>
             </tr>
         </thead>
@@ -57,6 +58,7 @@
                 <td>{{$order->order_number}}</td>
                 <td>{{$order->name}}</td>
                 <td>{{$order->phone}}</td>
+                <td>{{$order->address}}</td>
                 <td>
                     <a class="btn btn-success" href="/checkoutend/{{$order->order_number}}">詳細</a>
                 </td>

@@ -113,7 +113,12 @@
                     </button>
                 </div>
                 <div class="modal-body">
-
+                    <div class="row">
+                        <div class="col">
+                            <label>訂單編號:</label>
+                            <label class="order_number"></label>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col">
                             <label>姓名:</label>
@@ -502,6 +507,7 @@
                     modal.find('.modal-body .email').text(data.email)
                     modal.find('.modal-body .area_id').text(data.area_type.name)
                     modal.find('.modal-body .date').text(data.date)
+                    modal.find('.modal-body .order_number').text(data.order_number)
                     name.value = "";
                     phone.value = "";
                     area_id.value = "";

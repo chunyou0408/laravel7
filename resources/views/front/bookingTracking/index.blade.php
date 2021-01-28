@@ -33,6 +33,7 @@
 @endsection
 
 @section('main')
+dd({{$booking->order_number}});
 <div class="container">
     <div class="title_erea">
         <span class="title">
@@ -47,7 +48,6 @@
                 <th>區域</th>
                 <th>姓名</th>
                 <th>電話</th>
-                <th>地址</th>
                 <th style="width: 120px">功能</th>
             </tr>
         </thead>
@@ -58,7 +58,6 @@
                 <td>{{$booking->areaType->name}}</td>
                 <td>{{$booking->name}}</td>
                 <td>{{$booking->phone}}</td>
-                <td>{{$booking->address}}</td>
                 <td>
                     <a class="btn btn-success" href="/booking_checkoutend/{{$booking->order_number}}">詳細</a>
                 </td>

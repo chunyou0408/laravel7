@@ -375,6 +375,13 @@
                 }
 
                 if(date > today){
+                    var active=""
+                    if (indexNextLine == 6 || indexNextLine == 7){
+                        active="active";
+                    }else{
+                        active="";
+                    }
+
                     text = text + `
                 <td class="calendar-date">
                     <div class="day">
@@ -385,7 +392,7 @@
                         20-(currentMonth[day_num-1][2])+
                         20-(currentMonth[day_num-1][3])+
                         20-(currentMonth[day_num-1][4])}
-                        <ul>
+                        <ul class="ul ${active}">
 
                             <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="1" data-date="${day_num}">
                                 ${bookingtype[0]['name']}${20-(currentMonth[day_num-1][0])}個空位 預約

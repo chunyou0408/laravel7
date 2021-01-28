@@ -58,7 +58,7 @@
                 <td>{{$booking->name}}</td>
                 <td>{{$booking->phone}}</td>
                 <td>
-                    <a class="btn btn-success" href="/booking_checkoutend/">詳細</a>
+                    <a class="btn btn-success" href="/booking_checkoutend/{{$booking->order_number}}">詳細</a>
                 </td>
             </tr>
             @endforeach

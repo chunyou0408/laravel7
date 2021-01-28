@@ -5,7 +5,7 @@
     <div class="row justify-content-center align-items-center" style="min-height: calc(100vh - 382px);padding-top:80px;">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">付款結果</div>
+                <div class="card-header">預約資料</div>
 
                 <div class="card-body">
                     @if (session('status'))

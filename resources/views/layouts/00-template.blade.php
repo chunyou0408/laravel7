@@ -136,7 +136,7 @@
                                     {{ __('Logout') }}
                                 </a>
                                 <a class="dropdown-item" href="/tracking">
-                                    {{ __('查詢訂單') }}
+                                    查詢訂單
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

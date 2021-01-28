@@ -167,7 +167,7 @@
 <script>
     var galleryThumbs = new Swiper('.gallery-thumbs', {
       spaceBetween: 10,
-      slidesPerView: 4,
+      slidesPerView: 2,
       loop: true,
       freeMode: true,
       loopedSlides: 5, //looped slides should be the same

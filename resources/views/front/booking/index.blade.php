@@ -395,23 +395,23 @@
                         <ul class="ul ${active}">
 
                             <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="1" data-date="${day_num}">
-                                ${bookingtype[0]['name']}${20-(currentMonth[day_num-1][0])}個空位 預約
+                                ${bookingtype[0]['name']}_${20-(currentMonth[day_num-1][0])}個空位 預約
                             </div></li>
 
                             <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="2" data-date="${day_num}">
-                                ${bookingtype[1]['name']}${20-(currentMonth[day_num-1][1])}個空位 預約
+                                ${bookingtype[1]['name']}_${20-(currentMonth[day_num-1][1])}個空位 預約
                             </div></li>
 
                             <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="3" data-date="${day_num}">
-                                ${bookingtype[2]['name']}${20-(currentMonth[day_num-1][2])}個空位 預約
+                                ${bookingtype[2]['name']}_${20-(currentMonth[day_num-1][2])}個空位 預約
                             </div></li>
 
                             <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="4" data-date="${day_num}">
-                                ${bookingtype[3]['name']}${20-(currentMonth[day_num-1][3])}個空位 預約
+                                ${bookingtype[3]['name']}_${20-(currentMonth[day_num-1][3])}個空位 預約
                             </div></li>
 
                             <li><div type="button" class="" data-toggle="modal" data-target="#exampleModal" data-area_id="5" data-date="${day_num}">
-                                ${bookingtype[4]['name']}${20-(currentMonth[day_num-1][4])}個空位 預約
+                                ${bookingtype[4]['name']}_${20-(currentMonth[day_num-1][4])}個空位 預約
                             </div></li>
                         </ul>
 

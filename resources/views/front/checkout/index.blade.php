@@ -3,11 +3,10 @@
 @section('css')
 <link rel="stylesheet" href={{asset("./css/checkout.css")}}>
 <style>
-  main{
-    padding: 50px 0px 0px;
-    height: auto;
-  }
-
+    main {
+        padding: 50px 0px 0px;
+        height: auto;
+    }
 </style>
 @endsection
 
@@ -15,70 +14,79 @@
 <h1>購物車</h1>
 
 <div class="shopping-cart">
-  <div class="column-labels">
-    <label class="product-image">圖片</label>
-    <label class="product-details">商品</label>
-    <label class="product-price">價格</label>
-    <label class="product-quantity">數量</label>
-    <label class="product-removal">移除</label>
-    <label class="product-line-price">金額</label>
-  </div>
+    <div class="column-labels">
+        <label class="product-image">圖片</label>
+        <label class="product-details">商品</label>
+        <label class="product-price">價格</label>
+        <label class="product-quantity">數量</label>
+        <label class="product-removal">移除</label>
+        <label class="product-line-price">金額</label>
+    </div>
 
-  @foreach ($carts as $cart)
-  <?php $product = App\Product::find($cart->id);?>
-  <div class="product">
-    <div class="product-image">
-      <img src="{{$product->img}}">
+    @foreach ($carts as $cart)
+    <?php $product = App\Product::find($cart->id);?>
+    <div class="product">
+        <div class="product-image">
+            {{-- 顯示照片路徑 --}}
+            <img src="{{$product->img}}">
+        </div>
+        <div class="product-details">
+            {{-- 指定超連結到商品內頁,利用ID來指定 --}}
+            <a href="/product_detail/{{$product->id}}">
+                {{-- 顯示商品名稱路徑 --}}
+                <span class="product-title" style="color: black; margin-right: 0px;">{{$product->name}}</span>
+            </a>
+        </div>
+        {{-- 顯示商品價格,因為商品數字會換成100,000的格式,所以將價格塞到data-price方便JS計算 --}}
+        <div class="product-price" data-price="{{$product->price}}">{{(number_format($product->price))}}</div>
+        <div class="product-quantity">
+            {{-- 顯示商品數量 --}}
+            <input type="number" value="{{$cart->quantity}}" min="1" data-id="{{$cart->id}}">
+        </div>
+        {{-- 移除按鈕 --}}
+        <div class="product-removal">
+            {{-- 移除利用ID找到要移除的產品 --}}
+            <button class="remove-product" data-id="{{$cart->id}}">
+                移除
+            </button>
+        </div>
+        {{-- 計算產品價格(數量*價格),一樣將價格放入data-price方便js計算 --}}
+        <div class="product-line-price" data-price="{{$cart->quantity * $product->price}}">
+            {{number_format($cart->quantity * $product->price)}}</div>
     </div>
-    <div class="product-details">
-      <a href="/product_detail/{{$product->id}}">
-        <span class="product-title" style="color: black; margin-right: 0px;">{{$product->name}}</span>
-      </a>
-    </div>
-    <div class="product-price" data-price="{{$product->price}}">{{(number_format($product->price))}}</div>
-    <div class="product-quantity">
-      <input type="number" value="{{$cart->quantity}}" min="1" data-id="{{$cart->id}}">
-    </div>
-    <div class="product-removal">
-      <button class="remove-product" data-id="{{$cart->id}}">
-        移除
-      </button>
-    </div>
-    <div class="product-line-price" data-price="{{$cart->quantity * $product->price}}">{{number_format($cart->quantity * $product->price)}}</div>
-  </div>
-  @endforeach
+    @endforeach
 
-  <?php
+    <?php
+    // 將購物車的總價格計算出,套件內給的方式
     $subtotal=\Cart::getSubTotal();
     $tax = $subtotal*0.05;
     $total = $subtotal ;
   ?>
-  <div class="totals">
-    <div class="totals-item">
-      <label>小計</label>
-      <div class="totals-value" id="cart-subtotal" data-subtotal="$subtotal">{{number_format($subtotal)}}</div>
-    </div>
-    {{-- <div class="totals-item">
+    <div class="totals">
+        <div class="totals-item">
+            <label>小計</label>
+            <div class="totals-value" id="cart-subtotal" data-subtotal="$subtotal">{{number_format($subtotal)}}</div>
+        </div>
+        {{-- <div class="totals-item">
       <label>稅金 (5%)</label>
-      <div class="totals-value" id="cart-tax" data-tax="{{$tax}}">{{number_format($tax)}}</div>
-    </div> --}}
-    <div class="totals-item">
-      <label>運費</label>
-      <div class="totals-value" id="cart-shipping">0</div>
+      <div class="totals-value" id="cart-tax" data-tax="{{$tax}}">{{number_format($tax)}}
     </div>
-    <div class="totals-item totals-item-total">
-      <label>總計</label>
-      <div class="totals-value" id="cart-total" data-total="{{$total}}">{{number_format($total)}}</div>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-
-
-  {{-- <a href="/information" class="checkout">Checkout</a> --}}
+</div> --}}
+<div class="totals-item">
+    <label>運費</label>
+    <div class="totals-value" id="cart-shipping">0</div>
+</div>
+<div class="totals-item totals-item-total">
+    <label>總計</label>
+    <div class="totals-value" id="cart-total" data-total="{{$total}}">{{number_format($total)}}</div>
+</div>
+<div class="clearfix"></div>
+</div>
 
 <hr>
+<!--  這個部分是在讓使用者新增寄件資料,按下結帳後會新增訂單 -->
 <form action="/create_order" method="post">
-  @csrf
+    @csrf
     <div class="form-group offset-3 col-6">
         <label for="name">姓名:</label>
         <input type="text" class="form-control" id="name" name="name" required>
@@ -95,7 +103,7 @@
         <label for="address">地址:</label>
         <input type="text" class="form-control" id="address" name="address" required>
     </div>
-  <button type="submit" class="btn btn-primary checkout" >結帳</button>
+    <button type="submit" class="btn btn-primary checkout">結帳</button>
 </form>
 
 
@@ -103,17 +111,15 @@
 @endsection
 
 @section('js')
-  {{-- <script src="{{asset("./js/checkout.js")}}"></script> --}}
+{{-- <script src="{{asset("./js/checkout.js")}}"></script> --}}
 
 <script>
-/* Set rates + misc */
-  var taxRate = 0.05;
-  var shippingRate = 0;
-  var fadeTime = 300;
+    /* Set rates + misc */
+  var shippingRate = 0; //運費設定為0元
+  var fadeTime = 300; //動畫淡出淡入的時間
 
   /* Assign actions */
   $('.product-quantity input').change( function() {
-    // console.log($(this).attr('data-id'));
     //拿到購物車產品ID
     var id =$(this).attr('data-id');
     var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -126,9 +132,7 @@
     formData.append('_token',_token);
     formData.append('qty',qty);
 
-
-    // console.log(formData);
-
+    //使用fetch,使用post到/update_cart執行
     fetch('/update_cart', {
         method:'POST',
         body:formData,
@@ -148,7 +152,6 @@
             //車子有多少數量的商品
             $('.shopping_cart .qty').text(data);
         }
-        // console.log('成功:',data);
     });
 
     updateQuantity(this);
@@ -158,17 +161,14 @@
     console.log($(this).attr('data-id'));
     //拿到購物車產品ID
     var id =$(this).attr('data-id');
-    // var qty =parseInt(this.previousSibling.previousSibling.value);
     var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     //建立表單
     var formData = new FormData;
     //存入資料庫
     formData.append('id',id);
-    // formData.append('qty',qty);
     formData.append('_token',_token);
 
-    // console.log(formData);
 
     fetch('/del_cart', {
         method:'POST',
@@ -189,7 +189,6 @@
             //車子有多少數量的商品
             $('.shopping_cart .qty').text(data);
         }
-        // console.log('成功:',data);
     });
 
 
@@ -209,14 +208,12 @@
     });
 
     /* Calculate totals */
-    var tax = subtotal * taxRate;
-    var shipping = (subtotal > 0 ? shippingRate : 0);
+    var shipping = (subtotal > 0 ? shippingRate : 0); //運費0元
     var total = subtotal  + shipping;
 
     /* Update totals display */
     $('.totals-value').fadeOut(fadeTime, function() {
       $('#cart-subtotal').html(subtotal.toLocaleString());
-      $('#cart-tax').html(tax.toLocaleString());
       $('#cart-shipping').html(shipping.toLocaleString());
       $('#cart-total').html(total.toLocaleString());
       if(total == 0){

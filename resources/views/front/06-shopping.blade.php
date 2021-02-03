@@ -86,7 +86,7 @@
                     buy_button_quantity[i].value++;
 
                 } else if (target.classList.contains('buy_button_left')) {
-                    
+
                     if (buy_button_quantity[i].value > 0) {
                         buy_button_quantity[i].value--;
                     }
@@ -100,13 +100,13 @@
         //綁定點擊事件
         addCartBtns.forEach(function (addCartBtn){
             addCartBtn.onclick=function(){
-                
+
 
                 var id =this.getAttribute('data-id');
                 // var qty =parseInt(this.previousSibling.previousSibling.value);
                 var _token =document.querySelector('meta[name="csrf-token"]').getAttribute('content');
                 var qty =parseInt(this.parentNode.previousSibling.previousSibling.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.value);
-                
+
                 //判斷數量是否大於0
                 if(qty>0){
                     var formData = new FormData;

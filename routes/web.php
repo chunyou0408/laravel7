@@ -29,9 +29,7 @@ Route::get('/test',function(){
 
 Route::get('/product_detail/{id}','FrontController@productDetail');
 
-// Route::get('/checkout','FrontController@checkout');
-Route::get('/create_order','FrontController@createOrder');
-Route::post('/create_order','FrontController@createOrder02');
+Route::post('/create_order','FrontController@createOrder');
 
 
 Route::post('/area_types', 'FrontController@areaTypes');

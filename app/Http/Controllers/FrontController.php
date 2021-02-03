@@ -101,67 +101,6 @@ class FrontController extends Controller
         return view('front.checkout.index',compact('carts'));
     }
 
-    public function createOrder()
-    {
-        $dt=Carbon::now();
-        $order_number = 'DP'.$dt->year.$dt->month.$dt->day.$dt->hour.$dt->minute.$dt->second;
-
-        $order = Order::create([
-            'user_id'=>Auth::user()->id,
-            'total_price'=>'0',
-            'total_qty'=>'0',
-            'phone'=>'0930123456',
-            'address'=>'台中市XXX...',
-            'name'=>'測試測試',
-            'email'=>'9999@gmail.com',
-            'order_number'=>$order_number,
-            'status'=>'未付款',
-        ]);
-
-        //取得車內所有物品
-        $cartCollectinon= \Cart::getContent();
-
-        $items=[];
-
-        foreach ($cartCollectinon as $item) {
-            $product =Product::find($item->id);
-
-            OrderDetail::create([
-                'product_id'=>$product->id,
-                'order_id'=>$order->id,
-                'name'=>$product->name,
-                'price'=>$product->price,
-                'qty'=>$item->quantity,
-                'img'=>$product->img,
-            ]);
-
-            $new_ary = [
-                'name' => $product->name,
-                'qty' => $item->quantity,
-                'price' => $product->price,
-                'unit' => '個'
-            ];
-
-            array_push($items, $new_ary);
-        }
-
-         //第三方支付
-         $formData = [
-            'UserId' => Auth::user()->id, // 用戶ID , Optional
-            'OrderId' => 'DP'.$dt->year.$dt->month.$dt->day.$dt->hour.$dt->minute.$dt->second,
-            'ItemDescription' => '產品簡介',
-            'Items' => $items,
-            'TotalAmount' => \Cart::getTotal(),
-            'PaymentMethod' => 'Credit', // ALL, Credit, ATM, WebATM
-        ];
-
-        \Cart::clear();
-
-        // return redirect('/admin/order');
-
-        return $this->checkout->setNotifyUrl(route('notify'))->setReturnUrl(route('return'))->setPostData($formData)->send();
-
-    }
     public function checkoutInformation(){
         return view('front.checkout.information');
     }
@@ -185,7 +124,7 @@ class FrontController extends Controller
         return view('front.bookingTracking.checkoutend',compact('new_order'));
     }
 
-    public function createOrder02(Request $request)
+    public function createOrder(Request $request)
     {
         $dt=Carbon::now();
         $order_number = 'DP'.$dt->year.$dt->month.$dt->day.$dt->hour.$dt->minute.$dt->second;
@@ -332,7 +271,7 @@ class FrontController extends Controller
         $dt=Carbon::now();
         $order_number = 'BP'.$dt->year.$dt->month.$dt->day.$dt->hour.$dt->minute.$dt->second;
 
-        
+
         $data = Booking::create([
             'user_id'=>Auth::user()->id,
             'date'=>$request->date,
@@ -342,7 +281,7 @@ class FrontController extends Controller
             'email'=> $request->email,
             'order_number'=>$order_number,
         ]);
-        
+
         $data->areaType;
         return $data;
     }

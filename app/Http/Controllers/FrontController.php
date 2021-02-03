@@ -106,9 +106,11 @@ class FrontController extends Controller
     }
 
     public function orderTracking(){
+        //先取得目前的使用者id
         $id = Auth::user()->id;
+        //利用使用者id查詢所有訂單
         $orders = Order::where('user_id',$id)->get();
-        // dd($orders);
+        //顯示到畫面上,並將資料compact起來
         return view('front.orderTracking.index',compact('orders'));
     }
     public function bookingTracking(){

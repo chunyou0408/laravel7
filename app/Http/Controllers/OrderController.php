@@ -75,7 +75,7 @@ class OrderController extends Controller
     {
         //
         $order = Order::find($id);
-        $order->user_id = "1";
+        $order->user_id = $order->user_id;
         $order->total_price = $request->total_price;
         $order->total_qty = $request->total_qty;
         $order->order_number = $request->order_number;

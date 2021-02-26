@@ -128,12 +128,14 @@ class FrontController extends Controller
 
     public function createOrder(Request $request)
     {
+        //將時間讀出,轉成數字編輯訂單號碼
         $dt=Carbon::now();
         $order_number = 'DP'.$dt->year.$dt->month.$dt->day.$dt->hour.$dt->minute.$dt->second;
 
         //取得車內所有物品
         $cartCollectinon= \Cart::getContent();
 
+        //建立訂單,訂單預設都是未付款
         $order = Order::create([
             'user_id'=>Auth::user()->id,
             'total_price'=>\Cart::getTotal(),
@@ -146,10 +148,10 @@ class FrontController extends Controller
             'status'=>'未付款',
         ]);
 
-
-
+        //建立一個陣列,放詳細訂單資料用,會一起傳送到綠界視窗
         $items=[];
 
+        //將購物車內商品一個一個取出,新增到OrderDetail(需要自己先建立資料表)
         foreach ($cartCollectinon as $item) {
             $product =Product::find($item->id);
 
@@ -184,8 +186,7 @@ class FrontController extends Controller
 
         \Cart::clear();
 
-        // return redirect('/admin/order');
-
+        //當完成結帳後,會導引到route('notify')路由
         return $this->checkout->setNotifyUrl(route('notify'))->setReturnUrl(route('return'))->setPostData($formData)->send();
 
     }
@@ -221,12 +222,14 @@ class FrontController extends Controller
                 $order->status = "已付款完成";
                 $order->save();
 
+                //最後導引到完成付款的畫面
                 return redirect("/checkoutend/{$order_number}");
             }
         }
     }
 
     public function checkoutend($order_number){
+        //搜尋訂單編號,取出資料,顯示到頁面上
         $new_order = Order::where('order_number',$order_number)->first();
 
 

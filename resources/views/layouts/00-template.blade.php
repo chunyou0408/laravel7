@@ -347,7 +347,7 @@
                 $('#fold_area').attr('class' ,'fold_area');
             });
 
-            $(window).resize(function() { 
+            $(window).resize(function() {
                 $('#nav02_box').removeAttr('class');
                 $('#fold_area').attr('class' ,'fold_area');
             });

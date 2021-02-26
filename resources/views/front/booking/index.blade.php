@@ -102,8 +102,8 @@
     <!-- Large modal -->
 
 
-    <div class="modal fade bd-example-modal-lg" id="result_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-        aria-hidden="true">
+    <div class="modal fade bd-example-modal-lg" id="result_modal" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -139,7 +139,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <label >區域:</label>
+                            <label>區域:</label>
                             <label class="area_id"></label>
                         </div>
                     </div>
@@ -205,9 +205,12 @@
 
     var year = new Date().getFullYear(); //年 目前年份
     var month = new Date().getMonth();//月 目前月份
+
     var lastDay = new Date(year, month+1, 0).getDate();
 
     console.log("目前日期:"+year + "年" + (month+1) + "月");
+    console.log("這個月總共天數是:"+lastDay+ "天");
+
 
 
 
@@ -217,14 +220,17 @@
     function booking_search(year,month){
 
         var _token= document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
         var formData = new FormData();
+        lastDay = new Date(year, month+1, 0).getDate();
         formData.append('year',year);
         formData.append('month',month);
         formData.append('lastDay',lastDay);
         formData.append('_token',_token);
 
-        fetch(`booking_search`, {
+
+        console.log(`${year}年 ${month+1}月 這個月有${lastDay}天`);
+
+        fetch('/booking_search', {
                 method: 'POST',
                 body: formData,
             })
@@ -274,7 +280,7 @@
 
             });
             // console.log('二維');
-            console.log(currentMonth);
+            // console.log(currentMonth);
         }
 
 
@@ -288,6 +294,7 @@
                 month=11;
                 year=year-1;
             }
+
             booking_search(year,month);
         }
 
@@ -449,7 +456,7 @@
 
             myTable.innerHTML += text;
 
-            console.log(yy + "年" + (mm+1) + "月");
+            // console.log(yy + "年" + (mm+1) + "月");
 
         });
 

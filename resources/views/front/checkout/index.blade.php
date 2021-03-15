@@ -1,7 +1,7 @@
 @extends('layouts.00-template')
 
 @section('css')
-<link rel="stylesheet" href={{asset("./css/checkout.css")}}>
+<link rel="stylesheet" href={{secure_asset("./css/checkout.css")}}>
 <style>
     main {
         padding: 50px 0px 0px;
